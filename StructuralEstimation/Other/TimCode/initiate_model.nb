@@ -1,0 +1,244 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9607,        235]
+NotebookOptionsPosition[      9228,        219]
+NotebookOutlinePosition[      9706,        237]
+CellTagsIndexPosition[      9663,        234]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Assigns", " ", "the", " ", "directories", " ", "for", " ", "the", " ", 
+    "project"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "BaseDir", "=", 
+   "\"\<C:\\\\Users\\\\Tim\\\\Dropbox\\\\Current \
+Projects\\\\mathematica\\\\Tim\\\\dynamic_model\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CodeDir", "=", 
+   RowBox[{"BaseDir", "<>", "\"\<\\\\code\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DataDir", "=", 
+   RowBox[{"BaseDir", "<>", "\"\<\\\\data\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"FigDir", "=", 
+   RowBox[{"BaseDir", "<>", "\"\<\\\\figures\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"OutputDir", "=", 
+   RowBox[{"BaseDir", "<>", "\"\<\\\\output\>\""}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"TableDir", "=", 
+    RowBox[{"BaseDir", "<>", "\"\<\\\\tables\>\""}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"sets", " ", "the", " ", "sample", " ", "size"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"M", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"T", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Sets", " ", "the", " ", "initial", " ", "parameter", " ", "values", " ", 
+    "and", " ", "iteration", " ", "values"}], " ", "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"g1", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "4"}], ",", "5"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Bn", "=", 
+   RowBox[{"{", "3", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Bk", "=", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p\[Epsilon]", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p\[Eta]", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p\[Epsilon]\[Eta]", "=", "1.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m\[Epsilon]", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m\[Eta]", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"delta", "=", ".5"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "calcuates", " ", "other", " ", "parameter", " ", "values", " ", "based", 
+    " ", "on", " ", "the", " ", "input"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stdxi", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"p\[Epsilon]", "+", "p\[Eta]", "-", 
+      RowBox[{"2", "*", "p\[Epsilon]\[Eta]"}]}], ")"}], "^", ".5"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"stdeta", "=", 
+   RowBox[{"p\[Eta]", "^", ".5"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rho", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"p\[Eta]", "-", "p\[Epsilon]\[Eta]"}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"stdxi", "*", "stdeta"}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Sets", " ", "number", " ", "of", " ", "iterations", " ", "for", " ", 
+    "bootstrap"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"iter", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Saves", " ", "the", " ", "directories", " ", "and", " ", "other", " ", 
+    "input", " ", "for", " ", "use", " ", "in", " ", "the", " ", "remaining", 
+    " ", "programs"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DumpSave", "[", 
+    RowBox[{
+     RowBox[{"OutputDir", "<>", "\"\<\\\\settings.mx\>\""}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "BaseDir", ",", "CodeDir", ",", "DataDir", ",", "FigDir", ",", 
+       "OutputDir", ",", "TableDir", ",", "M", ",", "T", ",", "g1", ",", "g2",
+        ",", "Bn", ",", "Bk", ",", "p\[Epsilon]", ",", "p\[Eta]", ",", 
+       "p\[Epsilon]\[Eta]", ",", "m\[Epsilon]", ",", "m\[Eta]", ",", "delta", 
+       ",", "stdxi", ",", "stdeta", ",", "rho", ",", " ", "iter"}], "}"}]}], 
+    "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Runs", " ", "the", " ", "remaining", " ", "files"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Defnes", " ", "the", " ", "emax", " ", "functions", " ", "for", " ", 
+    "later", " ", "use"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"CodeDir", "<>", "\"\<\\\\emax_functions.m\>\""}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Draws", " ", "the", " ", "simulate", " ", "data"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"CodeDir", "<>", "\"\<\\\\draw_data.m\>\""}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Creates", " ", "the", " ", "likelihood", " ", "function", " ", "to", " ", 
+    "be", " ", "estimated"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"CodeDir", "<>", "\"\<\\\\read_likelihood.m\>\""}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Estimates", " ", "the", " ", "model"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"CodeDir", "<>", "\"\<\\\\estimate_model.m\>\""}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.561763309871956*^9, 3.5617633143492117`*^9}, {
+   3.561763350303268*^9, 3.561763552764848*^9}, {3.5617636122522507`*^9, 
+   3.561763612468263*^9}, {3.561763658188878*^9, 3.561763811290635*^9}, {
+   3.5617641298118534`*^9, 3.5617641574914365`*^9}, {3.561764487961338*^9, 
+   3.5617645121727233`*^9}, {3.5617685237861743`*^9, 3.5617685283004327`*^9}, 
+   3.5620801621987324`*^9, {3.5620804124110436`*^9, 3.562080414932188*^9}, {
+   3.562081673850194*^9, 3.5620816988106213`*^9}, {3.562081728940345*^9, 
+   3.562081821682649*^9}, 3.5620818546195335`*^9, {3.562081922306405*^9, 
+   3.5620819230844493`*^9}, {3.562082298920946*^9, 3.562082307230421*^9}, {
+   3.5620831736109753`*^9, 3.562083201692581*^9}, {3.5620833621047564`*^9, 
+   3.562083366729021*^9}, {3.5620846316563706`*^9, 3.5620846480483084`*^9}, {
+   3.562085031722253*^9, 3.562085046222082*^9}, 3.5620852757812123`*^9, {
+   3.562107835061589*^9, 3.5621078442131124`*^9}, 3.562108403854122*^9, {
+   3.5621119287507343`*^9, 3.5621119298837996`*^9}, {3.562115870448187*^9, 
+   3.562115875887498*^9}, 3.562119959352059*^9, {3.5621202576971235`*^9, 
+   3.5621202578471317`*^9}, {3.5621210910937905`*^9, 3.562121095676053*^9}, 
+   3.5621211412216578`*^9, 3.562121302389876*^9, {3.5621216871338825`*^9, 
+   3.5621216874569006`*^9}, {3.5621217699416184`*^9, 
+   3.5621217711846895`*^9}, {3.562121923390395*^9, 3.562121926770589*^9}, {
+   3.5621220359248323`*^9, 3.5621220510586977`*^9}, 3.5621228393907876`*^9, {
+   3.5621229026394053`*^9, 3.5621229063986197`*^9}, {3.5621236215865264`*^9, 
+   3.562123621940547*^9}, {3.5621239659602237`*^9, 3.562123966107232*^9}, {
+   3.5621248575853434`*^9, 3.562124861792584*^9}, 3.5621257262886057`*^9, {
+   3.562125997142776*^9, 3.5621259975951767`*^9}, {3.562130795235978*^9, 
+   3.562130804214492*^9}, {3.562132716611801*^9, 3.5621327170828285`*^9}, 
+   3.5621658042264657`*^9, {3.562170357397148*^9, 3.5621703626871557`*^9}, {
+   3.5637873856416955`*^9, 3.563787418152152*^9}, {3.5638255398790607`*^9, 
+   3.5638255530068116`*^9}, {3.5638291766670732`*^9, 
+   3.5638291772491064`*^9}, {3.5638305221370296`*^9, 
+   3.5638305366648607`*^9}, {3.563881290595131*^9, 3.5638812972205095`*^9}, 
+   3.5638840676249676`*^9, {3.563885182489734*^9, 3.563885198138629*^9}, {
+   3.5638965252970624`*^9, 3.56389652542807*^9}, {3.5639461191873727`*^9, 
+   3.5639461194123726`*^9}, {3.5641597969603615`*^9, 
+   3.5641598625685825`*^9}, {3.5641599037120094`*^9, 3.564159952613613*^9}, {
+   3.5642313365232105`*^9, 3.564231341660505*^9}, {3.5642328536169834`*^9, 
+   3.5642328570171785`*^9}, {3.564233692224949*^9, 3.5642337012814674`*^9}},
+ EmphasizeSyntaxErrors->True]
+},
+WindowSize->{1662, 888},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowSelection->True,
+Magnification->1.8000001907348633`,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 8667, 197, 2061, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
