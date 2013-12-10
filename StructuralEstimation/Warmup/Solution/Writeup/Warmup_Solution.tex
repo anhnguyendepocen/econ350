@@ -1,0 +1,36 @@
+
+%Input Style, Packages, Math Environment
+\input{HelperFiles/WarmupHelp}
+
+\begin{document}
+\title{Warm-Up: Solution}
+\date{This Draft: \today}
+\maketitle
+
+\begin{abstract}
+\noindent The objective of this exercise is for you to become familiar with the basic requirements to proceed with the rest of the empirical exercise. This lets you make sure that your software is installed and that the maximization package is working. Be sure to get this exercise correct so that you can be confident to proceed with the rest of the exercise. 
+\end{abstract}
+
+Consider a sample of N i.i.d. observations:
+\begin{equation}
+x_{i} \sim \mathcal{N}(0,\theta)
+\end{equation}
+\noindent for $i = 1, \ldots, N$. $\theta$ is the variance and you want to estimate it. 
+
+\begin{exercise} (Basics) \label{exercise:basics}
+(i) Write down the individual likelihood, the sample likelihood, and the sample log-likelihood; (ii) write down the sample score; (iii) calculate the Maximum Likelihood Estimator (MLE) of $\theta$ as a function the data.
+\end{exercise}
+
+\begin{exercise} (Estimation I) \label{exercise:manual}
+In Exercise \ref{exercise:basics} you find that the MLE estimator for $\theta$ has a closed and easy functional form. Actually, you do not need numeric maximization to obtain it. Use the data set ``warmpup.txt'' to estimate $\theta$ by MLE. The file ``readmewarmpup.txt'' described this data. Do not use a maximization routine. Use sums and multiplications. 
+\end{exercise}
+
+\begin{exercise} (Estimation II) \label{exercise:numeric}
+Use the data set ``warmpup.txt'' to estimate $\theta$ by MLE. The file ``readmewarmpup.txt'' describes this data. Use a the maximization routine discussed in the introductory session of Computational Econometrics.
+\end{exercise}
+
+\begin{exercise} 
+Compare the estimate in Exercise \ref{exercise:manual} to the estimate in Exercise \ref{exercise:numeric}. Do they differ? Why? Which one is better?
+\end{exercise}
+
+\end{document}
