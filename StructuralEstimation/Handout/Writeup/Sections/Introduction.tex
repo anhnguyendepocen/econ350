@@ -1,13 +1,5 @@
 \section{Introduction} \label{section:intro}
 \noindent The objective of this document is to build on \citet{keane2011structural} and clarify Structural Estimation methods. The focus is on the estimation of Discrete Choice Dynamic Programming (DCDP) models. In particular, the idea is to (i) illustrate the basic ideas and concepts; (ii) provide examples.\\
-\indent Some basic thoughts and concepts to consider are the following:
-\begin{enumerate}
-\item Modeling choices include the number of choice alternatives, the size of the state space, the error structure and distributional assumptions, and the functional forms for the structural relationships.
-\item In dynamic models, a fundamental model decision, also, is how agents form expectations.
-\item It is a truism that any dynamic optimization model that can be (numerically) solved can be estimated.
-\item Extra theoretic modeling assumptions (e.g., functional and distributional assumptions) enable to perform counter-factual analysis based on DCDP.
-%Continue this list...
-\end{enumerate} 
 
 \subsection{DCDP as an Extension of the Static Discrete Choice Framework} \label{section:extension}
 DCDP models are a natural generalization of static discrete choice models. They share the latent variable specification. To illustrate this, consider a binary choice model in which an economic agent, $i$, makes a choice at each discrete period $t$. He has two alternatives: $d_{it} \in \{ 0,1\}$. A latent variable, $v_{it}^*$, which is the difference in the expected payoffs between the choices $d_{it} = 1$ and $d_{it} = 0$, determines the outcome. Specifically, if $v_{it}^*$ is greater than certain threshold, the agent chooses $d_{it} = 1$. Without loss of generality, the threshold is normalized to zero. Thus, $d_{it} = 1$ iff $v_{it}^* \geq 0$ and $d_{it} = 0$ otherwise.\\
@@ -20,7 +12,7 @@ Solve the warm-up exercise posted in the web site. The objective of this is for 
 \end{exercise}
 
 \begin{exercise} (Estimation of the Probit Model)
-From Exercise \ref{exercise:idenprobit} you have clear the setup of the Probit model. Make sure you know what the correct parametric assumptions are and what can you identify in the model. Use the data base ``probit.csv'' to estimate a Probit model. The file ``readmeprobit.txt'' describes the data base and clarifies what the dependent and independent variables are. Try different specifications and explain your results. 
+From Exercise \ref{exercise:idenprobit} you have clear the setup of the Probit model. Make sure you know what the correct parametric assumptions are and what can you identify in the model. Simulate all the data necessary to estimate a Probit model. The instructions are loose in purpose because we want to evaluate your ability to create the data and estimate the model from scratch. Hint: simulate a single independent variable. This is sufficient for the purposes of this exercise.
 \end{exercise}
 
 \indent In general, the latent variable is a function of three variables: (i) $\tilde{D_{it}}$, a vector of the history of past choices (i.e., $d_{i\tau}, \tau = 0, \ldots, t-1$); (ii) $\tilde{X_{it}}$, a vector of contemporaneous and lagged values of $J$ variables (i.e., $X_{ij\tau},  j = 1, \ldots, J; \tau = 0, \ldots, t-1$); (iii) $\tilde{\epsilon_{it}}$, a vector of contemporaneous and lagged  unobserved variables (i.e., $\epsilon_{i\tau}, \tau = 0, \ldots, t-1$). Thus, the general decision rule of the agent is:
