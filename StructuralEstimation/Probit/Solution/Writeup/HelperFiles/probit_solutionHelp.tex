@@ -1,0 +1,30 @@
+%Style
+\documentclass[11pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\parindent 22pt
+
+%Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{tabularx,ragged2e,booktabs}
+\usepackage{caption}
+\usepackage[none]{hyphenat}
+\usepackage{fixltx2e}
+\usepackage[para]{threeparttable}
+\usepackage[capposition=top]{floatrow}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+%Math Environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{clue}[theorem]{Clue}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
