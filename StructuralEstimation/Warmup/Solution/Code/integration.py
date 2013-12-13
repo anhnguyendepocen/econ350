@@ -1,4 +1,5 @@
 #Warm-up exercise solver
+#Section 1
 #This project: JG, JEH, YW
 #This code: JG
 #This draft: 12/12/2013
@@ -7,10 +8,12 @@
 import matplotlib.pyplot as mplot
 import os
 import random
+#Set seed
+random.seed(0)
 
 #Change to my principal path
-#os.chdir(os.environ["jorge"])
-#os.chdir("econ350/StructuralEstimation/Warmup/Solution/Output")
+os.chdir(os.environ["jorge"])
+os.chdir("econ350/StructuralEstimation/Warmup/Solution/Data")
 
 
 #1.1 Basic continous function through a grid
@@ -21,7 +24,7 @@ s = sin(x)
 mplot.plot(x,s)
 mplot.title("$\sin(x)$")
 mplot.xlabel('x'); 
-#mplot.savefig("sin.png")
+mplot.savefig("sin.png")
 mplot.close()
 
 #1.4 Trapezoidal integration
@@ -56,34 +59,3 @@ def mcint(f, a, b, n):
 for n in 2, 50, 100, 500, 1000:
     approx_mcint_sin = mcint(sin, 0, pi, n)
     print approx_mcint_sin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

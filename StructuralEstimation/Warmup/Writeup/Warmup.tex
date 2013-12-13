@@ -9,7 +9,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent The objective of this exercise is for you to become familiar with the basic requirements to proceed with the rest of the empirical exercise. This lets you make sure that your software is installed and that the maximization package is working. Also, it teaches you how to do numerical integration, which is useful in the rest of the empirical project. Be sure to get this exercise correct so that you can be confident to proceed with the rest of the project. 
+\noindent The objective of this exercise is for you to become familiar with the basic requirements to proceed with the rest of the empirical exercise. This lets you make sure that your software is installed and try optimization exercises . Also, it teaches you how to do numerical integration, which is useful in the rest of the empirical project. Be sure to get this exercise correct so that you can be confident to proceed with the rest of the project. 
 \end{abstract}
 
 \section{How to Calculate a Numerical Integral}
@@ -93,10 +93,15 @@ Write down a code that has a general function for Monte Carlo Integration.
 \end{exercise}
 
 \begin{exercise} (Monte Carlo Integration of the Sine Function)
-Integrate (\ref{eq:trap}) with $n=10,50,100,500$ using your code of Exercise \ref{exercise:mt}. How do these values differ from the values that you can get in your calculator and in Exercise \ref{exercise:trap}. Why?
+Integrate (\ref{eq:trap}) with $n=10,50,100,500$ using your code of Exercise \ref{exercise:mt}. Use the random package in Python and set the seed to zero. How do these values differ from the values that you can get in your calculator and in Exercise \ref{exercise:trap}. Why?
 \end{exercise}
 
 \section{How to Maximize a Likelihood}
+
+\begin{exercise} (Basic Optimization)
+\noindent The Rosenbrock function helps to illustrate how to maximize a function that involves sums. This is useful in this context because log-likelihoods are sums. Write down a code that minimizes the  Rosenbrock function with the Broyden-Fletcher-Goldfarb-Shanno algorithm in Python. Examine the function and provide an initial condition (the length of this vector provides the dimension of the elements in the domain of the function. Use $10$). Hint: use Google.
+\end{exercise}
+
 Consider a sample of N i.i.d. observations:
 \begin{equation}
 x_{i} \sim \mathcal{N}(0,\theta)
@@ -108,11 +113,11 @@ x_{i} \sim \mathcal{N}(0,\theta)
 \end{exercise}
 
 \begin{exercise} (Estimation I) \label{exercise:manual}
-In Exercise \ref{exercise:basics} you find that the MLE estimator for $\theta$ has a closed and easy functional form. Actually, you do not need numeric maximization to obtain it. Use the data set ``warmpup.csv'' to estimate $\theta$ by MLE. The file ``readmewarmpup.txt'' describes this data. Do not use a maximization routine. Use sums and multiplications. 
+In Exercise \ref{exercise:basics} you find that the MLE estimator for $\theta$ has a closed and easy functional form. Actually, you do not need numeric maximization to obtain it. Simulate your own data with $\theta = 1$ and then recover the parameter by ML. Use the random package in Python, $10,000$ observations, and set the seed to zero. Set the Do not use a maximization routine. Use sums and multiplications. 
 \end{exercise}
 
 \begin{exercise} (Estimation II) \label{exercise:numeric}
-Use the data set ``warmpup.csv'' to estimate $\theta$ by MLE. The file ``readmewarmpup.txt'' describes this data. Use a the maximization routine discussed in the introductory session of Computational Econometrics.
+Use the data that you simulated to estimate $\theta$ by ML. Use the Broyden-Fletcher-Goldfarb-Shanno algorithm in Python. Hint: recall that this algorithm minimizes.
 \end{exercise}
 
 \begin{exercise} 
