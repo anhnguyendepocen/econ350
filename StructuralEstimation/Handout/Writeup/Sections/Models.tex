@@ -132,8 +132,12 @@ Write down the individual likelihood that individual $i$ at time $t$ contributes
 What is the set of parameters that you want to estimate? Are all of these parameters identified? Hint: read \citet{heckman1979sample}.
 \end{exercise}
 
+\begin{exercise} (Simulation)
+Simulate a dataset of size $n=1000$ with three periods, $T=3$, by using the following parameter values: $\beta_\kappa = 0.5, \beta_n = 0.2, \sigma_\epsilon = 1, \pi = 0.2, \gamma_1 = 0.8, \sigma_\eta = 0.2, \sigma_{\epsilon \eta} = 0.3$ and the following distributions of the observables: $\kappa_{it}$ is i.i.d and follows a uniform distribution $U(0,5)$, $n_{it}$ is time invariant and follows a discrete uniform distribution so that $n_{it} \in \left\{0,1,2,3\right\}$, $y_{it}$ is i.i.d and follows a uniform distribution $U(0,10)$, $z_{it}$ is i.i.d and follows a uniform distribution $U(0,5)$. Save your dataset in a csv file.
+\end{exercise}
+
 \begin{exercise} (Estimation)
-Simulate data and estimate the model. The file ``readmewomans.txt'' lists the necessary parameters.
+Estimate the parameters of the model by using maximum likelihood estimation. Compare the estimated parameters with the true parameter values.
 \end{exercise}
 
 \begin{exercise}

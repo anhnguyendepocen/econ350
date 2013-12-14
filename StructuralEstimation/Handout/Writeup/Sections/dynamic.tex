@@ -1,0 +1,59 @@
+\section{Discrete Choice Dynamic Programming}
+\subsection{The Model}
+
+\indent In the dynamic model, the utility function, budget constraint, and the distribution of the unobservables are assumed to be the same as in the static model. Recall that in the static model, we have:
+\begin{eqnarray}
+U_{it} &=& c_{it} + \alpha_{it} (1 - d_{it})\\
+\alpha_{it} &=& \beta_{\kappa} \kappa_{it} + \beta_{n} n_{it} + \epsilon_{it}\\
+c_{it} &=& y_{it} + w_{it} d_{it} - \pi n_{it} d_{it}\\
+f \left( \epsilon_{it}, \eta_{it} \right) & \overset{iid}{\sim} & \mathcal{N} \left( 0, \Lambda \right)\\
+\Lambda &=& \left( \begin{array}{cc} 
+\sigma_{\epsilon}^2 & \cdot \\
+\sigma_{\epsilon, \eta} & \sigma_{\eta}^2
+\end{array} \right)
+\end{eqnarray}
+
+And the only extension in the dynamic setting is to assume that woman's wage rate, $w_{it}$, increases with the level of work experience, $h_{it}$, which equals to the total number of periods in the past she participated in the labor market:
+\begin{equation}
+h_{it} = \sum\limits_{\tau=1}^{t-1} d_{i\tau} 
+\end{equation} 
+\noindent where $h_{i1} = 0$ for simplicity. And:
+\begin{equation}
+w_{it} = z_{it}\gamma_{1} + \gamma_{2}h_{it} + \eta_{it}
+\end{equation} 
+
+%Furthermore, assume that when a woman makes the participation decision, she could not forecast the unobservables in the wage offer of the current period. 
+
+\begin{exercise}
+Write down a woman's utility maximization problem in each period $t$. Denote the discount factor by  $\delta$ and the state space by $\Omega_{it}$, and the observables in the state space by $\Omega_{it}^-$. Explicitly write down the elements in $\Omega_{it}$ and $\Omega_{it}^-$.
+\end{exercise}
+
+\begin{exercise}
+Write down the value function in the form of a Bellman equation.
+\end{exercise}
+
+\begin{exercise}
+Now solve the dynamic optimization problem for the model with three periods, i.e. $T = 3$. Hint: use backward recursion.
+\end{exercise}
+
+\begin{exercise}
+In this model, what is the log likelihood function for an individual?
+\end{exercise}
+
+\subsection{Simulation and Estimation}
+\begin{exercise}
+Simulate a dataset of size $n = 1000$ for three periods $T=3$ by using the same parameter values and distributions of the observables as in the static model. In addition, assume that $\gamma_2 = 0.9$, $\delta = 0.85$, and the initial work experience at $t=1$ is zero for everyone: $h_{i1} = 0$. Save your dataset in a csv file.
+\end{exercise}
+
+\begin{exercise}
+Estimate the parameters of the model by using maximum likelihood estimation. Compare the estimated parameters with the true parameter values.
+\end{exercise} 
+
+
+
+
+
+
+
+
+
