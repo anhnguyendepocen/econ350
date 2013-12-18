@@ -1,0 +1,47 @@
+\section{Discrete Choice Dynamic Programming}
+Consider the dynamic version of the model in Section \ref{section:model}. The utility function, the budget constraint, and the distribution of the unobserved variables are the same:
+\begin{eqnarray}
+U_{it} &=& c_{it} + \alpha_{it} (1 - d_{it})\\
+\alpha_{it} &=& \beta_{\kappa} \kappa_{it} + \beta_{n} n_{it} + \epsilon_{it}\\
+c_{it} &=& y_{it} + w_{it} d_{it} - \pi n_{it} d_{it}\\
+f \left( \epsilon_{it}, \eta_{it} \right) & \overset{iid}{\sim} & \mathcal{N} \left( 0, \Lambda \right)\\
+\Lambda &=& \left( \begin{array}{cc} 
+\sigma_{\epsilon}^2 & \cdot \\
+\sigma_{\epsilon, \eta} & \sigma_{\eta}^2
+\end{array} \right).
+\end{eqnarray}
+
+\indent The dynamic problem extends the model through the wage rate process. In particular, $w_{it}$ increases with the level of work experience, $h_{it}$. This equals the total number of periods that the woman in household $i$ accumulated in all the periods previous to $t$:
+\begin{equation}
+h_{it} = \sum\limits_{\tau=1}^{t-1} d_{i\tau},
+\end{equation} 
+\noindent where $h_{i1} = 0$ for simplicity. The wage function is
+\begin{equation}
+w_{it} = z_{it}\gamma_{1} + \gamma_{2}h_{it} + \eta_{it}.
+\end{equation} 
+
+\begin{exercise} (Dynamic Programming Set-up)
+Write down the utility maximization problem in each period $t$. Denote the discount factor by  $\delta$, the state space by $\Omega_{it}$, and the observed variables in the state space by $\Omega_{it}^-$. Write down explicitly the elements in $\Omega_{it},\Omega_{it}^-$.
+\end{exercise}
+
+\begin{exercise} (Bellman Equation)
+Write down the recursive formulation of the household's problem.
+\end{exercise}
+
+\begin{exercise} (Solution)
+Solve the dynamic problem of the household for $T=3$. Hint: use a backward recursion.
+\end{exercise}
+
+\subsection{Simulation and Estimation}
+
+\begin{exercise} (Likelihood)
+What is the likelihood of household $i$ at time $t$? What is the sample likelihood across all periods?
+\end{exercise}
+
+\begin{exercise} (Simulation) \label{exercise:simulation}
+Simulate a balanced data set with $n = 1000$ observations and $T=3$. Use the same parameters as in the static model in Section \ref{section:models}. For the parameters that are exclusive of the dynamic model use the following: $\gamma_2 = 0.9,\delta = 0.85$. Set the experience of every woman to zero in $t=1$. Save the data in a ``.csv'' file.
+\end{exercise}
+
+\begin{exercise} (Estimation)
+Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulation}.
+\end{exercise} 

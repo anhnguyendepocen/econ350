@@ -19,15 +19,21 @@ w_{it} = w(z_{it}, \eta_{it}) \label{eq:wage}
 \noindent where $z_{it}$ are observed and $\eta_{it}$ unobserved factors. By assumption, $\epsilon_{it}, \eta_{it}$ are not serially correlated between each other.
 
 \begin{exercise}
-Is this model static or dynamic?
+Is this model static or dynamic?\\
+\noindent Answer:\\
+\noindent This model is static. There is no link between $t$ and $t-1$ in any of the variables (withing or across). 
 \end{exercise}
 
 \begin{exercise}
-What are the variables that you expect to find in $z_{it}$?
+What are the variables that you expect to find in $z_{it}$?\\
+\noindent Answer:\\
+\noindent Education and experience are two typical examples of variables in $z_{it}$.
 \end{exercise}
 
 \begin{exercise}
-Why is no serial correlation between $\epsilon_{it}, \eta_{it}$ a relevant assumption? Is it a technical or an economic assumption? Is it realistic? Hint: go ahead and answer the reminder of the exercise and then come back to this question.
+Why is no serial correlation between $\epsilon_{it}, \eta_{it}$ a relevant assumption? Is it a technical or an economic assumption? Is it realistic? Hint: go ahead and answer the reminder of the exercise and then come back to this question.\\
+\noindent Answer:\\
+\noindent This assumption is technical. Note that no serial correlation between $\epsilon_{it}, \eta_{it}$ is one of the reasons why the model is static. Whether this is realistic or not depends on the context but of course it is natural to think that shocks people receive are correlated over time. 
 \end{exercise}
 
 \indent This structure, actually, is enough to describe the problem through a decision rule that a latent variable dictates, as in (\ref{eq:latent}). Specifically, substitute (\ref{eq:budget}),(\ref{eq:wage}) into (\ref{eq:utility}) and note that
@@ -76,7 +82,9 @@ U_{it}^0 &=& U(y_{it}, 1; n_{it}, \kappa_{it}, \epsilon_{it}).
 \indent The combination of the initial approaches and the two auxiliary assumptions for identifications leads to a total of four possible estimation approaches: (i) S-P; (ii) S-NP; (iii) NS-P; (iv) NS-NP. The relevant question to ask which of the estimations approaches enable to attain the research goals in Section \ref{section:extension}.
 
 \begin{exercise} (The Joint Distribution of Observed and Unobserved Variables)
-Give a sufficient condition on the joint distribution of observed and unobserved variables to attain each of the research goals in Section \ref{section:extension}. Hint: Think if you can ask the questions implied by the research goals without an assumption about the relation between the unobserved variables that affect preferences and the wage function and the observed variables. Then, make a simple assumption about the joint distribution of the observed and unobserved variables.
+Give a sufficient condition on the joint distribution of observed and unobserved variables to attain each of the research goals in Section \ref{section:extension}. Hint: Think if you can ask the questions implied by the research goals without an assumption about the relation between the unobserved variables that affect preferences and the wage function and the observed variables. Then, make a simple assumption about the joint distribution of the observed and unobserved variables.\\
+\noindent Answer:\\
+\noindent It is \emph{necessary} to make an assumption of independence between the unobserved variables, $\epsilon_{it}, \eta_{it}$, and the observed variables, $y_{it}, z_{it}, n_{it}, \kappa_{it}$. Otherwise, variation in $y_{it}, z_{it}, n_{it}, \kappa_{it}$ either across individuals in $t$ or within individuals in any period $t, \ldots, T$, causes $d_{it}$ through two channels: (i) direct effect on preferences and  wages; (ii) indirect effects on preferences and wages through the effect that unobserved variables have on this. A natural step is to shut down the second channel and a \emph{sufficient} condition is full independence between $\epsilon_{it}, \eta_{it}$ and  $y_{it}, z_{it}, n_{it}, \kappa_{it}$: $F_{epsilon, \eta}|y, z, n, \kappa$.
 \end{exercise}
 
 \indent This model enables to illustrate how different estimation approaches help to attain the different research goals in Section \ref{section:extension}. Consider the following examples:
@@ -113,23 +121,52 @@ where $\left( \begin{array}{cc}
 \end{assumption}
 
 \begin{exercise} (Wage Normality)
-Is it odd to model the shock to wages as normal? Why is it useful?
+Is it odd to model the shock to wages as normal? Why is it useful?\\
+\noindent Answer:\\
+\noindent It is odd because wages are positive values. If $z_{i} \gamma$ is large enough this causes no negative wages. Modeling the wage shocks through a distribution with positive support is more natural but normality makes the model algebraically tractable. 
 \end{exercise}
 
 \begin{exercise} (The State Space)
-Define $\Omega_{it}$ and $\Omega_{it}^-$ for this problem. 
+Define $\Omega_{it}$ and $\Omega_{it}^-$ for this problem.\\
+\noindent Answer:\\
+\noindent (Same as before) $\Omega_{it} = \{ y_{it}, z_{it}, n_{it}, \kappa_{it}, \epsilon_{it}, \eta_{it} \}$. $\Omega_{it}^{-} = \{ y_{it}, z_{it}, n_{it}, \kappa_{it} \}$. 
 \end{exercise}
 
 \begin{exercise} (Latent Variable Function)
-Use Assumption \ref{assumption:utwajo} to write down the latent variable function. First define $U_{it}^1$ and $U_{it}^0$. Your latent function should be a function of $\xi_{it} \equiv \eta_{it} - \epsilon_{it}$ and  $\xi_{it}^*\left( \Omega_{it}^- \right) \equiv z_{it} \gamma - \left( \pi \beta_{n} \right) - \kappa_{it} \beta_{\kappa}$. Use this notation for the rest of the problem. 
+Use Assumption \ref{assumption:utwajo} to write down the latent variable function. First define $U_{it}^1$ and $U_{it}^0$. Your latent function should be a function of $\xi_{it} \equiv \eta_{it} - \epsilon_{it}$ and  $\xi_{it}^*\left( \Omega_{it}^- \right) \equiv z_{it} \gamma - \left( \pi \beta_{n} \right) - \kappa_{it} \beta_{\kappa}$. Use this notation for the rest of the problem.\\
+\noindent Answer:\\
+\begin{eqnarray}
+U_{it}^{1} &=& c_{it} \nonumber \\
+           &=& y_{it} + w_{it} - \pi n_{it} \nonumber \\
+           &=& y_{it} + z_{it} \gamma + eta_{it} - \pi n_{it} \\
+U_{it}^{0} &=& y_{it} + \beta_{\kappa} \kappa_{it} + \beta_{n} n_{it} + \epsilon_{it} \\
+U_{it}^{1} - U_{it}^{0} &\equiv& v_{it}^{*} \left( y_{it}, z_{it}, n_{it}, \kappa_{it}, \epsilon_{it}, \eta_{it}  \right) \nonumber \\ 
+           &=& z_{it} \gamma - \left( \pi + \beta_{n} \right) n_{it} - \beta_{\kappa} \kappa_{it} + \eta_{it} - \epsilon_{it} \nonumber \\
+           & \equiv & \xi_{it}^{*} \left( \Omega_{it}^{-} \right) + \xi_{it}.
+\end{eqnarray}
 \end{exercise}
 
 \begin{exercise} (Individual and Sample Likelihood Function)
-Write down the individual likelihood that individual $i$ at time $t$ contributes to the sample likelihood function. Write down the sample likelihood function.
+Write down the individual likelihood that individual $i$ at time $t$ contributes to the sample likelihood function. Write down the sample likelihood function.\\
+\noindent Answer (assume that the data is strongly balanced, i.e. observe all the individuals in the same periods):\\
+\noindent The likelihood of individual $i$ at time $t$ is
+\begin{eqnarray}
+L_{it} \left( \theta | \Omega_{it}^{-} \right) &=& \Pr \left(  d_{it} = 1, w_{it} | \Omega_{it}^{-} \right)^{d_{it}} \times \Pr \left(  d_{it} = 0 | \Omega_{it}^{-} \right)^{1-d_{it}} \nonumber \\
+&=& \Pr \left( \xi_{it} \geq - \xi_{it}^{*} \left(\Omega_{it}^{-} \right), n_{it} = w_{it} - z_{it} \gamma  \right) ^{d_{it}} \nonumber \\  
+&\times& \Pr \left( \xi_{it} < - \xi_{it}^{*} \left(\Omega_{it}^{-} \right) \right) ^{1 - d_{it}}
+\end{eqnarray}
+
+\noindent \ldots and the sample likelihood is
+\begin{equation}
+L \left( \theta | \Omega_{it}^{-} \right) = \prod \limits _{i \in \mathcal{I}} \prod \limits _{t \in \mathcal{T}} L_{it}.
+\end{equation}
+\noindent where $\theta$ is the vector of estimands (see Exercise \ref{exercise:estimands}). Importantly, note that $\Pr \left(  d_{it} = 1, w_{it} | \cdot \right)^{d_{it}}$ is not a probability but a mixture of the $c.d.f.$ (of the decision, $d$) and the $p.d.f.$ (of the wage, $w_{it}$).   
 \end{exercise}
 
-\begin{exercise} (Estimands and Identification)
-What is the set of parameters that you want to estimate? Are all of these parameters identified? Hint: read \citet{heckman1979sample}.
+\begin{exercise} (Estimands and Identification) \label{exercise:estimands}
+What is the set of parameters that you want to estimate? Are all of these parameters identified? Hint: read \citet{heckman1979sample}.\\ 
+\noindent Answer:\\
+\noindent The estimands are $\beta_{k}, \beta_{n}, \gamma, \pi, \sigma_{\epsilon}^2, \sigma_{\eta}^2, \sigma_{\epsilon, \eta} $. It is impossible to identify $\beta_{n}$ from $\pi$. It is only possible to identify $\beta_{n} + \pi$. For the rest of the parameters \citet{heckman1979sample} shows identification. Joint normality enables to identify $\gamma, \sigma_{\eta}^2, \frac{\sigma_{\eta}^2 - \sigma_{\epsilon, \eta}}{\sigma_{\xi}}$. The data on work choices identifies $\frac{\gamma}{\sigma_{\xi}}$ and $\frac{\beta}{\sigma_{\xi}}$. The identification of $\sigma_{\xi}$ requires a variable in $z_{it}$ which is not in $\kappa_{it}$. This identification provides the identification of $\sigma_{\epsilon, \eta}^2$. 
 \end{exercise}
 
 \begin{exercise} (Simulation) \label{exercise:simulations}
