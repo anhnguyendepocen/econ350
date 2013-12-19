@@ -6,19 +6,19 @@ DCDP models are a natural generalization of static discrete choice models. They 
 \begin{exercise} (Identification of the Probit Model) \label{exercise:idenprobit}
 Model a bivariate, static, discrete choice through a Probit model. The convention is that in this model the unobserved variable is normally distributed. (i) Show that you can normalize the threshold that defines the agent's decision without loss of generality;  (ii) why is the normalization without loss of generality?; (iii) what other normalization can you make without loss of generality in your Probit model?; (iv) what does this normalization implies with respect to the distribution of the unobserved variable? (v) are you able to identify all the parameters of the model?; (vi) how does identification and the normalizations relate to each other? Hint: think of the scalar and spatial identification issues that the structure of a Probit model generates.\\
 \noindent Answer:\\
-\noindent See the separate handout Probit. 
+\noindent See the separate handout. 
 \end{exercise}
 
 \begin{exercise} (Computational Econometrics: Warm-up)
-Solve the warm-up exercise posted in the web site. The objective of this is for you to go from the basics (i.e., installing Python in your computer and setting up the function maximizer) to an exercise in which you can maximize a likelihood function.\\
+Solve the exercise ``Warmup.pdf'' posted on the web site. The objective of this is for you to go from the basics (i.e., installing Python in your computer and setting up the function maximizer) to an exercise in which you can maximize a likelihood function.\\
 \noindent Answer:\\
-\noindent See the separate handout Warm-up. 
+\noindent See the separate handout. 
 \end{exercise}
 
 \begin{exercise} (Estimation of the Probit Model)
 From Exercise \ref{exercise:idenprobit} you have clear the setup of the Probit model. Make sure you know what the correct parametric assumptions are and what can you identify in the model. Simulate all the data necessary to estimate a Probit model. The instructions are loose in purpose because we want to evaluate your ability to create the data and estimate the model from scratch. Hint: simulate a single independent variable. This is sufficient for the purposes of this exercise.\\
 \noindent Answer:\\
-\noindent See the separate handout Probit. 
+\noindent See the separate handout. 
 \end{exercise}
 
 \indent In general, the latent variable is a function of three variables: (i) $\tilde{D_{it}}$, a vector of the history of past choices (i.e., $d_{i\tau}, \tau = 0, \ldots, t-1$); (ii) $\tilde{X_{it}}$, a vector of contemporaneous and lagged values of $J$ variables (i.e., $X_{ij\tau},  j = 1, \ldots, J; \tau = 0, \ldots, t-1$); (iii) $\tilde{\epsilon_{it}}$, a vector of contemporaneous and lagged  unobserved variables (i.e., $\epsilon_{i\tau}, \tau = 0, \ldots, t-1$). Thus, the general decision rule of the agent is:
@@ -38,7 +38,7 @@ In this context, forward looking refers to the behavior in which agents consider
 
 \begin{exercise}
 The last paragraphs clarify that there is a general framework to think of either static or dynamic binary choice models. Argue that this can be generalized for multivariate models. Write down a general framework for the multivariate case that encompasses static and dynamic models. Specify conditions under which the model is either static or dynamic.\\
-\noindent Answer:
+\noindent Answer:\\
 \noindent In the case of the binary choice, $v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right)$ is a function of the utility individual $i$ has at time $t$ in each of the states. Often, $v(\cdot)$, is actually the utility in one state less the utility in the other. The rule is simple. In a multiple choice framework a bit more notation is necessary. The choice set, $\mathcal{S}$, has a cardinality greater or equal than $3$, $\# \mathcal{S} \geq 3$. Let $U_{it}(s) \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right)$ be the utility of individual $i$ at time $t$ in state (i.e., when she chooses) $s$, $\forall s \in \mathcal{S}$. Then,
  \begin{eqnarray}
    D_{it}(j) = \left\{
