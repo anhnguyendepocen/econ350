@@ -25,8 +25,8 @@ From Exercise \ref{exercise:idenprobit} you have clear the setup of the Probit m
 \begin{eqnarray}
 d_{it} =
 \begin{cases}
-1 \  \text{if }  v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}} \tilde{\epsilon_{it}} \right) \ \geq 0  \\
-0 \  \text{if }  v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}} \tilde{\epsilon_{it}} \right)  < 0. \label{eq:latent}
+1 \  \text{if }  v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right) \ \geq 0  \\
+0 \  \text{if }  v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right)  < 0. \label{eq:latent}
 \end{cases}
 \end{eqnarray}
 
@@ -37,7 +37,18 @@ In this context, forward looking refers to the behavior in which agents consider
 \end{remark}
 
 \begin{exercise}
-The last paragraphs clarify that there is a general framework to think of either static or dynamic binary choice models. Argue that this can be generalized for multivariate models. Write down a general framework for the multivariate case that encompasses static and dynamic models. Specify conditions under which the model is either static or dynamic. 
+The last paragraphs clarify that there is a general framework to think of either static or dynamic binary choice models. Argue that this can be generalized for multivariate models. Write down a general framework for the multivariate case that encompasses static and dynamic models. Specify conditions under which the model is either static or dynamic.\\
+\noindent Answer:
+\noindent In the case of the binary choice, $v_{it}^* \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right)$ is a function of the utility individual $i$ has at time $t$ in each of the states. Often, $v(\cdot)$, is actually the utility in one state less the utility in the other. The rule is simple. In a multiple choice framework a bit more notation is necessary. The choice set, $\mathcal{S}$, has a cardinality greater or equal than $3$, $\# \mathcal{S} \leq 3$. Let $U_{it}(s) \left( \tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}} \right)$ be the utility of individual $i$ at time $t$ in state (i.e., when she chooses) $s$, $\forall s \in \mathcal{S}$. Then,
+ \begin{eqnarray}
+   D_{it}(j) = \left\{
+     \begin{array}{lr}
+       1  : \ \underset{s \in \mathcal{S}}{\operatorname{argmax}} \ \{U_{it}(j)\} = j \\
+       0  : \ \text{otherwise}. 
+     \end{array}
+   \right.
+\end{eqnarray}
+\noindent with $\sum \limits _{s \in \mathcal{S}} D_{it}(s) = 1$. $\tilde{D_{it}}$ is still the set that encodes all the past choices individuals make before $t$,. This model encompasses both the static and the dynamic cases. The model is dynamic if there is a link between between $t$ and $t-1$ in any of the variables $\tilde{D_{it}}, \tilde{X_{it}}, \tilde{\epsilon_{it}}$. 
 \end{exercise}
 
 \indent This document follows \citet{keane2011structural} and argues that there are three broad research goals in the estimation of DCDP models:

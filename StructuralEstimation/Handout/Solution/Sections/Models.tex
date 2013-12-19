@@ -84,7 +84,7 @@ U_{it}^0 &=& U(y_{it}, 1; n_{it}, \kappa_{it}, \epsilon_{it}).
 \begin{exercise} (The Joint Distribution of Observed and Unobserved Variables)
 Give a sufficient condition on the joint distribution of observed and unobserved variables to attain each of the research goals in Section \ref{section:extension}. Hint: Think if you can ask the questions implied by the research goals without an assumption about the relation between the unobserved variables that affect preferences and the wage function and the observed variables. Then, make a simple assumption about the joint distribution of the observed and unobserved variables.\\
 \noindent Answer:\\
-\noindent It is \emph{necessary} to make an assumption of independence between the unobserved variables, $\epsilon_{it}, \eta_{it}$, and the observed variables, $y_{it}, z_{it}, n_{it}, \kappa_{it}$. Otherwise, variation in $y_{it}, z_{it}, n_{it}, \kappa_{it}$ either across individuals in $t$ or within individuals in any period $t, \ldots, T$, causes $d_{it}$ through two channels: (i) direct effect on preferences and  wages; (ii) indirect effects on preferences and wages through the effect that unobserved variables have on this. A natural step is to shut down the second channel and a \emph{sufficient} condition is full independence between $\epsilon_{it}, \eta_{it}$ and  $y_{it}, z_{it}, n_{it}, \kappa_{it}$: $F_{epsilon, \eta}|y, z, n, \kappa$.
+\noindent It is \emph{necessary} to make an assumption of independence between the unobserved variables, $\epsilon_{it}, \eta_{it}$, and the observed variables, $y_{it}, z_{it}, n_{it}, \kappa_{it}$. Otherwise, variation in $y_{it}, z_{it}, n_{it}, \kappa_{it}$ either across individuals in $t$ or within individuals in any period $t, \ldots, T$, causes $d_{it}$ through two channels: (i) direct effect on preferences and  wages; (ii) indirect effects on preferences and wages through the effect that unobserved variables have on this. A natural step is to shut down the second channel and a \emph{sufficient} condition is full independence between $\epsilon_{it}, \eta_{it}$ and  $y_{it}, z_{it}, n_{it}, \kappa_{it}$: $F_{\epsilon, \eta}|y, z, n, \kappa$.
 \end{exercise}
 
 \indent This model enables to illustrate how different estimation approaches help to attain the different research goals in Section \ref{section:extension}. Consider the following examples:
@@ -94,8 +94,14 @@ Give a sufficient condition on the joint distribution of observed and unobserved
 \item Goal 3: take the derivative of $G(\cdot)$, the probability of woman's employment, with respect to a variable that is outside the model (e.g., $\pi$, the per-child cost of child-care). 
 \end{enumerate}
 
-\begin{exercise} (Estimation Approaches and Research Goals)
-What research goals can you attain with the structural approaches NP-NS, P-NS, P-NS. Be as formal as possible. Hint: think of the different effects that you are able to identify.  
+\begin{exercise} (Estimation Approaches and Research Goals) \label{exercise:approaches}
+What research goals can you attain with the estimation approaches NP-NS, P-NS, P-NS. Be as formal as possible. Hint: think of the different effects that you are able to identify.
+\begin{itemize}
+\item NP-NS: 
+\item P-NS:
+\item P-NS:
+\item P-S: see Exercise \ref{exercise:psapproach}.
+\end{itemize}
 \end{exercise}
 
 \subsection{Estimation of a Parametric, Structural Model}
@@ -177,14 +183,23 @@ Simulate a balanced data set with $n = 1000$ observations and $T=3$. Use the fol
 Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulations}.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise} \label{exercise:psapproach}
 What research goals are you able to attain with this approach?
+\noindent Answer:\\
+\begin{itemize}
+\item Goal 1: As discussed above, you need an exclusion restriction. In the simulation exercise you actually have it because $\kappa_{it},z_{it}$ are generated independently.
+\item Goal 2: These approach enables to determine the effect on the the woman's labor force participation in any of the variables within and outside of sample. This follows because it recovers the structure of the model and it has specific functional forms. 
+\item Goal 3: Of course! This is one of the appealing features of the P-S approach. This is usually referred as counter-factual analysis. We explain a counter-factual exercise in the TA session.  
+\end{itemize}
+ 
 \end{exercise}
 
 \begin{exercise}
-Think of three policy questions that you can address with each of estimation of the model you just did. You need to link each question to each research goal in Section \ref{section:extension}. Hint: include a exclusion restriction in the simulation of your data.
+Think of three policy questions that you can address with each of estimation of the model you just did. You need to link each question to each research goal in Section \ref{section:extension}.\\
+\noindent Answer:\\
+\noindent There are various examples. Let's discuss this in the TA session.
 \end{exercise}
 
 \begin{exercise}
-What are you able to learn from each estimation approach? Is any estimation approach better than the other? Why?
+What are you able to learn from each estimation approach? Is any estimation approach better than the other? Why? This follows from the answer to Exercise \ref{exercise:approaches}. There are no ``best approaches''. It all depends on the question you want to ask, the data availability, and the assumptions that are plausible in each scenario.
 \end{exercise}
