@@ -6,10 +6,9 @@
 
 #Import packages
 import numpy as np
-import random
 from scipy.optimize import minimize 
 #Set seed
-random.seed(0)
+np.random.seed(0)
 
 #2.1 Basic optimization
 #Define the Rosenbrock Function
@@ -30,7 +29,7 @@ print (opt.message)
 #2.3 (Estimation I)
 #Generate data
 N = 10000
-x = np.array([random.gauss(0,1) for i in range(0,N)])
+x = np.array([np.random.normal(0,1) for i in range(0,N)])
 n = float(x.size)
 mle_1 = (1/n)*sum(x**2)
 print mle_1

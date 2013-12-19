@@ -5,15 +5,15 @@
 #This draft: 12/12/2013
 
 #Import packages
+import numpy as np
 import matplotlib.pyplot as mplot
 import os
-import random
 #Set seed
-random.seed(0)
+np.random.seed(0)
 
 #Change to my principal path
 os.chdir(os.environ["jorge"])
-os.chdir("econ350/StructuralEstimation/Warmup/Solution/Data")
+os.chdir("econ350/StructuralEstimation/Warmup/Solution/Output")
 
 
 #1.1 Basic continous function through a grid
@@ -50,12 +50,12 @@ for n in 10, 50, 100, 500:
 def mcint(f, a, b, n):
     s = 0
     for i in range(n):
-        x = random.uniform(a, b)
+        x = np.random.uniform(a, b)
         s += f(x)
     I = (float(b-a)/n)*s
     return I
 
-#1.7 
-for n in 2, 50, 100, 500, 1000:
+#1.7 Monte Carlo Integration of the sine function
+for n in 10, 50, 100, 500, 1000:
     approx_mcint_sin = mcint(sin, 0, pi, n)
     print approx_mcint_sin

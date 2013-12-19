@@ -98,7 +98,7 @@ Write down a code that has a general function for Monte Carlo Integration.\\
 \end{exercise}
 
 \begin{exercise} (Monte Carlo Integration of the Sine Function)
-Integrate (\ref{eq:trap}) with $n=10,50,100,500$ using your code of Exercise \ref{exercise:mt}. Use the random package in Python and set the seed to zero. How do these values differ from the values that you can get in your calculator and in Exercise \ref{exercise:trap}. Why?\\
+Integrate (\ref{eq:trap}) with $n=10,50,100,500$ using your code of Exercise \ref{exercise:mt}. Use the Numpy random package in Python and set the seed to zero. How do these values differ from the values that you can get in your calculator and in Exercise \ref{exercise:trap}. Why?\\
 \noindent Answer:  see code ``integration.py''. For small values of $n$ the trapezoidal integration is more precise. This is because Monte Carlo integration may have a couple of draws that give extreme values of the function to be integrated. As $n$ grows, Monte Carlo integration is more precise. This is specially important because for some functions linear interpolation is inaccurate. 
 \end{exercise}
 

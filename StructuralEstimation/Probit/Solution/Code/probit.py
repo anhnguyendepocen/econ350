@@ -6,18 +6,17 @@
 #Import packages
 import numpy as np
 from scipy.stats import norm
-import random
 from scipy.optimize import minimize 
 #Set seed
-random.seed(0)
+np.random.seed(0)
 
 #Exercise 1.3
 #Generate data
 N = 100
-X1 = np.array([random.lognormvariate(3,1.5) for i in range(0,N)])
-X2 = np.array([random.randint(0,1) for i in range(0,N)])
+X1 = np.array([np.random.lognormal(3,1.5) for i in range(0,N)])
+X2 = np.array([np.random.randint(0,2) for i in range(0,N)])
 X = zip(X1,X2)
-E = np.array([random.gauss(0,1) for i in range(0,N)])
+E = np.array([np.random.normal(0,1) for i in range(0,N)])
 
 #Set arbitrary beta and construct latent
 beta = np.array([-.3,2])
