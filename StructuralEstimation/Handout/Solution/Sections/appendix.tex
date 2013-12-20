@@ -1,0 +1,39 @@
+\renewcommand{\thesection}{\Alph{section}}
+\setcounter{section}{0}
+\section{Appendix} \label{section:appendix}
+
+\subsection{The Univariate Normal Distribution} \label{section:uninormal}
+Let $x \sim \mathcal{N} \left( \mu, \sigma^2 \right)$. Then
+\begin{eqnarray}
+f(x) &=& \frac{1}{\sigma} \frac{1}{2\pi} \exp \left( \frac{-1}{2} \left( \frac{x - \mu}{\sigma} \right)^2 \right) \nonumber \\
+     &=& \frac{1}{\sigma} \phi \left( \frac{x - \mu}{\sigma} \right) 
+\end{eqnarray}
+\noindent where $\phi(\cdot)$ is the p.d.f. of a univariate normal standard distribution.
+
+\subsection{The Conditional Normal Theorem} \label{section:conditional}
+Consider two random vectors, $\bf{x_{1}}, \bf{x_{2}}$, which are jointly, normally distributed:
+\begin{equation}
+\left[ \begin{array}{c}
+\bf{x_{1}} \\
+\bf{x_{2}} 
+\end{array} \right]
+\thicksim \mathcal{N}
+\left[ \left( \begin{array}{c}
+\bf{\mu_{1}} \\
+\bf{\mu_{2}} 
+\end{array} \right)
+,
+\left( \begin{array}{cc}
+\bf{\Sigma_{11}} & \bf{\Sigma_{12}}  \\
+\bf{\Sigma_{21}} & \bf{\Sigma_{22}}
+\end{array} \right) \right]. 
+\end{equation}
+\noindent Then
+\begin{equation}
+\bf{x_{1}} | \bf{x_{2}} \thicksim \mathcal{N} (\bf{\mu_{1.2}},\bf{\Sigma_{11.2}})
+\end{equation}
+where
+\begin{eqnarray}
+\bf{\mu_{1.2}}     &=& \bf{\mu_{1}} + \bf{\Sigma_{12}}{\bf{\Sigma_{22}}}^{-1}(\bf{x_{2}}-\mu_{2}) \\
+\bf{\Sigma_{11.2}} &=& \bf{\Sigma_{11}}   - \bf{\Sigma_{12}}{\bf{\Sigma_{22}}}^{-1}\bf{\Sigma_{21}}
+\end{eqnarray}
