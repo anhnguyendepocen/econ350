@@ -1,0 +1,6 @@
+
+Warning: Desired error not necessarily achieved due to precision loss.
+         Current function value: 2871.313773
+         Iterations: 15
+         Function evaluations: 217
+         Gradient evaluations: 27
