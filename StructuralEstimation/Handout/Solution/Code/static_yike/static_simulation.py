@@ -9,7 +9,7 @@ import numpy as np
 import os
 
 # Set working directory
-os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static')
+os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static_yike')
 
 # Set seed
 np.random.seed(0)

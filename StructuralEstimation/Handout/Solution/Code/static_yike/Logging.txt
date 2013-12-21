@@ -1,26 +1,4 @@
-
-Warning: Desired error not necessarily achieved due to precision loss.
-         Current function value: 2871.313773
-         Iterations: 15
-         Function evaluations: 217
-         Gradient evaluations: 27
-Warning: Desired error not necessarily achieved due to precision loss.
-         Current function value: 2871.313773
-         Iterations: 34
-         Function evaluations: 3195
-         Gradient evaluations: 384
-Warning: Desired error not necessarily achieved due to precision loss.
-         Current function value: 2871.313773
-         Iterations: 34
-         Function evaluations: 3195
-         Gradient evaluations: 384
-Warning: Desired error not necessarily achieved due to precision loss.
-         Current function value: 2871.313773
-         Iterations: 34
-         Function evaluations: 3195
-         Gradient evaluations: 384
-Warning: Desired error not necessarily achieved due to precision loss.
-         Current function value: 2871.313773
-         Iterations: 34
-         Function evaluations: 3195
-         Gradient evaluations: 384
+Optimization terminated successfully.
+         Current function value: 2871.466043
+         Iterations: 290
+         Function evaluations: 460
