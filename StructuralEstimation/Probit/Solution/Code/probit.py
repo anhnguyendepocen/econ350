@@ -12,7 +12,7 @@ np.random.seed(0)
 
 #Exercise 1.3
 #Generate data
-N = 100
+N = 1000
 X1 = np.array([np.random.lognormal(3,1.5) for i in range(0,N)])
 X2 = np.array([np.random.randint(0,2) for i in range(0,N)])
 X = zip(X1,X2)
@@ -39,9 +39,9 @@ def llk(B):
     l_1 = log(norm.cdf(XB))
     for i in range(0,N):
         if l_0[i] == -inf:
-            l_0[i] = 1e-30
+            l_0[i] = log(1e-3)
         elif l_1[i] == -inf:
-            l_1[i] = 1e-30
+            l_1[i] = log(1e-13)
     return -sum(d*l_1 + (1-d)*l_0)
 
 #Initial Condition

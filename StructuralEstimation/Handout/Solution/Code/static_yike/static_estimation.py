@@ -13,7 +13,7 @@ import sys
 from scipy.optimize import fmin_bfgs
 
 # Set working directory
-os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static')
+#os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static')
 
 # Import data
 data = np.genfromtxt('data', dtype = 'float')
