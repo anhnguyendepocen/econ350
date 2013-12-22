@@ -13,7 +13,7 @@ from scipy.optimize import minimize
 from scipy.stats import norm
 
 # Set working directory
-os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static_yike1')
+#os.chdir('/Users/ywang/Documents/TA/ECON350_Yike/StructuralEstimation/Handout2/Solution/Code/static_yike1')
 
 # Import data
 data = np.genfromtxt('data', dtype = 'float')

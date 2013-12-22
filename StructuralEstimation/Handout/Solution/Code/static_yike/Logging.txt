@@ -2,3 +2,7 @@ Optimization terminated successfully.
          Current function value: 2871.466043
          Iterations: 290
          Function evaluations: 460
+Optimization terminated successfully.
+         Current function value: 2871.466043
+         Iterations: 290
+         Function evaluations: 460
