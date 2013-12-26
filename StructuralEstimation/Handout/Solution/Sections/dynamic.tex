@@ -185,7 +185,7 @@ V^{0}_{T-2}\left(\Omega_{T-2}\right) &=& U^{0}_{T-2} +
 \begin{eqnarray*}
 \mathbb{E} \left\{ V^{1}_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) \geq V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\} &=& W^1 \left(\mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}+ d_{T-2}, n \right) \\
 & & + \delta Emax_T \left(\mathbb{E} [y_T \middle| \Omega_{T-2}], z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \\
-& & + \frac{\sigma_{\eta \epsilon}}{\sigma_\epsilon} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi} \right)}{1-\Phi\left( -\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}   
+& & + \frac{\sigma_{\eta \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi} \right)}{1-\Phi\left( -\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}   
 \end{eqnarray*}
  
 \begin{eqnarray*}
@@ -237,7 +237,7 @@ L_{it} = \Pr \left(d_{it} = 1, w_{it} \middle| \Omega_{it}^- \right)^{d_{it}} \t
 \begin{eqnarray*}
 \Pr\left(d_{it}=1, w_{it} \middle| \Omega_{it}^- \right) &=& \Pr \left( \xi_{it} > -\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right) \middle| \eta_{it} = w_{it} -z_i \gamma_1 - \gamma_2 h_{it} \right)\\
 & & \times \Pr \left( \eta_{it} = w_{it} -z_i \gamma_1 - \gamma_2 h_{it} \right)\\
-&=& \left( 1 - \Phi \left(\frac{-\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right) - \frac{\rho_{\xi \eta}}{\sigma_\eta} \left(w_{it} - z_i \gamma_1 - \gamma_2 h_{it} \right)}{\sqrt{1-\rho_{\xi \eta}^2}} \right) \right) \\
+&=& \left( 1 - \Phi \left(\frac{-\frac{\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right)}{\sigma_\xi} - \frac{\rho_{\xi \eta}}{\sigma_\eta} \left(w_{it} - z_i \gamma_1 - \gamma_2 h_{it} \right)}{\sqrt{1-\rho_{\xi \eta}^2}} \right) \right) \\
 & & \times \frac{1}{\sigma_\eta} \phi \left( \frac{w_{it} - z_i \gamma_1 - \gamma_2 h_{it}}{\sigma_\eta} \right) 
 \end{eqnarray*}
 
@@ -255,5 +255,5 @@ Simulate a balanced data set with $n = 1000$ observations and $T=3$. Use the sam
 \end{exercise}
 
 \begin{exercise} (Estimation)
-Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulation}. Hint: if the BFGS algorithm does not work use the Nelder-Mead algorithm.
+Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulation}.
 \end{exercise} 
