@@ -35,13 +35,13 @@ d = np.array(d)
 #Define the negative of the likelihood function (the routine minimizes)
 def llk(B):
     XB = np.dot(X,B)
-    l_0 = log(norm.cdf(-XB))
-    l_1 = log(norm.cdf(XB))
+    l_0 = np.log(norm.cdf(-XB))
+    l_1 = np.log(norm.cdf(XB))
     for i in range(0,N):
-        if l_0[i] == -inf:
-            l_0[i] = log(1e-3)
-        elif l_1[i] == -inf:
-            l_1[i] = log(1e-13)
+        if l_0[i] == -np.inf:
+            l_0[i] = np.log(1e-3)
+        elif l_1[i] == -np.inf:
+            l_1[i] = np.log(1e-13)
     return -sum(d*l_1 + (1-d)*l_0)
 
 #Initial Condition

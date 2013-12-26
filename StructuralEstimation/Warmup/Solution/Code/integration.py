@@ -15,11 +15,10 @@ np.random.seed(0)
 os.chdir(os.environ["jorge"])
 os.chdir("econ350/StructuralEstimation/Warmup/Solution/Output")
 
-
 #1.1 Basic continous function through a grid
 n = 1000
-x = linspace(0, 2*pi, n+1)
-s = sin(x)
+x = np.linspace(0, 2*np.pi, n+1)
+s = np.sin(x)
 
 mplot.plot(x,s)
 mplot.title("$\sin(x)$")
@@ -39,11 +38,11 @@ def trapezoidalint(f, a, b, n):
 
 #1.5 Trapezoidal integration of the sine function
 # Calculate the closed form integral
-cfi_sin = -cos(pi) + cos(0)
+cfi_sin = -np.cos(np.pi) + np.cos(0)
 print cfi_sin
 #Calculate the approximations
 for n in 10, 50, 100, 500:
-    approx_trapint_sin = trapezoidalint(sin, 0, pi, n)
+    approx_trapint_sin = trapezoidalint(np.sin, 0, np.pi, n)
     print approx_trapint_sin
 
 #1.6 Monte Carlo Integration
@@ -57,5 +56,5 @@ def mcint(f, a, b, n):
 
 #1.7 Monte Carlo Integration of the sine function
 for n in 10, 50, 100, 500, 1000:
-    approx_mcint_sin = mcint(sin, 0, pi, n)
+    approx_mcint_sin = mcint(np.sin, 0, np.pi, n)
     print approx_mcint_sin
