@@ -69,25 +69,25 @@ V^{0}_{T}\left(\Omega_{T}\right) &=& U^{0}_{T}\left(\Omega_{T}\right) = y_{T} + 
 
 \noindent Define:
 \begin{eqnarray*}
-W^1 \left(y_T, z,h_T,n\right) & \equiv & y_T + z \gamma_1 + h_T \gamma_2 - \pi n\\
-W^0 \left(y_T, \kappa,n\right) & \equiv & y_T + \beta_\kappa \kappa + \beta_n n
+W^1 \left(z,h_T,n\right) & \equiv & z \gamma_1 + h_T \gamma_2 - \pi n\\
+W^0 \left(\kappa,n\right) & \equiv & \beta_\kappa \kappa + \beta_n n
 \end{eqnarray*}
 
 \noindent So, 
 \begin{eqnarray*}
-V_T^1\left(\Omega_T\right) &=& W^1\left(y_T, z,h_T,n\right) + \eta_T \\
-V_T^0\left(\Omega_T\right) &=& W^0\left(y_T, \kappa,n\right) + \epsilon_T
+V_T^1\left(\Omega_T\right) &=& y_T + W^1\left(z,h_T,n\right) + \eta_T \\
+V_T^0\left(\Omega_T\right) &=& y_T + W^0\left(\kappa,n\right) + \epsilon_T
 \end{eqnarray*}
 
 \noindent So, we have:
 \begin{equation*}
-V^1_T - V^0_T =  W^1\left(y_T, z,h_T,n\right) + \eta_T -   W^0\left(y_T, \kappa,n\right) - \epsilon_T
+V^1_T - V^0_T =  W^1\left(z,h_T,n\right) + \eta_T -   W^0\left(\kappa,n\right) - \epsilon_T
 \end{equation*}
 
 \noindent Define:
 \begin{eqnarray*}
 \xi_T & \equiv & \eta_T - \epsilon_T \\
-\xi^{*}_T\left(z,h_T,n,\kappa\right) & \equiv & W^1\left(y_T, z,h_T,n\right) - W^0\left(y_T, \kappa,n\right)
+\xi^{*}_T\left(z,h_T,n,\kappa\right) & \equiv & W^1\left(z,h_T,n\right) - W^0\left(\kappa,n\right)
 \end{eqnarray*}
 
 \noindent Notice that $\xi_T^*$ does not depend on $y_T$ since it cancels out when we substract $W^0$ from $W^1$. 
@@ -116,36 +116,50 @@ V^{0}_{T-1}\left(\Omega_{T-1}\right) &=& U^{0}_{T-1} +
 in which we have:
 \begin{eqnarray*}
 \Pr\left(V^1_T\left(\Omega_T\right) \geq V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right) &=& \Pr\left(\xi_T \geq - \xi^*_T\left(z, h_{T-1}+d_{T-1},n,\kappa\right)\right)\\
-&=& 1 - \Phi\left( -\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)
+&=& 1 - \Phi\left( -\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)\\
+&=& \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)
 \end{eqnarray*}
 
 \noindent And,
 \begin{eqnarray*}
-\mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} &=& W^1\left(\mathbb{E} [y_T \middle| \Omega_{T-1}],z,h_{T-1}+d_{T-1},n\right) \\
-& & + \mathbb{E} \left\{\eta_T \middle| \xi_T \geq - \xi^*_T\left( z, h_{T-1}+d_{T-1}, n, \kappa\right)\right\} \\
-&=& W^1\left(\mathbb{E} [y_T \middle| \Omega_{T-1}],z,h_{T-1}+d_{T-1},n\right) \\
+\mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n\right) \\
+& & +\mathbb{E} \left\{\eta_T \middle| \xi_T \geq - \xi^*_T\left( z, h_{T-1}+d_{T-1}, n, \kappa \right)\right\} \\
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
 & & +  \frac{\sigma_{\eta \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{1-\Phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}
 \end{eqnarray*}
 
 \noindent Also,
 \begin{eqnarray*}
 \mathbb{E} \left\{ V^{0}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) < V^{0}_T\left(\Omega_T\right) \right\}
-&=& W^0\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], \kappa, n\right) \\
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \\
 & & + \mathbb{E} \left\{\epsilon_T \middle| \xi_T < -\xi^*_T\left(z, h_{T-1} + d_{T-1}, n, \kappa \right) \right\}\\
-&=& W^0\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], \kappa, n\right) \\
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \\
 & & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}
 \end{eqnarray*}
 
-\noindent So, $\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\}$ is a function of $\mathbb{E} [y_T | \Omega_{T-1}], z, h_{T-1}+d_{T-1}, n, \kappa$. Denote it as:
+\noindent So, 
+\begin{eqnarray*}
+\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
+& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \\
+& & + \sigma_\xi \times \phi\left( \frac{- \xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)
+\end{eqnarray*}
 
+\noindent Define: 
+\begin{eqnarray*}
+Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right) &\equiv & \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
+& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \\
+& & + \sigma_\xi \times \phi\left( \frac{- \xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) 
+\end{eqnarray*}
+
+\noindent Then,
 \begin{equation*}
-\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} \equiv Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-1}],z,h_{T-1}+d_{T-1},n,\kappa\right)
+\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} = \mathbb{E} [y_T | \Omega_{T-1}]  + Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)  
 \end{equation*}
 
-Therefore, we have:
+\noindent Therefore, we have:
 \begin{eqnarray*}
-V^1_{T-1} - V^0_{T-1} &=& W^1\left(y_{T-1}, z, h_{T-1}, n\right) - W^0\left(y_{T-1},\kappa, n\right) + \eta_{T-1} - \epsilon_{T-1}\\
-& & + \delta [ Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], z, h_{T-1}, n, \kappa \right)]
+V^1_{T-1} - V^0_{T-1} &=& W^1\left( z, h_{T-1}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-1} - \epsilon_{T-1}\\
+& & + \delta [ Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(z, h_{T-1}, n, \kappa \right)]
 \end{eqnarray*}
 \noindent and $d_{T-1} = 1$ iff:
 \begin{equation*}
@@ -153,8 +167,8 @@ V^1_{T-1} - V^0_{T-1} &=& W^1\left(y_{T-1}, z, h_{T-1}, n\right) - W^0\left(y_{T
 \end{equation*}
 in which:
 \begin{eqnarray*}
-\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa \right) &\equiv & W^1\left(y_{T-1}, z, h_{T-1}, n\right) - W^0\left(y_{T-1},\kappa, n\right)\\
-& &+\ \delta [ Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-1}], z, h_{T-1}, n, \kappa \right)] 
+\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa \right) &\equiv & W^1\left(z, h_{T-1}, n\right) - W^0\left(\kappa, n\right)\\
+& &+\ \delta [ Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(z, h_{T-1}, n, \kappa \right)] 
 \end{eqnarray*}
 
 \noindent Notice that $\mathbb{E} [y_T | \Omega_{T-1}]$ and $y_{T-1}$ are cancelled out and thus do not appear in $\xi_{T-1}^*$.
@@ -179,33 +193,54 @@ V^{0}_{T-2}\left(\Omega_{T-2}\right) &=& U^{0}_{T-2} +
 \noindent in which we have:
 \begin{eqnarray*}
 \Pr\left(V^1_{T-1}\left(\Omega_{T-1}\right) \geq V^0_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2} \right) &=& \Pr \left(\xi_{T-1} > -\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right) \right)\\
-&=& 1 - \Phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) 
+&=& 1 - \Phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \\
+&=& \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)
 \end{eqnarray*}
 
 \begin{eqnarray*}
-\mathbb{E} \left\{ V^{1}_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) \geq V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\} &=& W^1 \left(\mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}+ d_{T-2}, n \right) \\
-& & + \delta Emax_T \left(\mathbb{E} [y_T \middle| \Omega_{T-2}], z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \\
+\mathbb{E} \left\{ V^{1}_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) \geq V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) \\
+& & + \delta \mathbb{E} [y_T | \Omega_{T-2}] \\
+& & + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \\
 & & + \frac{\sigma_{\eta \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi} \right)}{1-\Phi\left( -\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}   
 \end{eqnarray*}
  
 \begin{eqnarray*}
-\mathbb{E} \left\{ V^{0}_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) < V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\}
-&=& W^0\left(\mathbb{E} [y_{T-1} \middle| \Omega_{T-2}],\kappa, n\right) \\
-& & +\delta Emax_T\left(\mathbb{E} [y_T \middle| \Omega_{T-2}], z, h_{T-2}+d_{T-2}, n, \kappa \right)\\
-& & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}
+\mathbb{E} \left\{ V^{0}_{T-1}\left(\Omega_{T-1}\right) | \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) < V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\}
+&=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + W^0\left(\kappa, n \right) \\
+& & +\delta \mathbb{E} [y_T | \Omega_{T-2}] \\
+& & + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \\
+& & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}
 \end{eqnarray*} 
 
-\noindent So, $\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) | \Omega_{T-2}, d_{T-2}\right\}$ is a function of $\mathbb{E} [y_{T-1} | \Omega_{T-2}]$, $z$, $h_{T-2}+d_{T-2}$, $n$, $\kappa$, and $\mathbb{E} [y_T | \Omega_{T-2}]$. Denote it as:
-
+\noindent So,
 \begin{eqnarray*}
-\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} = Emax_{T-1} \left( \mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}+d_{T-2}, n, \kappa, \mathbb{E} [y_T \middle| \Omega_{T-2}] \right)
+\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + \delta \mathbb{E} [y_T | \Omega_{T-2}] \\
+& & + \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
+& & \times \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \\
+& & + \left( W^0\left(\kappa, n \right) + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
+& & \times \left( 1 - \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \right) \\
+& & + \sigma_\xi \phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)
+\end{eqnarray*} 
+
+\noindent Define:
+\begin{eqnarray*}
+Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) & \equiv & \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
+& & \times \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \\
+& & + \left( W^0\left(\kappa, n \right) + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
+& & \times \left( 1 - \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \right) \\
+& & + \sigma_\xi \phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)
+\end{eqnarray*}
+
+\noindent Then we have:
+\begin{eqnarray*}
+\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + \delta \mathbb{E} [y_T | \Omega_{T-2}] + Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right)
 \end{eqnarray*}
 
 \noindent Therefore, we have:
 \begin{eqnarray*}
-V^1_{T-2} - V^0_{T-2} &=& W^1\left(y_{T-2}, z, h_{T-2}, n\right) - W^0\left(y_{T-2},\kappa, n\right) + \eta_{T-2} - \epsilon_{T-2}\\
-& & + \delta [ Emax_{T-1} \left( \mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}+1, n, \kappa, \mathbb{E} [y_T \middle| \Omega_{T-2}] \right) \\
-& & - Emax_{T-1} \left( \mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}, n, \kappa, \mathbb{E} [y_T \middle| \Omega_{T-2}] \right)]
+V^1_{T-2} - V^0_{T-2} &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-2} - \epsilon_{T-2}\\
+& & + \delta [ Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
+& & - Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
 \end{eqnarray*}
 
 \noindent and $d_{T-2} = 1$ iff:
@@ -215,9 +250,9 @@ V^1_{T-2} - V^0_{T-2} &=& W^1\left(y_{T-2}, z, h_{T-2}, n\right) - W^0\left(y_{T
 
 \noindent in which:
 \begin{eqnarray*}
-\xi^*_{T-2} \left(z, h_{T-2}, n, \kappa \right) &=& W^1\left(y_{T-2}, z, h_{T-2}, n\right) - W^0\left(y_{T-2},\kappa, n \right)\\
-& & + \delta [ Emax_{T-1} \left( \mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}+1, n, \kappa, \mathbb{E} [y_T \middle| \Omega_{T-2}] \right) \\
-& & - Emax_{T-1} \left( \mathbb{E} [y_{T-1} \middle| \Omega_{T-2}], z, h_{T-2}, n, \kappa, \mathbb{E} [y_T \middle| \Omega_{T-2}] \right)]
+\xi^*_{T-2} \left(z, h_{T-2}, n, \kappa \right) &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-2} - \epsilon_{T-2}\\
+& & + \delta [ Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
+& & - Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
 \end{eqnarray*}
 
 \noindent Again, $\xi_{T-2}^*$ does not depend on $y_{T-2}$, $\mathbb{E} [y_{T-1} | \Omega_{T-2}]$, and $\mathbb{E} [y_T | \Omega_{T-2}]$.
