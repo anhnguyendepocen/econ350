@@ -18,8 +18,7 @@ k_lb = 0.0; k_up = 5.0;
 z_lb = 0.0; z_up = 5.0;
 n_lb = 0; n_up = 3
 
-# Simulate observables
-
+# Simulate observed variables
 #y
 y = np.random.uniform(low=y_lb,high=y_up,size=(N,T))
 
@@ -37,6 +36,7 @@ for t in range(T):
     kappa[:,t] = kappa_N
     n[:,t] = n_N
 
+#Simulate unobserved variables
 epseta = np.random.multivariate_normal([0,0],[[sigmaeps**2, covepseta],[covepseta, sigmaeta**2]],(N,T))
 eps = epseta[:,:,0]
 eta = epseta[:,:,1]
