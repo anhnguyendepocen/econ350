@@ -1,179 +1,156 @@
 \section{Discrete Choice Dynamic Programming}
-Consider the dynamic version of the model in Section \ref{section:model}. The utility function, the budget constraint, and the distribution of the unobserved variables are the same:
-\begin{eqnarray*}
-U_{it} &=& c_{it} + \alpha_{it} (1 - d_{it})\\
-\alpha_{it} &=& \beta_{\kappa} \kappa_{i} + \beta_{n} n_{i} + \epsilon_{it}\\
-c_{it} &=& y_{it} + w_{it} d_{it} - \pi n_{i} d_{it}\\
-f \left( \epsilon_{it}, \eta_{it} \right) & \overset{iid}{\sim} & \mathcal{N} \left( 0, \Lambda \right)\\
-\Lambda &=& \left( \begin{array}{cc} 
-\sigma_{\epsilon}^2 & \cdot \\
-\sigma_{\epsilon, \eta} & \sigma_{\eta}^2
-\end{array} \right).
-\end{eqnarray*}
-
-\indent The dynamic problem extends the model through the wage rate process. In particular, $w_{it}$ increases with the level of work experience, $h_{it}$. This equals the total number of periods that the woman in household $i$ accumulated in all the periods previous to $t$:
-\begin{equation*}
+Consider the dynamic version of the model in Section \ref{section:model}. The utility function, the budget constraint, and the distribution of the unobserved variables are the same. The dynamics of the model come through the wage process. In particular, $w_{it}$ increases with work experience, $h_{it}$. This equals the total number of periods that the woman in household $i$ accumulates in all the periods previous to $t$:
+\begin{equation}
 h_{it} = \sum\limits_{\tau=1}^{t-1} d_{i\tau},
-\end{equation*} 
+\end{equation} 
 \noindent where $h_{i1} = 0$ for simplicity. The wage function is
-\begin{equation*}
+\begin{equation}
 w_{it} = z_{i}\gamma_{1} + \gamma_{2}h_{it} + \eta_{it}.
-\end{equation*} 
+\end{equation} 
 
-\noindent Notice that for the purpose of simplicity, the variables $\kappa_i$, $n_i$, $z_i$, are assumed to be nonstochastic and time invariant.
+\noindent For simplicity, the variables $\kappa_{it}$, $n_{it}$, $z_{it}$ are non-stochastic and time invariant.
 
 \begin{exercise} (Dynamic Programming Set-up)
-Write down the utility maximization problem in each period $t$. Denote the discount factor by  $\delta$, the state space by $\Omega_{it}$, and the observed variables in the state space by $\Omega_{it}^-$. Write down explicitly the elements in $\Omega_{it},\Omega_{it}^-$.
-\end{exercise}
-
-\noindent\textbf{Solution:}	
-\noindent A woman's utility maximization problem in period $t$ is:
-\begin{equation*}
+Write down the household's problem for each period $t$. Let $\delta$ be the discount factor, $\Omega_{it}$ the state space, and $\Omega_{it}^-$ the observed state space. Write down the elements in $\Omega_{it},\Omega_{it}^-$.\\
+\noindent Answer:\\	
+\noindent The problem is
+\begin{equation}
 \max_{d_{it}} \mathbb{E}\left\{ \sum\limits_{\tau=t}^{T}\delta^{\tau-t} \left[U^{1}_{i\tau}d_{i\tau} + U^{0}_{i\tau}\left( 1-d_{i\tau} \right)\right] \middle| \Omega_{it}\right\} 
-\end{equation*}
+\end{equation}
 
-\noindent in which
-\begin{eqnarray*}
+\noindent where
+\begin{eqnarray}
 U^{1}_{i\tau} &=& y_{i\tau} + z_{i}\gamma_{1} + \gamma_{2}h_{i\tau} + \eta_{i\tau} - \pi n_{i}\\
 U^{0}_{i\tau} &=& y_{i\tau} + \beta_{\kappa}\kappa_{i} + \beta_{n}n_{i} + \epsilon_{i\tau}\\
 \Omega_{it} &=& \left\{ y_{it}, z_{i}, n_{i}, \kappa_{i}, \epsilon_{it}, \eta_{it}, h_{it}\right\}\\
 \Omega_{it}^- &=& \left\{ y_{it}, z_{i}, n_{i}, \kappa_{i}, h_{it}\right\}
-\end{eqnarray*}
-
-\begin{exercise} (Bellman Equation)
-Write down the recursive formulation of the household's problem.
+\end{eqnarray}
 \end{exercise}
+\begin{exercise} (Bellman Equation)
+Write down the recursive formulation of the household's problem.\\
+\noindent Answer:\\
+\noindent Write down the value function as the maximization over the two alternative-specific value functions:
+\begin{equation}
+V_t\left(\Omega_{it}\right) = \max_{d_{it} \in \{0, 1\}} \left\{V^{0}_{t} \left(\Omega_{it} \right),V^{1}_{t} \left(\Omega_{it} \right)\right\}
+\end{equation}
+\noindent where
 
-\noindent\textbf{Solution:}
-Write down the value function as the maximization over the two alternative-specific value functions:
-\begin{equation*}
-V_t\left(\Omega_{it}\right) = \max \left\{V^{0}_{t} \left(\Omega_{it} \right),V^{1}_{t} \left(\Omega_{it} \right)\right\}
-\end{equation*}
-\noindent in which
-\begin{eqnarray*}
-V^{k}_t\left(\Omega_{it}\right) &=& U^{k}_{it}\left(\Omega_{it}\right) + \delta \mathbb{E} \left[V_{t+1}\left(\Omega_{i,t+1} \right) \middle| \Omega_{it}, d_{it} = k \right]\ \ for\ t<T\\
-V^{k}_{T} \left(\Omega_{iT}\right) &=& U^{k}_{iT}\left(\Omega_{iT}\right)
-\end{eqnarray*}
-for $k \in \left\{0,1\right\}$.
+\begin{eqnarray}
+V^{k}_t =
+\begin{cases}
+U^{k}_{it}\left(\Omega_{it}\right) + \delta \mathbb{E} \left[V_{t+1}\left(\Omega_{i,t+1} \right) \middle| \Omega_{it}, d_{it} = k \right], & \text{for } t < T \\
+U^{k}_{iT}\left(\Omega_{iT}\right),& \text{for } t = T
+\end{cases}
+\end{eqnarray}
+\end{exercise}
 
 \begin{exercise} (Solution)
-Solve the dynamic problem of the household for $T=3$. Hint: use a backward recursion.
+Solve the dynamic problem of the household for for an arbitrary time horizon, $T$. Hint: use a backward recursion.
 \end{exercise}
 
 \noindent\textbf{Solution:}
-\noindent In this exercise, the subscript $i$ is omitted for simplicity. For the final period, $t = T$, the value functions for $d_{T}=1$ and $d_{T}=0$ are respectively:\\
-\begin{eqnarray*}
+\noindent (Omit the subscript $i$ for simplicity. For the final period, $t = T$, the value functions for $d_{T}=1$ and $d_{T}=0$ are, respectively:\\
+\begin{eqnarray}
 V^{1}_{T}\left(\Omega_{T}\right) &=& U^{1}_{T}\left(\Omega_{T}\right) = y_{T} + z\gamma_1 + h_{T}\gamma_2 + \eta_{T} - \pi n\\
-V^{0}_{T}\left(\Omega_{T}\right) &=& U^{0}_{T}\left(\Omega_{T}\right) = y_{T} + \beta_\kappa \kappa + \beta_n n + \epsilon_T
-\end{eqnarray*}
+V^{0}_{T}\left(\Omega_{T}\right) &=& U^{0}_{T}\left(\Omega_{T}\right) = y_{T} + \beta_\kappa \kappa + \beta_n n + \epsilon_T.
+\end{eqnarray}
 
-\noindent Define:
-\begin{eqnarray*}
+\noindent Let:
+\begin{eqnarray}
 W^1 \left(z,h_T,n\right) & \equiv & z \gamma_1 + h_T \gamma_2 - \pi n\\
-W^0 \left(\kappa,n\right) & \equiv & \beta_\kappa \kappa + \beta_n n
-\end{eqnarray*}
+W^0 \left(\kappa,n\right) & \equiv & \beta_\kappa \kappa + \beta_n n.
+\end{eqnarray}
 
-\noindent So, 
-\begin{eqnarray*}
+\noindent Thus, 
+\begin{eqnarray}
 V_T^1\left(\Omega_T\right) &=& y_T + W^1\left(z,h_T,n\right) + \eta_T \\
-V_T^0\left(\Omega_T\right) &=& y_T + W^0\left(\kappa,n\right) + \epsilon_T
-\end{eqnarray*}
+V_T^0\left(\Omega_T\right) &=& y_T + W^0\left(\kappa,n\right) + \epsilon_T.
+\end{eqnarray}
 
-\noindent So, we have:
-\begin{equation*}
-V^1_T - V^0_T =  W^1\left(z,h_T,n\right) + \eta_T -   W^0\left(\kappa,n\right) - \epsilon_T
-\end{equation*}
+\noindent This implies
+\begin{equation}
+V^1_T - V^0_T =  W^1\left(z,h_T,n\right) + \eta_T -   W^0\left(\kappa,n\right) - \epsilon_T.
+\end{equation}
 
-\noindent Define:
-\begin{eqnarray*}
+\noindent Define
+\begin{eqnarray}
 \xi_T & \equiv & \eta_T - \epsilon_T \\
 \xi^{*}_T\left(z,h_T,n,\kappa\right) & \equiv & W^1\left(z,h_T,n\right) - W^0\left(\kappa,n\right)
-\end{eqnarray*}
+\end{eqnarray}
 
-\noindent Notice that $\xi_T^*$ does not depend on $y_T$ since it cancels out when we substract $W^0$ from $W^1$. 
+\noindent and note that $\xi_T^*$ does not depend on $y_T$ because this cancels out when in the subtraction of $W^0$ from $W^1$. Hence, $d_T=1$ iff $\xi_T > -\xi^{*}_T\left(z,h_T,n,\kappa\right)$.
 
-\noindent So, $d_T=1$ iff:
-\begin{equation*}
-\xi_T > -\xi^{*}_T\left(z,h_T,n,\kappa\right)
-\end{equation*} 
-
-\noindent Next, for $t = T-1$, we have:
-\begin{eqnarray*}
+\indent For $t = T-1$
+\begin{eqnarray}
 V^{1}_{T-1}\left(\Omega_{T-1}\right) &=& U^{1}_{T-1} + 
 \delta \mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}=1\right\} \\
 V^{0}_{T-1}\left(\Omega_{T-1}\right) &=& U^{0}_{T-1} + 
-\delta \mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}=0\right\}
-\end{eqnarray*}
+\delta \mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}=0\right\}.
+\end{eqnarray}
 
-\noindent First we need to calculate $\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\}$. So:
-\begin{eqnarray*}
-\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} &=& \mathbb{E} \left\{ \max\left\{ V^{1}_T\left(\Omega_T\right), V^{0}_T\left(\Omega_T\right) \right\} \middle| \Omega_{T-1}, d_{T-1} \right\} \\
-&=& \mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} \\
-& & \times \Pr\left(V^1_T\left(\Omega_T\right) \geq V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right)\\
-& & + \mathbb{E} \left\{ V^{0}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) < V^{0}_T\left(\Omega_T\right) \right\} \\
+\noindent \ldots so that it is necessary to calculate $\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\}$:
+\begin{eqnarray}
+\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} &=& \mathbb{E} \left\{ \max\left\{ V^{1}_T\left(\Omega_T\right), V^{0}_T\left(\Omega_T\right) \right\} \middle| \Omega_{T-1}, d_{T-1} \right\} \nonumber \\
+&=& \mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} \nonumber \\
+& & \times \Pr\left(V^1_T\left(\Omega_T\right) \geq V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right) \nonumber \\
+& & + \mathbb{E} \left\{ V^{0}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) < V^{0}_T\left(\Omega_T\right) \right\} \nonumber \\
 & & \times \Pr\left(V^1_T\left(\Omega_T\right) < V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right)
-\end{eqnarray*}
-in which we have:
-\begin{eqnarray*}
-\Pr\left(V^1_T\left(\Omega_T\right) \geq V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right) &=& \Pr\left(\xi_T \geq - \xi^*_T\left(z, h_{T-1}+d_{T-1},n,\kappa\right)\right)\\
-&=& 1 - \Phi\left( -\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)\\
+\end{eqnarray}
+\noindent where
+\begin{eqnarray}
+\Pr\left(V^1_T\left(\Omega_T\right) \geq V^0_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1} \right) &=& \Pr\left(\xi_T \geq - \xi^*_T\left(z, h_{T-1}+d_{T-1},n,\kappa\right)\right) \nonumber \\
+&=& 1 - \Phi\left( -\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \nonumber \\
 &=& \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)
-\end{eqnarray*}
+\end{eqnarray}
 
-\noindent And,
-\begin{eqnarray*}
-\mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n\right) \\
-& & +\mathbb{E} \left\{\eta_T \middle| \xi_T \geq - \xi^*_T\left( z, h_{T-1}+d_{T-1}, n, \kappa \right)\right\} \\
-&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
+\begin{eqnarray}
+\mathbb{E} \left\{ V^{1}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) \geq V^{0}_T\left(\Omega_T\right) \right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n\right) \nonumber \\
+& & +\mathbb{E} \left\{\eta_T \middle| \xi_T \geq - \xi^*_T\left( z, h_{T-1}+d_{T-1}, n, \kappa \right)\right\} \nonumber \\
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^1\left( z,h_{T-1}+d_{T-1},n \right) \nonumber \\
 & & +  \frac{\sigma_{\eta \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{1-\Phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}
-\end{eqnarray*}
+\end{eqnarray}
 
-\noindent Also,
-\begin{eqnarray*}
+\begin{eqnarray}
 \mathbb{E} \left\{ V^{0}_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}, V^{1}_T\left(\Omega_T\right) < V^{0}_T\left(\Omega_T\right) \right\}
-&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \\
-& & + \mathbb{E} \left\{\epsilon_T \middle| \xi_T < -\xi^*_T\left(z, h_{T-1} + d_{T-1}, n, \kappa \right) \right\}\\
-&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \\
-& & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}
-\end{eqnarray*}
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \nonumber \\
+& & + \mathbb{E} \left\{\epsilon_T \middle| \xi_T < -\xi^*_T\left(z, h_{T-1} + d_{T-1}, n, \kappa \right) \right\} \nonumber \\
+&=& \mathbb{E} [y_T | \Omega_{T-1}] + W^0\left(\kappa, n\right) \nonumber \\
+& & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)}.
+\end{eqnarray}
 
-\noindent So, 
-\begin{eqnarray*}
-\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
-& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \\
-& & + \sigma_\xi \times \phi\left( \frac{- \xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right)
-\end{eqnarray*}
+\indent Then, 
+\begin{eqnarray}
+\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} &=& \mathbb{E} [y_T | \Omega_{T-1}] + \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \nonumber \\
+& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \nonumber \\
+& & + \sigma_\xi \times \phi\left( \frac{- \xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right).
+\end{eqnarray}
 
-\noindent Define: 
-\begin{eqnarray*}
-Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right) &\equiv & \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \\
-& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \\
+\noindent Let 
+\begin{eqnarray}
+\Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right) &\equiv & \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \times W^1\left( z,h_{T-1}+d_{T-1},n \right) \noindent \\
+& & + \left(1 - \Phi\left( \frac{\xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) \right) \times  W^0\left(\kappa, n\right) \noindent \\
 & & + \sigma_\xi \times \phi\left( \frac{- \xi^*_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)}{\sigma_\xi}\right) 
-\end{eqnarray*}
+\end{eqnarray}
 
-\noindent Then,
+\noindent \ldots so that
 \begin{equation*}
-\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} = \mathbb{E} [y_T | \Omega_{T-1}]  + Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right)  
+\mathbb{E} \left\{ V_T\left(\Omega_T\right) \middle| \Omega_{T-1}, d_{T-1}\right\} = \mathbb{E} [y_T | \Omega_{T-1}]  + \Emax_T\left(z,h_{T-1}+d_{T-1},n,\kappa\right).  
 \end{equation*}
 
-\noindent Therefore, we have:
-\begin{eqnarray*}
-V^1_{T-1} - V^0_{T-1} &=& W^1\left( z, h_{T-1}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-1} - \epsilon_{T-1}\\
-& & + \delta [ Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(z, h_{T-1}, n, \kappa \right)]
-\end{eqnarray*}
-\noindent and $d_{T-1} = 1$ iff:
-\begin{equation*}
-\xi_{T-1} > -\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa\right)
-\end{equation*}
-in which:
-\begin{eqnarray*}
-\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa \right) &\equiv & W^1\left(z, h_{T-1}, n\right) - W^0\left(\kappa, n\right)\\
-& &+\ \delta [ Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - Emax_T\left(z, h_{T-1}, n, \kappa \right)] 
-\end{eqnarray*}
+\noindent This enables to write
+\begin{eqnarray}
+V^1_{T-1} - V^0_{T-1} &=& W^1\left( z, h_{T-1}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-1} - \epsilon_{T-1} \nonumber \\
+& & + \delta [ \Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - \Emax_T\left(z, h_{T-1}, n, \kappa \right)]
+\end{eqnarray}
+\noindent and $d_{T-1} = 1$ iff $\xi_{T-1} > -\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa\right)$ where
+\begin{eqnarray}
+\xi^*_{T-1}\left(z, h_{T-1}, n, \kappa \right) &\equiv & W^1\left(z, h_{T-1}, n\right) - W^0\left(\kappa, n\right) \nonumber \\
+& &+\ \delta [ \Emax_T\left(z, h_{T-1}+1, n, \kappa\right) - \Emax_T\left(z, h_{T-1}, n, \kappa \right)].
+\end{eqnarray}
 
-\noindent Notice that $\mathbb{E} [y_T | \Omega_{T-1}]$ and $y_{T-1}$ are cancelled out and thus do not appear in $\xi_{T-1}^*$.
+\indent Importantly, $\mathbb{E} [y_T | \Omega_{T-1}]$ and $y_{T-1}$ cancel out and do not appear in $\xi_{T-1}^*$.
 
-\noindent Finally, for $t = T-2$,
+\noindent Finally, at $t = T-j$ for j = ,
 \begin{eqnarray*}
 V^{1}_{T-2}\left(\Omega_{T-2}\right) &=& U^{1}_{T-2} + 
 \delta \mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}=1\right\} \\
@@ -200,7 +177,7 @@ V^{0}_{T-2}\left(\Omega_{T-2}\right) &=& U^{0}_{T-2} +
 \begin{eqnarray*}
 \mathbb{E} \left\{ V^{1}_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) \geq V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) \\
 & & + \delta \mathbb{E} [y_T | \Omega_{T-2}] \\
-& & + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \\
+& & + \delta \Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \\
 & & + \frac{\sigma_{\eta \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi} \right)}{1-\Phi\left( -\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}   
 \end{eqnarray*}
  
@@ -208,39 +185,39 @@ V^{0}_{T-2}\left(\Omega_{T-2}\right) &=& U^{0}_{T-2} +
 \mathbb{E} \left\{ V^{0}_{T-1}\left(\Omega_{T-1}\right) | \Omega_{T-2}, d_{T-2}, V^{1}_{T-1}\left(\Omega_{T-1}\right) < V^{0}_{T-1}\left(\Omega_{T-1}\right) \right\}
 &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + W^0\left(\kappa, n \right) \\
 & & +\delta \mathbb{E} [y_T | \Omega_{T-2}] \\
-& & + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \\
+& & + \delta \Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \\
 & & - \frac{\sigma_{\epsilon \xi}}{\sigma_\xi} \frac{\phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2},n,\kappa\right)}{\sigma_\xi}\right)}{\Phi\left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)}
 \end{eqnarray*} 
 
 \noindent So,
 \begin{eqnarray*}
 \mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + \delta \mathbb{E} [y_T | \Omega_{T-2}] \\
-& & + \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
+& & + \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta \Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
 & & \times \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \\
-& & + \left( W^0\left(\kappa, n \right) + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
+& & + \left( W^0\left(\kappa, n \right) + \delta \Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
 & & \times \left( 1 - \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \right) \\
 & & + \sigma_\xi \phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)
 \end{eqnarray*} 
 
 \noindent Define:
 \begin{eqnarray*}
-Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) & \equiv & \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
+\Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) & \equiv & \left( W^1 \left( z, h_{T-2}+ d_{T-2}, n \right) + \delta \Emax_T \left( z, h_{T-2} + d_{T-2} +1, n, \kappa \right) \right) \\
 & & \times \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \\
-& & + \left( W^0\left(\kappa, n \right) + \delta Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
+& & + \left( W^0\left(\kappa, n \right) + \delta \Emax_T \left( z, h_{T-2}+d_{T-2}, n, \kappa \right) \right) \\
 & & \times \left( 1 - \Phi \left(\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right) \right) \\
 & & + \sigma_\xi \phi \left(-\frac{\xi^*_{T-1}\left(z, h_{T-2}+d_{T-2}, n, \kappa \right)}{\sigma_\xi}\right)
 \end{eqnarray*}
 
 \noindent Then we have:
 \begin{eqnarray*}
-\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + \delta \mathbb{E} [y_T | \Omega_{T-2}] + Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right)
+\mathbb{E} \left\{ V_{T-1}\left(\Omega_{T-1}\right) \middle| \Omega_{T-2}, d_{T-2}\right\} &=& \mathbb{E} [y_{T-1} | \Omega_{T-2}] + \delta \mathbb{E} [y_T | \Omega_{T-2}] + \Emax_{T-1} \left( z, h_{T-2}+d_{T-2}, n, \kappa \right)
 \end{eqnarray*}
 
 \noindent Therefore, we have:
 \begin{eqnarray*}
 V^1_{T-2} - V^0_{T-2} &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-2} - \epsilon_{T-2}\\
-& & + \delta [ Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
-& & - Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
+& & + \delta [ \Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
+& & - \Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
 \end{eqnarray*}
 
 \noindent and $d_{T-2} = 1$ iff:
@@ -251,8 +228,8 @@ V^1_{T-2} - V^0_{T-2} &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\r
 \noindent in which:
 \begin{eqnarray*}
 \xi^*_{T-2} \left(z, h_{T-2}, n, \kappa \right) &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\right) + \eta_{T-2} - \epsilon_{T-2}\\
-& & + \delta [ Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
-& & - Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
+& & + \delta [ \Emax_{T-1} \left( z, h_{T-2}+1, n, \kappa \right) \\
+& & - \Emax_{T-1} \left(z, h_{T-2}, n, \kappa \right)]
 \end{eqnarray*}
 
 \noindent Again, $\xi_{T-2}^*$ does not depend on $y_{T-2}$, $\mathbb{E} [y_{T-1} | \Omega_{T-2}]$, and $\mathbb{E} [y_T | \Omega_{T-2}]$.
@@ -260,35 +237,19 @@ V^1_{T-2} - V^0_{T-2} &=& W^1\left( z, h_{T-2}, n\right) - W^0\left( \kappa, n\r
 \subsection{Simulation and Estimation}
 
 \begin{exercise} (Likelihood)
-What is the likelihood of household $i$ at time $t$? What is the sample likelihood across all periods?
+What is the individual likelihood of household $i$ at time $t$? What is the sample likelihood across all periods?\\
+\noindent Answer:\\
+\noindent The individual and sample likelihoods are the same as in the static case (see Section \ref{section:static}). What changes are the definitions of $w_{it}, \xi_{it}^*$.
 \end{exercise}
 
-\noindent\textbf{Solution:} The likelihood of household $i$ at time $t$ is:
-\begin{eqnarray*}
-L_{it} = \Pr \left(d_{it} = 1, w_{it} \middle| \Omega_{it}^- \right)^{d_{it}} \times \Pr \left(d_{it} = 0 \middle| \Omega_{it}^- \right)^{1-d_{it}}
-\end{eqnarray*}
-
-\noindent in which we have:
-\begin{eqnarray*}
-\Pr\left(d_{it}=1, w_{it} \middle| \Omega_{it}^- \right) &=& \Pr \left( \xi_{it} > -\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right) \middle| \eta_{it} = w_{it} -z_i \gamma_1 - \gamma_2 h_{it} \right)\\
-& & \times \Pr \left( \eta_{it} = w_{it} -z_i \gamma_1 - \gamma_2 h_{it} \right)\\
-&=& \left( 1 - \Phi \left(\frac{-\frac{\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right)}{\sigma_\xi} - \frac{\rho_{\xi \eta}}{\sigma_\eta} \left(w_{it} - z_i \gamma_1 - \gamma_2 h_{it} \right)}{\sqrt{1-\rho_{\xi \eta}^2}} \right) \right) \\
-& & \times \frac{1}{\sigma_\eta} \phi \left( \frac{w_{it} - z_i \gamma_1 - \gamma_2 h_{it}}{\sigma_\eta} \right) 
-\end{eqnarray*}
-
-\begin{eqnarray*}
-\Pr \left(d_{it} = 0 \middle| \Omega_{it}^- \right) = \Phi\left(- \frac{\xi_{it}^* \left(z_i, h_{it}, n_i, \kappa_i \right)}{\sigma_\xi} \right)
-\end{eqnarray*}
-
-\noindent And the sample likelihood across all periods is:
-\begin{eqnarray*}
-L = \prod_{i=1}^N \prod_{t=1}^3 L_{it}
-\end{eqnarray*}
-
 \begin{exercise} (Simulation) \label{exercise:simulation}
-Simulate a balanced data set with $n = 1000$ observations and $T=3$. Use the same parameters as in the static model in Section \ref{section:models}. For the parameters that are exclusive of the dynamic model use the following: $\gamma_2 = 0.9,\delta = 0.85$. Set the experience of every woman to zero in $t=1$. Save the data in a ``.csv'' file.
+Simulate a balanced data set with $n = 1000$ observations and $T=6$. Use the same parameters as in the static model in Section \ref{section:models}. For the parameters that are exclusive of the dynamic model use the following: $\gamma_2 = 0.9,\delta = 0.85$. Set the experience of every woman to zero in $t=1$. Save the data in a ``.csv'' file.\\
+\noindent Answer:\\
+See ``womansdsimulation.py''.
 \end{exercise}
 
 \begin{exercise} (Estimation)
-Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulation}.
-\end{exercise} 
+Estimate the parameters of the model by ML. Compare your results with the parameters in Exercise \ref{exercise:simulation}.\\
+\noindent Answer:\\
+See ``womansdestimation.py''
+\end{exercise}
