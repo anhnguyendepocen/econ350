@@ -1,4 +1,4 @@
-#Solution to Static Model: Estimation
+#Solution to Dynamic Model: Estimation
 #This project: JG, JEH, YW
 #This code: JG/YW
 #This draft: 28/12/2013

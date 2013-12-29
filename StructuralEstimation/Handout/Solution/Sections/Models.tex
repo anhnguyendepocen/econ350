@@ -96,7 +96,8 @@ Give a sufficient condition on the joint distribution of observed and unobserved
 \end{enumerate}
 
 \begin{exercise} (Estimation Approaches and Research Goals) \label{exercise:approaches}
-What research goals can you attain with the estimation approaches NP-NS, P-NS, P-NS. Be as formal as possible. Hint: think of the different effects that you are able to identify.
+What research goals can you attain with the estimation approaches NP-NS, P-NS, P-NS. Be as formal as possible. Hint: think of the different effects that you are able to identify.\\
+\noindent Answer:\\
 \begin{itemize}
 \item NP-NS: the base of this approach is a non-parametric estimate of $G(\cdot)$.
 \begin{itemize}
@@ -193,7 +194,7 @@ L_{it}^1 &=& \Pr \left( d_{it} = 1 , w_{it} | z_{it}, n_{it}, \kappa_{it} \right
        &=& \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it}, \eta_{it} \right) d \xi_{it} \nonumber \\
        &=& \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it} | \eta_{it} \right) f \left( \eta_{it} \right) d \xi_{it} \nonumber \\
        &=& f \left( \eta_{it} \right) \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it} | \eta_{it} \right) d \xi_{it} \nonumber \\
-       &=& \frac{1}{\sigma_{\eta}} \phi \left( \frac{\eta_{it}}{\sigma_{\eta}} \right) \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it} | \eta_{it} \right) d \xi_{it} \ref{eq:int}.
+       &=& \frac{1}{\sigma_{\eta}} \phi \left( \frac{\eta_{it}}{\sigma_{\eta}} \right) \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it} | \eta_{it} \right) d \xi_{it} \label{eq:int}.
 \end{eqnarray}
 \noindent where the last line follows from Subsection \ref{section:uninormal} in Appendix \ref{section:appendix}. From \ref{section:conditional} in Appendix \ref{section:appendix} note that
 \begin{eqnarray}
@@ -245,7 +246,7 @@ What is the set of parameters that you want to estimate? Are all of these parame
 \end{exercise}
 
 \begin{exercise} (Simulation) \label{exercise:simulations}
-Simulate a strongly balanced data set with $n = 1000$ observations and $T=3$. Use the following parameters: $\beta_\kappa = 0.5, \beta_n = 0.2, \sigma_\epsilon = 1, \pi = 0.2, \gamma_1 = 0.8, \sigma_\eta = 0.2, \sigma_{\epsilon \eta} = 0.3$. Assume that $y_{it} \overset{iid}{\sim} \mathcal{U} (0,10)$. $\kappa_{it}$, $z_{it}$ and $n_{it}$ are time invariant. In particular, $\kappa_{i}, z_{i} \overset{iid}{\sim} \mathcal{U} (0,5)$, and $n_{i}$ follows a discrete uniform distribution and $n_{i} \in \left\{0,1,2,3\right\}$. Use the Numpy random package in Python and set the seed to zero. \\
+Simulate a strongly balanced data set with $N = 1000$ observations and $T=6$. Use the following parameters: $\beta_\kappa = 0.5, \beta_n = 0.2, \sigma_\epsilon = 1, \pi = 0.2, \gamma_1 = 0.8, \sigma_\eta = 0.2, \sigma_{\epsilon \eta} = 0.3$. Assume that $y_{it} \overset{iid}{\sim} \mathcal{U} (0,10)$. $\kappa_{it}$, $z_{it}$ and $n_{it}$ are time invariant. In particular, $\kappa_{i}, z_{i} \overset{iid}{\sim} \mathcal{U} (0,5)$, and $n_{i}$ follows a discrete uniform distribution and $n_{i} \in \left\{0,1,2,3\right\}$. Use the Numpy random package in Python and set the seed to zero. \\
 \noindent Answer:\\
 \noindent See file ``womanssimulation.py''.
 \end{exercise}

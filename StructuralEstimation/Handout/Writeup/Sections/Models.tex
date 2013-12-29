@@ -89,22 +89,6 @@ Give a sufficient condition on the joint distribution of observed and unobserved
 
 \begin{exercise} (Estimation Approaches and Research Goals) \label{exercise:approaches}
 What research goals can you attain with the estimation approaches NP-NS, P-NS, P-NS. Be as formal as possible. Hint: think of the different effects that you are able to identify.
-\begin{itemize}
-\item NP-NS: the base of this approach is a non-parametric estimate of $G(\cdot)$.
-\begin{itemize}
-\item Goal 1: the typical example of an exercise towards Goal 1 is to inspect how a change in the wage affects the woman's labor force participation decision. An important feature of this model is that wages are observed iff the woman participates of the labor market. This shapes the possibility to answer research questions related to Goal 1. This exercise requires variation in $w_{it}$ that is independent to variation in other variables that determine participation. Put differently, the exercise requires a variable in $z_{it}$ which is not in $\kappa_{it}$ (an exclusion restriction). Also, it is necessary to sign the effect of the exclusion restriction on the wage. This follows because $w_{it}$ enters indirectly into the latent function, through $z_{it}$. Again, the reason of this is that the wages are not observed for everyone.   
-\item Goal 2: it is possible to obtain a non-parametric estimate of $G(\cdot)$ (think of a empirical c.d.f.). This enables to test the change of any of the variables on participation \emph{within the range of the data}. Since the estimate is non-parametric, it is impossible to make out-of-sample tests.   
-\item Goal 3: a natural research question towards this goal is to study what happens when $\pi$ changes. It is impossible to identify $\pi$ from $G(\cdot)$, however. Note that $G_{n} = \pi G_{n \pi}$. Thus, it is not possible to identify $\pi$ from $G_{n \pi}$ and carry on with the exercise.
-\end{itemize} 
-\item P-NS: the base of this approach is a parametric assumption about $G(\cdot)$.
-\begin{itemize}
-\item Goal 1: by the same reasoning as in the NP-NS approach this requires an exclusion restriction. This is simply because a parametric assumption does not imply that the effects through $z_{it}$ and $\kappa_{it}$ without an exclusion restriction. 
-\item Goal 2: the parametric assumption on $G(\cdot)$ enables to test the change of any of the variables on participation \emph{within and outside the range of the data}.
-\item Goal 3: again, it is impossible to identify $\pi$ from $G(\cdot)$.
-\end{itemize}
-\item NP-S: this approach is not feasible because it implies to identify $U(\cdot), w(\cdot), F$ without any parametric or auxiliary assumptions and the wages for the women who do not work are not observed for everyone. When the wages are observed for everyone the structure is reduced and some normalizations enable to identify it \citep[see][]{matzkin1993nonparametric}.
-\item P-S: see Exercise \ref{exercise:psapproach}.
-\end{itemize}
 \end{exercise}
 
 \subsection{Estimation of a Parametric, Structural Model}
@@ -150,7 +134,7 @@ What is the set of parameters that you want to estimate? Are all of these parame
 \end{exercise}
 
 \begin{exercise} (Simulation) \label{exercise:simulations}
-Simulate a strongly balanced data set with $n = 1000$ observations and $T=3$. Use the following parameters: $\beta_\kappa = 0.5, \beta_n = 0.2, \sigma_\epsilon = 1, \pi = 0.2, \gamma_1 = 0.8, \sigma_\eta = 0.2, \sigma_{\epsilon \eta} = 0.3$. Assume that $y_{it} \overset{iid}{\sim} \mathcal{U} (0,10)$. $\kappa_{it}$, $z_{it}$ and $n_{it}$ are time invariant. In particular, $\kappa_{i}, z_{i} \overset{iid}{\sim} \mathcal{U} (0,5)$, and $n_{i}$ follows a discrete uniform distribution and $n_{i} \in \left\{0,1,2,3\right\}$. Use the Numpy random package in Python and set the seed to zero.
+Simulate a strongly balanced data set with $N = 1000$ observations and $T=6$. Use the following parameters: $\beta_\kappa = 0.5, \beta_n = 0.2, \sigma_\epsilon = 1, \pi = 0.2, \gamma_1 = 0.8, \sigma_\eta = 0.2, \sigma_{\epsilon \eta} = 0.3$. Assume that $y_{it} \overset{iid}{\sim} \mathcal{U} (0,10)$. $\kappa_{it}$, $z_{it}$ and $n_{it}$ are time invariant. In particular, $\kappa_{i}, z_{i} \overset{iid}{\sim} \mathcal{U} (0,5)$, and $n_{i}$ follows a discrete uniform distribution and $n_{i} \in \left\{0,1,2,3\right\}$. Use the Numpy random package in Python and set the seed to zero.
 \end{exercise}
 
 \begin{exercise} (Estimation)
