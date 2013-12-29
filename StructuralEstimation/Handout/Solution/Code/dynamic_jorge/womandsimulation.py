@@ -11,7 +11,7 @@ from scipy.stats import norm
 np.random.seed(0)
 
 #Model Parameters
-N = 1000; T = 5; betak = .5; betan = .2; sigmaeps = 0.4; pi = .2; 
+N = 1000; T = 6; betak = .5; betan = .2; sigmaeps = 0.4; pi = .2; 
 gamma1 = .8; sigmaeta = 1.0; covepseta = .3; gamma2 = .9; delta = .85;
 covepsxi = covepseta - sigmaeps**2
 covetaxi = sigmaeta**2 - covepseta

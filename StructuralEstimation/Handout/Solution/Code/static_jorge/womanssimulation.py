@@ -9,7 +9,7 @@ import numpy as np
 np.random.seed(0)
 
 #Model Parameters
-N = 1000; T = 3; betak = .5; betan = .2; sigmaeps = 0.4; pi = .2; 
+N = 1000; T = 6; betak = .5; betan = .2; sigmaeps = 0.4; pi = .2; 
 gamma = .8; sigmaeta = 1; covepseta = .3; 
 
 #Simimulation Parameters
@@ -37,7 +37,8 @@ for t in range(T):
     n[:,t] = n_N
 
 #Simulate unobserved variables
-epseta = np.random.multivariate_normal([0,0],[[sigmaeps**2, covepseta],[covepseta, sigmaeta**2]],(N,T))
+epseta = np.random.multivariate_normal([0,0],[[sigmaeps**2, covepseta],
+[covepseta, sigmaeta**2]],(N,T))
 eps = epseta[:,:,0]
 eta = epseta[:,:,1]
 
