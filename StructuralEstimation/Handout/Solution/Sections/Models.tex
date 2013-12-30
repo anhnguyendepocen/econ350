@@ -36,7 +36,7 @@ Why is no serial correlation between $\epsilon_{it}, \eta_{it}$ a relevant assum
 \noindent This assumption is technical. Note that no serial correlation between $\epsilon_{it}, \eta_{it}$ is one of the reasons why the model is static. Whether this is realistic or not depends on the context but of course it is natural to think that shocks people receive are correlated over time. 
 \end{exercise}
 
-\indent This structure, actually, is enough to describe the problem through a decision rule that a latent variable dictates, as in (\ref{eq:latent}). Specifically, substitute (\ref{eq:budget}),(\ref{eq:wage}) into (\ref{eq:utility}) and note that
+\indent This structure, actually, is enough to describe the problem through a decision rule that a latent variable dictates, as in \eqref{eq:latent}. Specifically, substitute \eqref{eq:budget},\eqref{eq:wage} into \eqref{eq:utility} and note that
 \begin{eqnarray}
 d_{it} =
 \begin{cases}
@@ -90,7 +90,7 @@ Give a sufficient condition on the joint distribution of observed and unobserved
 
 \indent This model enables to illustrate how different estimation approaches help to attain the different research goals in Section \ref{section:extension}. Consider the following examples:
 \begin{enumerate}
-\item Goal 1: from (\ref{eq:utility}) note that an increase in wage increases the utility the household has if the woman works and does not affect the utility the household has when the woman does not work. Then, a test of the theory is to analyze if the probability of woman's employment is increasing in wage. 
+\item Goal 1: from (\eqref{eq:utility}) note that an increase in wage increases the utility the household has if the woman works and does not affect the utility the household has when the woman does not work. Then, a test of the theory is to analyze if the probability of woman's employment is increasing in wage. 
 \item Goal 2: take the derivative of $G(\cdot)$, the probability of woman's employment, with respect to any of the state variables.
 \item Goal 3: take the derivative of $G(\cdot)$, the probability of woman's employment, with respect to a variable that is outside the model (e.g., $\pi$, the per-child cost of child-care). 
 \end{enumerate}
@@ -200,7 +200,7 @@ L_{it}^1 &=& \Pr \left( d_{it} = 1 , w_{it} | z_{it}, n_{it}, \kappa_{it} \right
 \begin{eqnarray}
 \xi_{it} | \eta_{it} \overset{iid}{\sim} \mathcal{N} \left( \mu_{\xi.\eta}, \sigma_{\xi.\eta}^2 \right)
 \end{eqnarray}
-\noindent where $\mu_{\xi.\eta} \equiv \frac{\sigma_{\xi, \eta} \eta_{it}}{\sigma_{\eta}^2}$ and $\sigma_{\xi.\eta}^2 = \sigma_{\xi}^2 - \frac{\sigma_{\xi,\eta}^2}{\sigma_{\eta}^2}$. This suffices to calculate the value of the integral in (\ref{eq:int}) (it is simply equal to $\Phi \left(  \frac{\xi_{it}^* + \mu_{\xi.\eta}}{\sigma_{\xi.\eta}}\right)$). For completeness, consider the following
+\noindent where $\mu_{\xi.\eta} \equiv \frac{\sigma_{\xi, \eta} \eta_{it}}{\sigma_{\eta}^2}$ and $\sigma_{\xi.\eta}^2 = \sigma_{\xi}^2 - \frac{\sigma_{\xi,\eta}^2}{\sigma_{\eta}^2}$. This suffices to calculate the value of the integral in (\eqref{eq:int}) (it is simply equal to $\Phi \left(  \frac{\xi_{it}^* + \mu_{\xi.\eta}}{\sigma_{\xi.\eta}}\right)$). For completeness, consider the following
 \begin{eqnarray}
 \int \limits _{-\xi_{it}^{*}} ^{\infty} f \left( \xi_{it} | \eta_{it} \right) d \xi_{it} &=& \frac{1}{\sigma_{\xi.\eta}} \int \limits _{-  \left( \frac{\xi_{it}^{*} + \mu_{\xi.\eta}}{\sigma_{\xi.\eta}}  \right) } ^{\infty} \phi \left( \frac{\xi_{it} - \mu_{\xi.\eta}}{\sigma_{\xi.\eta}}  \right) d\xi_{it}. \nonumber \\
 \end{eqnarray}
