@@ -27,7 +27,7 @@ mplot.legend(('a = 2', 'a = 4','a = 6', 'a = 8', 'a = 10'), loc='upper left')
 
 #Title
 mplot.title(r"$f(x)$ ="
-            r"$\left[ \frac{1}{1+\exp(x)} - .5\right] \times 2 \times a$",
+            r"$\left[ \frac{1}{1+\exp(-x)} - .5\right] \times 2 \times a$",
           fontsize=16, color='black')
 #space
 mplot.subplots_adjust(top=0.9)
