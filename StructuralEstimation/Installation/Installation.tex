@@ -1,0 +1,42 @@
+
+%Input Style, Packages, Math Environment
+\input{HelperFiles/InstallationHelp}
+
+\begin{document}
+\title{Python Installation}
+\author{Econ 350: The University of Chicago}
+\date{This Draft: \today}
+\maketitle
+
+\begin{abstract}
+\noindent This document explains how to install Python in Linux, Mac, and Windows. As we discuss in class, it is better this first time for Mac and Windows, to install a commercial distribution. This consists of a package that contains a vast amount of libraries and Spyder, an IDE that helps to write and run code interactively. It is recommendable to use Python 2.7 because several libraries may have not be updated to later library developments. For new users, \citet{langtangen2011primer} is a useful guide to learn Python.
+\end{abstract}
+
+\section{Linux}
+Do the following steps in the command line.
+\begin{itemize}
+\item wget http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
+\item tar -xzf Python-2.7.6.tgz  
+\item cd Python-2.7.6
+\item ./configure
+\item make
+\item sudo make install
+\end{itemize}
+If you want to install Spyder go to the Ubuntu Software Center and make a search. 
+\bibliographystyle{chicago}
+\bibliography{BibtexFiles/InstallationBib}
+\end{document}
+
+\section{Mac-OS}
+\begin{itemize}
+\item Open this \href{https://store.continuum.io/cshop/anaconda/}{website}.
+\item Click ``Download Anaconda''.
+\item Follow the usual steps of any program installation.
+\end{itemize}
+
+\section{Windows}
+\begin{itemize}
+\item Open this \href{https://store.continuum.io/cshop/anaconda/}{website}.
+\item Click ``Download Anaconda''.
+\item Follow the usual steps of any program installation.
+\end{itemize}
