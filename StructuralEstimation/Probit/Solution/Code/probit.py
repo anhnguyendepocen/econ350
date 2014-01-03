@@ -1,7 +1,7 @@
 #Solution to Probit exercise
 #This project: JG, JEH, YW
-#This code: JG
-#This draft: 13/12/2013
+#This code: JG with edits from JEH
+#This draft: 03/01/2014
 
 #Import packages
 import numpy as np
@@ -11,29 +11,29 @@ from scipy.optimize import minimize
 np.random.seed(0)
 
 #Exercise 1.3
+
+#=============================
 #Generate data
-N = 1000
-X1 = np.array([np.random.lognormal(3,1.5) for i in range(0,N)])
-X2 = np.array([np.random.randint(0,2) for i in range(0,N)])
-X = zip(X1,X2)
-E = np.array([np.random.normal(0,1) for i in range(0,N)])
+#=============================
+N  = 1000
+X1 = np.random.lognormal(3,1.5,N)
+X2 = np.random.randint(0,2,N)
+X  = zip(X1,X2)
+E  = np.random.normal(0,1,N)
 
 #Set arbitrary beta and construct latent
-beta = np.array([-.3,2])
-Xbeta = np.dot(X,beta)
+beta   = np.array([-.3,2])
+Xbeta  = np.dot(X,beta)
 y_star = Xbeta + E
 
 #Construct latent and observed decision
-d = []
-for i in range(0,N):
-    if y_star[i] >= 0:
-        d.append(1)
-    else:
-        d.append(0)
-d = np.array(d)
+d = y_star >=0
 
+#==========================
 #Define the negative of the likelihood function (the routine minimizes)
+#==========================
 def llk(B):
+    '''calculates the neg log-likelihood for the probit '''
     XB = np.dot(X,B)
     l_0 = np.log(norm.cdf(-XB))
     l_1 = np.log(norm.cdf(XB))
@@ -44,6 +44,9 @@ def llk(B):
             l_1[i] = np.log(1e-13)
     return -sum(d*l_1 + (1-d)*l_0)
 
+#================================
+# Solving the minimization
+#================================
 #Initial Condition
 beta0 = np.array([-.3,2.0])
  
