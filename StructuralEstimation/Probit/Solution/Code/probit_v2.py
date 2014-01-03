@@ -1,6 +1,6 @@
 #Solution to Probit exercise
 #This project: JG, JEH, YW
-#This code: JG
+#This code: JG with some edits from JEH
 #This draft: 13/12/2013
 
 #Import packages
