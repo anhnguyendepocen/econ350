@@ -27,7 +27,7 @@ Xbeta  = np.dot(X,beta)
 y_star = Xbeta + E
 
 #Construct latent and observed decision
-d = y_star >=1
+d = y_star >=0
 
 #=================================
 #Define the negative of the likelihood function (the routine minimizes)
