@@ -11,23 +11,7 @@ w_{it} = z_{i}\gamma_{1} + \gamma_{2}h_{it} + \eta_{it}.
 \noindent For simplicity, the variables $\kappa_{it}$, $n_{it}$, $z_{it}$ are non-stochastic and time invariant.
 
 \begin{exercise} (Dynamic Programming Set-up)
-Write down the household's problem for each period $t$. Let $\delta$ be the discount factor, $\Omega_{it}$ the state space, and $\Omega_{it}^-$ the observed state space. Write down the elements in $\Omega_{it},\Omega_{it}^-$.\\
-\noindent Answer:\\	
-\noindent The problem is
-\begin{equation}
-\max_{d_{it}} \mathbb{E}\left\{ \sum\limits_{\tau=t}^{T}\delta^{\tau-t} \left[U^{1}_{i\tau}d_{i\tau} + U^{0}_{i\tau}\left( 1-d_{i\tau} \right)\right] \middle| \Omega_{it}\right\} 
-\end{equation}
-
-\noindent where
-\begin{eqnarray}
-U^{1}_{i\tau} &=& y_{i\tau} + z_{i}\gamma_{1} + \gamma_{2}h_{i\tau} + \eta_{i\tau} - \pi n_{i}\\
-U^{0}_{i\tau} &=& y_{i\tau} + \beta_{\kappa}\kappa_{i} + \beta_{n}n_{i} + \epsilon_{i\tau}\\
-\Omega_{it} &=& \left\{ y_{it}, z_{i}, n_{i}, \kappa_{i}, \epsilon_{it}, \eta_{it}, h_{it}\right\}\\
-\Omega_{it}^- &=& \left\{ y_{it}, z_{i}, n_{i}, \kappa_{i}, h_{it}\right\}
-\end{eqnarray}
-\end{exercise}
-\begin{exercise} (Bellman Equation)
-Write down the recursive formulation of the household's problem.
+Write down the household's problem for each period $t$. Let $\delta$ be the discount factor, $\Omega_{it}$ the state space, and $\Omega_{it}^-$ the observed state space. Write down the elements in $\Omega_{it},\Omega_{it}^-$.
 \end{exercise}
 
 \begin{exercise} (Solution)
