@@ -1,0 +1,300 @@
+\documentclass[11pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\parindent 20pt
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+
+\begin{document}
+
+%\tableofcontents
+
+\makeatletter
+
+\patchcmd{\maketitle}{\@fnsymbol}{\@fnsymbol}{}{}
+\makeatother
+
+\author{Jorge and Yike}
+
+
+\section*{Elasticities}
+\subsection*{a) Static and Perfectly Certain Context}
+Consider the following static problem of individual maximization.
+\begin{itemize}
+\item Endogenous variables:
+
+\begin{itemize}
+\item $c$ : consumption; $h$: hours worked.
+\end{itemize}
+
+\item Parameters:
+
+\begin{itemize}
+\item $w$ an exogenous wage; \ $Y$ non-labor income; $T$ the total time of
+the individual (consumption is the numeraire good so its price is identical to one).
+\end{itemize}
+
+\item Utility:   
+
+\begin{itemize}
+\item $u\left( \cdot \right) $ : strictly concave in $l\equiv T-h$
+(leisure), and $c$ and satisfies standard Inada conditions.
+\end{itemize}
+\end{itemize}
+
+\subsubsection*{Marshallian Compensated}
+
+\begin{itemize}
+\item Consider the following problem. \textbf{Problem 1}:
+
+\begin{equation*}
+\max_{c,h}u\left( c,h\right) 
+\end{equation*}
+
+s.t. $c\leq wh+T$.
+\item First order conditions (interior solution):
+
+\begin{itemize}
+\item $\frac{-u_{h}\left( c,h\right) }{u_{c}\left( c,h\right) }=w;$where $
+u_{i}\equiv \frac{\partial u_{i}\left( c,h\right) }{\partial i}$ for $i=c,h$.
+\end{itemize}
+
+\item Given the functional for of $u\left( \cdot \right) $, solve for the
+optimal amount of hours worked (i.e. solve for the Marshallian Compensated labor supply): $h^{\ast }=h_{m}\left( w,Y\right)$.
+
+
+\item Define the Marshallian Compensated elasticity of labor supply:
+\begin{equation}
+\eta _{m}=\frac{\partial \log h_{m}\left( w,Y\right) }{\partial \log w}.
+\end{equation}
+
+\item Percentage change in hours worked given a $1\%$ change in wage \textit{
+holding income constant}.
+\end{itemize}
+
+\subsubsection*{Marshallian Uncompensated}
+
+\begin{itemize}
+
+\item Consider the following problem. \textbf{Problem 2}:
+\begin{equation*}
+\min_{c,h}c+w(T-h)
+\end{equation*}
+
+s.t. $u\left( c,h\right) =\overset{\_}{u}$, where $\overset{\_}{u}\in \mathbb{R}$ (utility level target).
+
+\item Given the functional for of $u\left( \cdot \right) $, solve for the
+optimal amount of hours worked (i.e. solve for the Marshallian Uncompensated (Hicksian) labor supply): $h^{\ast }=h_{h}\left( w,\overset{\_}{u}\right)$.
+
+\item Define the Marshallian Uncompensated (Hicksian) elasticity of labor supply:
+\begin{equation}
+\eta _{h}=\frac{\partial \log h_{h}\left( w,\overset{\_}{u}\right) }{
+\partial \log w}.
+\end{equation}
+
+\item Percentage change in hours worked given a $1\%$ change in wage \textit{
+holding utility constant}.
+\end{itemize}
+
+\subsubsection*{Frisch}
+
+\begin{itemize}
+\item Consider again \textbf{Problem 1}. 
+
+\item The first order conditions are: 
+\begin{eqnarray}
+u_{c}-\lambda  &=&0   \nonumber \\
+-u_{h}-\lambda w &=&0 \nonumber \\
+T-c+wh &=&0           \label{eq:ss}
+\end{eqnarray}
+
+\item Note that the system (\ref{eq:ss}) is a function of $\lambda, w, Y, T$, which is the \textit{marginal utility of wealth}. Then, write:
+
+\begin{eqnarray}
+u_{c}(c(\lambda,w,T),h(\lambda,w,T))-\lambda  &=&0    \nonumber \\
+-u_{h}(c(\lambda,w,T),h(\lambda,w,T))-\lambda w &=&0  \label{eq:sss}
+\end{eqnarray}
+
+\item Differentiate with respect to $w$ and get%
+\begin{eqnarray}
+u_{cc}\frac{\partial c}{\partial w}+u_{ch}\frac{\partial
+h}{\partial w} &=&0 \\
+u_{ch}\frac{\partial c}{\partial w}+u_{hh}\frac{\partial
+h}{\partial w} &=&-\lambda
+\end{eqnarray}
+
+which gives a system of two equations and two unknowns.
+
+\item Solve for $\frac{\partial c}{\partial w},\frac{\partial h}{%
+\partial w}$ and obtain:
+\begin{equation}
+\frac{\partial h}{\partial w}=\frac{\lambda u_{cc}\left(
+\cdot \right) }{u_{ch}^{2}\left( \cdot \right) -u_{hh}\left(
+\cdot \right) u_{cc}\left( \cdot \right) }. \label{eq:fhspar}
+\end{equation}
+\end{itemize}
+
+\begin{itemize}
+\item Insert (\ref{eq:sss}) in (\ref{eq:fhspar}) to obtain
+\begin{equation}
+\frac{\partial h}{\partial w}=\frac{-u_{cc}\left( \cdot \right)
+u_{h}}{\left[ u_{ch}^{2}\left( \cdot \right)
+-u_{hh}\left( \cdot \right) u_{cc}\left( \cdot \right) %
+\right] w}.
+\end{equation}
+
+\item Define the Frisch Elasticity of Supply as $\eta _{f}=\frac{w}{h}%
+\frac{\partial h}{\partial w}$. Then,%
+\begin{equation}
+\eta _{f}=\frac{u_{h}}{\left[ u_{hh}\left( \cdot \right) -\frac{%
+u_{ch}^{2}\left( \cdot \right) }{u_{cc}}\right] h}.
+\end{equation}
+
+\item Percentage change in hours worked given a $1\%$ change in wage holding 
+\textit{marginal utility of wealth constant}.
+\end{itemize}
+
+\subsection*{b) Dynamic and Perfectly Certain Context}
+Add dynamics to the problem (same notation; add time subscripts). Include an asset denoted by $A_{t}$ at time $t$. Assume that the agent discounts inter-temporally at rate $\varrho $. The benchmark problem is the following. 
+
+\begin{itemize}
+
+\item \textbf{Problem 3}: 
+
+\begin{equation*}
+\begin{aligned}
+& \underset{\{A_{t+1},c_{t},h_{t}\}}{\text{max}}
+& & \sum \limits _{t=0} ^T (\frac{1}{1+\varrho})^{t} u(c_{t},h_{t}) \\
+& \text{subject to}
+& & c_{t}+a_{t+1}=\left( 1+r\right) a_{t}+wh_{t}\forall t=0,\ldots ,T; a_{0}=%
+\overset{\_}{a}.
+\end{aligned}
+\end{equation*}
+
+\end{itemize}
+
+In this sub-section, rather than going over the algebra again, we think of the meaning of a Compensated Marshallian elasticities in a Dynamic context and discuss it. The  \textit{experiment} needed to define the concept is the same: a change in the wage. However, in this case, differently than in the static case, change in $w$ imply a change in the \textit{wage profile} that the agent faces, which is another way to say that the wage o the agents changes in every period $t$. Then, in this case, there the analogue to the \textit{holding income constant} condition is \textit{holding the initial asset position constant}. To see why, simply note that the sequences of budget constraints of the problem collapse to a simple inter-temporal budget constraint using $a_0$, which we show below. \\
+\indent The two important relevant assumptions about the optimization process that help to correctly identify the Marshallian elasticities, in this case, is that: a) agents are forward looking; b) agents are \textit{not myopic}. What does this mean? On the one hand, a) means that agents exactly know what their wage profile is at $t=0$. For example, it could be that $w_{t}=w \forall t=0 \dots T$. (This is when the joke \textit{we assume that the wage profile is whispered by the agent's mom when she borns} came about. On the other hand, b) means that agents decision at $t=0$ are inter-temporally consistent, i.e. they are optimal $\forall t=0 \dots T$ after the optimization happens. Given this...
+
+\subsubsection*{What is the Difference between Marshallian Compensated and Marshallian Uncompensated Elasticities in a Dyanamic Context?}
+In a static context, the "Hicksian" approach is an easy way to understand Marshallian Compensated elasticities: we think of the change in hours worked given a change i wage \textit{holding utility fixed}. In a dynamic context, however, it is useful to be more general. The \textbf{Marshallian Unompensated Elasticity} is the change in hours worked given a change in the \textit{wage profile} and \textbf{no other change generated at the moment experiment}. \\
+\indent The \textbf{Marshallian Compensated Elasticity} allows for changes generated at the tome of the experiment. The easiest way to illustrate this is with a tax. On the one hand, if the government compensates people after the tax starts, the elasticity is compensated. On the other hand, if the tax does not generate an \textit{after policy} the elasticity is uncompensated. Of course, all the changes of the policy are known to the individual for the elasticities to be a well-defined concept. 
+
+\subsubsection*{Frisch}
+We do go over the Algebra of the Frish elasticity because it is a concepto widely used in dynamic settings. Perhaps the reason for this is that, as explained below, it is useful to compute comparative static exercises after transitory shocks to the wage processes. 
+\begin{itemize}
+
+\item Consider \textbf{Problem 3} again.
+
+\item Define as $\lambda _{t}$ the multiplier of the budget constraint at $t$
+and note that it is the \textit{marginal utility of wealth} at time $t$. 
+
+\item The first order conditions are:%
+\begin{eqnarray}
+u_{c_{t}}-\lambda _{t} &=&0  \nonumber \\ 
+-u_{h_{t}}-\lambda _{t}w&=&0 \nonumber \\
+\lambda _{t} &=&\left( \frac{1+r}{1+\varrho }\right) \lambda _{t+1} \label{eq:ds}.
+\end{eqnarray}
+
+which defines the Frisch demands for consumption and leisure (and therefore
+the Frisch Labor supply).
+\end{itemize}
+
+\begin{itemize}
+\item Note that this system is a function of $\lambda _{t}$ and $w$. Make this explicit
+\begin{eqnarray}
+u_{c_{t}}\left( c_{t}\left( \lambda _{t},w\right) ,h_{t}\left( \lambda
+_{t},w\right) \right)  &=&\lambda _{t} \nonumber \\
+u_{h_{t}}\left( c_{t}\left( \lambda _{t},w\right) ,h_{t}\left( \lambda
+_{t},w\right) \right)  &=&-\lambda _{t}w \label{eq:dss}.
+\end{eqnarray}
+
+\item Differentiate with respect to $w$ and get%
+\begin{eqnarray}
+u_{c_{t}c_{t}}\frac{\partial c_{t}}{\partial w}+u_{c_{t}h_{t}}\frac{\partial
+h_{t}}{\partial w} &=&0 \\
+u_{c_{t}h_{t}}\frac{\partial c_{t}}{\partial w}+u_{h_{t}h_{t}}\frac{\partial
+h_{t}}{\partial w} &=&-\lambda _{t}
+\end{eqnarray}
+
+which gives a system of two equations and two unknowns.
+
+\item Solve for $\frac{\partial c_{t}}{\partial w},\frac{\partial h_{t}}{%
+\partial w}$ and obtain:%
+\begin{equation}
+\frac{\partial h_{t}}{\partial w}=\frac{\lambda _{t}u_{c_{t}c_{t}}\left(
+\cdot \right) }{u_{c_{t}h_{t}}^{2}\left( \cdot \right) -u_{h_{t}h_{t}}\left(
+\cdot \right) u_{c_{t}c_{t}}\left( \cdot \right) }. \label{eq:fhpar}
+\end{equation}
+\end{itemize}
+
+\begin{itemize}
+\item Insert (\ref{eq:dss}) in (\ref{eq:fhpar}) to obtain
+\begin{equation}
+\frac{\partial h_{t}}{\partial w}=\frac{-u_{c_{t}c_{t}}\left( \cdot \right)
+u_{h_{t}}}{\left[ u_{c_{t}h_{t}}^{2}\left( \cdot \right)
+-u_{h_{t}h_{t}}\left( \cdot \right) u_{c_{t}c_{t}}\left( \cdot \right) %
+\right] w}.
+\end{equation}
+
+\item Define the Frisch Elasticity of Supply as $\eta _{f}=\frac{w}{h_{t}}%
+\frac{\partial h_{t}}{\partial w}$. Then,%
+\begin{equation}
+\eta _{f}=\frac{u_{h_{t}}}{\left[ u_{h_{t}h_{t}}\left( \cdot \right) -\frac{%
+u_{c_{t}h_{t}}^{2}\left( \cdot \right) }{u_{c_{t}c_{t}}}\right] h_{t}}.
+\end{equation}
+
+\item Percentage change in hours worked given a $1\%$ change in wage holding 
+\textit{marginal utility of wealth constant}.\textit{\ }
+\end{itemize}
+
+\subsubsection*{Discussion}
+The question is the following: in the context of transitory and permanent shock to wages, what is the relevant elasticity to evaluate the change in hours worked after a perturbation in wages. As discussed above, the sequences of budget constraints that we consider could be written in present value. As in any sequential problem, this equation shows that we can write the Lagrange multiplier, $\lambda_{0}$ at $t=0$ as a function of $\{\lambda_{t}\} _{t=0} ^{T}$, i.e. $\lambda_{0}=\{\lambda_{t}\} _{t=0} ^{T}$. The present value of the budget constraints looks as follows:
+\begin{equation}
+\sum \limits _{t=0} ^{T} \frac{c_{t}(\cdot,\lambda_{0})}{(1+r)^t}
+= \sum \limits _{t=0} ^{T} \frac{wh_{t}(\cdot,\lambda_{0})}{(1+r)^t}+a_{0}(1+r).
+\end{equation} \label{eq:ibc}
+
+\indent Note from this that a transitory shock to the wage, i.e., changing $w_{t}$ barely impacts $\lambda_{0}$ so the Frisch elasticity is an adequate approximation to analyze changes in labor supply after a transitory shock. However, note than changing the complete wage profile, i.e. a permanent shock, impacts the value of $\lambda_{0}$ and therefore changes the marginal utility of wealth. In that case, then, Marshallian Elasticities are needed to correctly identify the changes in hours after a perturbation in the wage. 
+
+\subsubsection*{c) Dynamic and Uncertain Context}
+In this context the problem is the following:
+\begin{itemize}
+\item \textbf{Problem 4}
+
+\begin{equation*}
+\begin{aligned}
+& \underset{\{A_{t+1},c_{t},h_{t}\}}{\text{max}}
+& & \mathbb{E}_{0} \sum \limits _{t=0} ^T (\frac{1}{1+\varrho})^{t} u(c_{t},h_{t}) \\
+& \text{subject to}
+& & c_{t}+a_{t+1}=\left( 1+r\right) a_{t}+w_{t}h_{t}\forall t=0,\ldots ,T; a_{0}=%
+\overset{\_}{a}.
+\end{aligned}
+\end{equation*}
+where the expectation is taken with respect to the wage process at time $t=0$. Further expectations contain further information sets. For example, $\mathbb{E}_{t}$ considers the information set at $t$.
+
+\item The first order conditions are
+
+\begin{eqnarray}
+u_{c_{t}}-\lambda _{t} &=&0  \nonumber \\ 
+-u_{h_{t}}-\lambda _{t}w&=&0 \nonumber \\
+\lambda _{t} &=& \left( \frac{1+r}{1+\varrho }\right) \mathbb{E}_{t} \lambda _{t+1} \label{eq:dsu}.
+\end{eqnarray} 
+
+\item Note that in this case the first order condition implies that all the uncertainty is contained in $\lambda _{t+1}$. 
+\item There is a forecast error with respect to this variable.
+\item To build intuition, define the forecast error at time $t$ as $\varepsilon_{t} = \mathbb{E}_{t} \lambda _{t+1}- \lambda _{t+1}$ with $\mathbb{E}\varepsilon_{t}$. Solve the Euler equation in (\ref{eq:dsu}) and obtain:
+\begin{equation}
+\lambda_{t}=\lambda_{0} \left({\frac{1+\varrho}{1+r}}\right)^t -\sum \limits _{i=1} ^t \varepsilon_{t-i} \left(\frac{1+\varrho}{1+r}\right)^{i-1}. \label{eq:muwu}
+\end{equation}
+\item The first thing to note is than in the case of perfect certainty, as in b), the last term of (\ref{eq:muwu}) is identical to zero because the forecast error is zero at all $t$ by construction. 
+\end{itemize}
+To draw an equivalence between the discussion in the case of perfect certainty and the case of perfect certainty, note that if changes in wage are \textit{expected}, the analysis is identical from the case of perfect certainty. Why? From (\ref{eq:muwu}) note that the only difference for the determination of $\lambda_{0}$ between the two cases is the last term. If changes are \textit{expected} the forecast error is zero, while if they are \textit{unexpected} there is an inherent forecast error in the optimization process at $t=0$ with respect to them. Then, expected shocks look exactly the same in perfectly certain and uncertain contexts.\\
+\indent To be clear, then, there are for kinds of shocks: expected and permanent, expected and transitory, unexpected and permanent, and unexpected and transitory. In order to analyze the first two we proceed as in the perfectly certain case. As argued above, we need to use Marshallian elasticies for the permanent shocks and the Frish elasticities for the transitory shocks. The definition of this concepts is exactly the same. Note that the agent perfectly expects the shocks. \\
+\indent The dynamic, uncertain case becomes trickier because of the last term in (\ref{eq:muwu}) is different than zero. Hence, any shock (transitory or permanent), affects the value of the marginal utility of wealth. If we want to calculate Marshallian elasticities we have no problem because the changes in the forecast errors are basically \textit{wealth effects} (the definitions of the concepts of elasticities are analogue to the ones in b) but including expectations with respect to the \textit{wage profile} at the moment of the shock). \\
+\indent However, given that forecast errors generate \textit{wealth effects} even when the shock is transitory, the Frisch elasticity is not correctly identified in this contexts. There are two ways in which various authors (see below) treat this problem: 1) assume that the transitory shock is small enough to generate a small forecast error and, therefore, calculate the Frisch elasticity approximating the last term in (\ref{eq:muwu}) as zero. Put differently, calculate the Frisch elasticity as in b) and hope that the wealth effect generated by the transitory shock is small; 2) make some context-dependent wealth adjustments. 
+
+\end{document}
