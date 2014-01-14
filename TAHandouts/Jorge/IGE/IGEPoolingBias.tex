@@ -1,0 +1,93 @@
+%Input premable
+\input{beamerHelperFilesUChicagoJorge}
+
+\title{IGE and the Pooling Bias}
+\subtitle{}
+\author{Econ 350}\institute{The University of Chicago, Economics}
+
+
+
+\begin{document}
+
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Standard Approach to Estimating IGE}
+	\begin{equation}
+		\ln y_{itc} = \alpha + \beta \ln y_{itp} + \varepsilon_{it} \label{eq:ige1}
+	\end{equation}
+
+	\begin{itemize}
+		\item $y_{itp}$: measure of parent's permanent income; $y_{itc}$: measure of child's permanent income; \item $1 - \beta$: IGE
+\end{itemize}
+
+	\begin{itemize}
+	\item What happens if there is grouping or heterogeneity? Say, for example, region heterogeneity driven by:
+		\begin{enumerate}
+			\item Production technology
+			\item Migration costs
+			\item Institutions that promote human capital
+		\end{enumerate}
+	\item Standard estimates of $\beta$ in \eqref{eq:ige1} are biased upwards
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Considering heterogeneity}
+		\begin{itemize}
+			\item Standard estimates cannot identify grouping
+			\item Consider the model
+				\begin{equation}
+				\ln y_{itc} = \alpha + \beta ( \ln y_{itp} - \gamma_{i}) + \epsilon_{it}				
+				\end{equation}
+where $\gamma_{i} = \mu_{r}$ if ``family'' $i$ is converging to equilibrium $r$, for $r = 1, \ldots, R$.
+			\item $\gamma_{i}$ represents a fixed displacement determined by the family's (log) income long run equilibrium
+			\item Interpret $\gamma_{i}$	as an omitted regressor
+			\item Let $\hat{\beta}$ be the OLS estimate of $\beta$ in \eqref{eq:ige1}, then
+			\begin{equation}
+				\plim \hat{\beta} = \beta \left( 1 - \frac{\cov(\gamma_{i}, \ln y_{itp} ) }{ \var (\ln y_{itp})} \right)
+			\end{equation}						
+			\item Plausibly, $\cov(\gamma_{i}, \ln y_{itp} ) >0$, so that $\hat{\beta}$ is upward biased\footnote{For a complete discussion on this type of bias and statistical inference on $\beta$ in this context see Bernard and Durlauf (1996).}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Considering heterogeneity 2}
+	\begin{wideitemize}
+	\item Roberts (2013) considers heterogeneity, indexed by $r$, as follows:
+	\begin{equation}
+		\ln y_{irtc} = \alpha_{r} + \beta_{r} \ln y_{irtp} + \varepsilon_{irt} \label{eq:ige2}
+	\end{equation}		
+	\item Individuals who belong to $r$ ``regress to'' $\bar{y}_{r} = \frac{\alpha_{r}}{1 - \beta_{r}}$
+	\item Individuals ``select'' on their private coefficients and standard estimates of $\beta$ in \eqref{eq:ige1} are biased upwards
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bias corrections}
+	\begin{itemize}
+	\item Let $\hat{\beta}$ denote the estimate for $\beta$ in \eqref{eq:ige1}  and let $\beta$ denote the true parameter in \eqref{eq:ige2}	
+	\end{itemize}
+ 
+		\begin{enumerate}
+			\item Assume S.S. for the income process and only allow $\alpha_{r}$ to vary:
+			\begin{equation}
+			\plim \beta = \hat{\beta} - \left(1 - \hat{\beta} \right) \frac{\var_{r}(\bar{y}_{r})}{\mathbb{E}_{r}[\var(y_{rt})|r]} \label{eq:corr1}
+			\end{equation}
+				\begin{itemize}
+				\item Bias increases as variance across regions increases
+				\item Bias decreases as variance within regions increases
+				\end{itemize}				 
+			\item Allowing for covariances in mean income measures over generations only implies to subtract from \eqref{eq:corr1} the following term
+			\begin{equation}
+\frac{\cov ( \bar{y}_{rt+1} - \bar{y}_{rt} ) - \var_{r}(\bar{y}_{r})}{\mathbb{E}_{r}[\var(y_{rt})|r]}
+			\end{equation}
+		\end{enumerate}
+\end{frame}
+
+
+
+\end{document}
