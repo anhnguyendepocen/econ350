@@ -1,7 +1,7 @@
 %Input premable
 \input{beamerHelperFilesUChicagoJorge}
 
-\title{Labor Supply Decisions}
+\title{Life Cycle Decisions}
 \subtitle{Female vs. Male}
 \author{Jorge L. Garc\'{i}a G.-Men\'{e}ndez}\institute{The University of Chicago, Economics}
 
@@ -43,11 +43,11 @@
 		\item Large differences in economic and demographic characteristics of majority (white) compared to minority (black and Hispanic) women
 		\item NLSY79 in 1990 (Ages 25 to 33):
 		\begin{wideitemize}
-			\item Mean schooling years: white 13.4; black 12.8; Hispanic 12.1 
-			\item Marriage percentages: white 65\%; black 32\%; Hispanic 55\%.
-			\item Children: white 1.2; black and Hispanic 1.7
-			\item Employment: white 74\%, black 66\%, Hispanic 67\%
-			\item AFDC previous year: white 4\%, black 20\%, Hispanic, 11\%  
+			\item Mean schooling years: white $13.4$; black $12.8$; Hispanic $12.1$ 
+			\item Marriage percentages: white $65\%$; black $32\%$; Hispanic $55\%$.
+			\item Children: white $1.2$; black and Hispanic $1.7$
+			\item Employment: white $74\%$, black $66\%$, Hispanic $67\%$
+			\item AFDC previous year: white $4\%$, black $20\%$, Hispanic, $11\%$  
 		\end{wideitemize}
 	\end{enumerate}
 \end{frame}
@@ -69,8 +69,7 @@
 			\item How does to welfare system affects augment the differences minority-majority differences?
 			\item How will the new cohorts that grow up under the new welfare system (TANF) behaves compared to older cohorts?
 			\end{enumerate}
-		\end{wideitemize}
-		
+		\end{wideitemize}	
 \end{frame}
 
 \begin{frame}
@@ -86,10 +85,165 @@
 				\item Wage patterns
 			\end{enumerate}			 
 		\end{wideitemize}
-		
 \end{frame}
 
 \section{Models}
+\begin{frame}
+	\frametitle{Model: Females, Basics}
+		\begin{wideitemize}
+		\item $j = 1, \ldots, J$ defines the types of women
+		\item At each time $a$ each women $j$ decides to:
+		\begin{enumerate}
+			\item work (if she gets an offer), $h_{a}^p,h_{a}^f$
+			\item attend school to schoo, $s_{a}$
+			\item be married (if someones proposes), $m_{a}$
+			\item become pregnant (if at fecund age), $p_{a}$
+			\item government help (if eligible)
+		\end{enumerate}
+		\item Life span: $14$ to $62$ (fecund stage: $14$ to $45$)
+		\item Utility depends on:
+			\begin{enumerate}
+				\item Past and current choices
+				\item Number of children, $N_{a}$
+				\item Consumption, $C_{a}$
+				\item Completed level of Schooling, $S_{a}$
+			\end{enumerate}
+		\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Females, Utility and BC}
+	\begin{eqnarray}
+	U_{a}^j &=& U_{a} \left( C_{a}, S_{a}, m_{a}, p_{a}, g_{a}, h_{a}^p, h_{a}^f; \mathbf{\varepsilon}_{a}, \mathbf{1}(type=j), \Omega_{a}^a \right) \nonumber \\
+c_{a} &=& y_{a}^o (1 - m_{a})(1 - z_{a}) + \left[ y_{a}^o + y_{a}^m\right]m_{a}\tau_{a}^m \nonumber \\
+	                  &+& \left[ y_{a}^o + y_{a}^z \tau_{a}^z \right]z_{a} + \beta_{1}g_{a} - [\beta_{3}  \left( \mathbf{1}(S_{a} \geq 12) \right) ] \nonumber \\ 
+	                 &+& \beta_{4} \left( \mathbf{1}(S_{a} \geq 16) \right) \nonumber
+	\end{eqnarray}
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Model: Females, Job Offers and Wages}
+	\begin{itemize}
+		\item Probabilities of receiving full and part time job offers: $\pi^{wp}, \pi^{wf}$
+		\item Earnings: $y_{a}^o = 500w_{a}^ph_{a}^p + 1000w_{a}^fh_{a}^f $
+		\item Hourly wage: $\ln w_{a}^k = r^k + \Psi_{a}(\cdot) + \varepsilon_{a}^{w}$, for $k = p,f$ and where $r^k$ is rental rate and $\Psi_{a}(\cdot)$ is human capital stock
+		\item Marriage: 
+			\begin{enumerate}
+			\item offers to marry married depend on age and welfare status, $\pi_{a}^m$
+			\item offers to continue married depend on age and marriage current duration
+			\end{enumerate}
+		\item Husband's human capital: (conditional on marriage offer) drawn from a distribution that depends on woman's race/ethnicity, schooling, age, state of residence, type, $Psi_{a}^m$
+		\item After marriage, husband's earnings are $\ln y_{a}^m = \mu^m + \Psi_{0m}^m + \varepsilon_{a}^m$ 					
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Females, Welfare System}
+	\begin{itemize}
+		\item The welfare system is time and state particular
+	\end{itemize}
+	\begin{eqnarray}
+b_{t}^s \left( N_{at}^{18}, y_{at}^o, y_{at}^z \right) =
+\begin{cases}
+b_{0t}^s + b_{1t}^s N_{at}^{18} - b_{3t}^s \beta_{2} y_{at}^z z_{at}, & y_{at}^o < y_{at}^{s1}(\cdot) \nonumber \\
+b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
+\times \left[ y_{at}^o - y_{at}^{s1} + \beta_{2} y_{at}^z z_{at} \right] , & y_{at}^{s1}(\cdot) < y_{at}^o < y_{at}^{s2}(\cdot) \nonumber \\
+0, & \text{otherwise} \nonumber \\
+\end{cases}
+	\end{eqnarray}
+	\begin{itemize}
+	\item The parameters that define the welfare system evolve according to a VAR
+		\begin{equation}
+		\mathbf{b}_{t}^s = \lambda^s + \Lambda^s \mathbf{b}_{t-1}^s + \mathbf{u}_{t}^s \label{eq:welsys}
+		\end{equation}
+	 \item \eqref{eq:welsys} is estimated outside the model with simulated data
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Model: Females, Dynamic Problem}
+	\begin{eqnarray}
+		V_{a} (\Omega_{a}) = 
+		\begin{cases}	
+			\max_{l \in \mathcal{L}} {U_{a}^j + \delta \mathbb{E} \left(  V_{a+1}(\Omega_{a+1} | \l \in \mathcal{L}, \Omega_{a}) \right) }, & a < A \nonumber \\
+			U_{A}^j, & a = A \nonumber
+		\end{cases}  
+	\end{eqnarray}
+	\begin{itemize}
+		\item The value of option $l \in \mathcal{L}$ depends on the current state space: $\Omega_{A}$, which includes residence, the WS rule parameters, preference shocks, own husband's earnings shocks, parental income shocks, labor market, marriage, and parental co-residence opportunities
+		\item Solution: set of ``Emax's'' for all $l \in \mathcal{L}$ and all elements in $\Omega_{a}$ 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Males, Basics}
+	\begin{itemize}
+		\item $k = 1, \ldots, J$ defines the types of men (by human capital at age $16$)
+		\item At each age $a$ individuals choose among five mutually exclusive, exhaustive alternatives ($m = 1, \ldots, 5$):
+		\begin{enumerate}
+			\item Blue collar job
+			\item White collar job
+			\item Military job
+			\item Go to school
+			\item Engage in household production
+		\end{enumerate}
+		\item Per period reward:
+		\begin{equation}
+			R(a) = \sum \limits _{m=1} ^ 5 R_{m}(a)d_{m}(a) \nonumber
+		\end{equation}
+		\noindent where $R_{m}(a)$ is the per period reward in the $m_{th}$ alternative and $d_{m}(a)$ indicates the choice of the $m_{th}$ alternative 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Males, Utility}
+	\begin{itemize}
+		\item For $m = 1, 2, 3$:
+		\begin{eqnarray}
+			R_{m}(a) &=& w_{m}(a) \nonumber \\
+			         &=& r_{m} \exp [ e_{m}(16) + e_{m1}g(a) + e_{m2}x_{m}(a) \nonumber \\ 
+			         &-& e_{m3}x_{m}^2 + \epsilon_{m}(a) ] \nonumber
+		\end{eqnarray}
+		\item For $m = 4, 5$:
+		\begin{eqnarray}
+			R_{4}(a) &=& e_{4}(16) - tc_{1} \mathbf{1} [g(a) \geq 12] - tc_{2} \mathbf{1} [g(a) \geq 16] + \epsilon_{4}(a) \nonumber \\
+			R_{3}(a) &=& e_{5}(16) + \epsilon_{4}(a) \nonumber
+		\end{eqnarray}
+		\item $r_{m}$, rental rate of human capital; completed schooling years, $g(a)$; work experience, $x_{m}(a)$; skill endowment, $e_{m}(16)$; $tc_{1},tc_{2}$ college/grad school costs; $\epsilon_{m}(a)$ skill technology shock
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Males, Dynamic Problem}
+	\begin{eqnarray}
+	V(\mathbf{S}_{a}) =
+		\begin{cases}
+			R_{m} (\mathbf{S}_{a}) + \delta \mathbb{E} \left[ V (\mathbf(S(a+1)) | d_{m}(a), \mathbf{S}(a) \right], & a < A \nonumber \\
+			R_{m} (\mathbf{S}_{a}) \nonumber, & a = A
+		\end{cases}
+	\end{eqnarray}
+	\begin{itemize}
+		\item The value of option $m$ depends on the current state space, $\mathbf{S}_a$: endowment at age $16$ (occupation and type particular), $\mathbf{e}(16)$; completed schooling years, $g_{a}$, experience in each (labor) occupation, $\mathbf{x}(a)$; skill technology shocks (occupation particular), $\mathbf{\epsilon}(a)$
+		\item Solution: set of ``Emax's'' for $m = 1, \ldots, 5$ and all elements in $\mathbf{S}_a$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model: Males, Dynamic Problem}
+	\begin{itemize}
+		\item The model needs the following extensions to fit the data adequately:
+		\begin{enumerate}
+		\item
+		\item
+		\item
+		\item
+		\item
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
 
 
 \section{Results}
