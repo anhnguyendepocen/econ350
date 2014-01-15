@@ -44,7 +44,7 @@
 		\item NLSY79 in 1990 (Ages 25 to 33):
 		\begin{wideitemize}
 			\item Mean schooling years: white $13.4$; black $12.8$; Hispanic $12.1$ 
-			\item Marriage percentages: white $65\%$; black $32\%$; Hispanic $55\%$.
+			\item Percent Married: white $65\%$; black $32\%$; Hispanic $55\%$.
 			\item Children: white $1.2$; black and Hispanic $1.7$
 			\item Employment: white $74\%$, black $66\%$, Hispanic $67\%$
 			\item AFDC previous year: white $4\%$, black $20\%$, Hispanic, $11\%$  
@@ -89,14 +89,14 @@
 
 \section{Models}
 \begin{frame}
-	\frametitle{Model: Females, Basics}
+	\frametitle{Model Basics: Females}
 		\begin{wideitemize}
 		\item $j = 1, \ldots, J$ defines the types of women
 		\item At each time $a$ each women $j$ decides to:
 		\begin{enumerate}
 			\item work (if she gets an offer), $h_{a}^p,h_{a}^f$
 			\item attend school, $s_{a}$
-			\item be married (if someones proposes), $m_{a}$
+			\item marry (remain married) (if someones proposes), $m_{a}$
 			\item become pregnant (if fecund), $p_{a}$
 			\item government help (if eligible)
 		\end{enumerate}
@@ -112,7 +112,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Females, Utility and BC}
+	\frametitle{Utility and BC: Females}
 	\begin{eqnarray}
 	U_{a}^j &=& U_{a} \left( C_{a}, S_{a}, m_{a}, p_{a}, g_{a}, h_{a}^p, h_{a}^f; \mathbf{\varepsilon}_{a}, \mathbf{1}(type=j), \Omega_{a}^a \right) \nonumber \\
 c_{a} &=& y_{a}^o (1 - m_{a})(1 - z_{a}) + \left[ y_{a}^o + y_{a}^m\right]m_{a}\tau_{a}^m \nonumber \\
@@ -124,7 +124,7 @@ c_{a} &=& y_{a}^o (1 - m_{a})(1 - z_{a}) + \left[ y_{a}^o + y_{a}^m\right]m_{a}\
 
 
 \begin{frame}
-	\frametitle{Model: Females, Job Offers and Wages}
+	\frametitle{Job Offers and Wages: Females}
 	\begin{itemize}
 		\item Probabilities of receiving full and part-time job offers: $\pi^{wp}, \pi^{wf}$
 		\item Earnings: $y_{a}^o = 500w_{a}^ph_{a}^p + 1000w_{a}^fh_{a}^f $
@@ -140,7 +140,7 @@ c_{a} &=& y_{a}^o (1 - m_{a})(1 - z_{a}) + \left[ y_{a}^o + y_{a}^m\right]m_{a}\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Females, Welfare System}
+	\frametitle{Welfare System: Females}
 	\begin{itemize}
 		\item The welfare system is time and state particular
 	\end{itemize}
@@ -164,7 +164,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 
 
 \begin{frame}
-	\frametitle{Model: Females, Dynamic Problem}
+	\frametitle{Dynamic Problem: Females}
 	\begin{eqnarray}
 		V_{a} (\Omega_{a}) = 
 		\begin{cases}	
@@ -179,7 +179,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Males, Basics}
+	\frametitle{Model Basics: Males}
 	\begin{itemize}
 		\item $k = 1, \ldots, J$ defines the types of men (by human capital at age $16$)
 		\item At each age $a$ individuals choose among five mutually exclusive, exhaustive alternatives ($m = 1, \ldots, 5$):
@@ -199,7 +199,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Males, Utility}
+	\frametitle{Utility: Males}
 	\begin{itemize}
 		\item For $m = 1, 2, 3$:
 		\begin{eqnarray}
@@ -217,7 +217,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Males, Dynamic Problem}
+	\frametitle{Dynamic Problem: Males}
 	\begin{eqnarray}
 	V(\mathbf{S}_{a}) =
 		\begin{cases}
@@ -232,7 +232,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model: Males, Model Extension}
+	\frametitle{Model Extension: Males}
 	\begin{itemize}
 		\item Extensions to fit the data adequately:
 		\begin{enumerate}
@@ -260,10 +260,10 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \section{Data}
 
 \begin{frame}
-	\frametitle{Data, Females}
+	\frametitle{Data: Females}
 		\begin{itemize}
 			\item NLSY79: represents the cohort of young individuals (ages $14$ to $21$) in 1979: $12,686$ total observations 
-			\item $6,000$ women (nationally representative sample plus over sample of poor white, blacks, and Hispanics)
+			\item $6,000$ women (nationally representative sample plus over-sample of poor white, blacks, and Hispanics)
 			\item Data on all decisions available in very high frequency
 			\item Period decision: trade-off between information precision and computational burden
 			\begin{itemize}
@@ -275,17 +275,17 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Choice Distribution by Age, Females}
+	\frametitle{Choice Distribution by Age: Females}
 	\textbf{Table 1 KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Estimated Monthly Benefits, Females}
+	\frametitle{Estimated Monthly Benefits: Females}
 	\textbf{Table 2 KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Data, Males}
+	\frametitle{Data: Males}
 		\begin{itemize}
 			\item NLSY79: represents the cohort of young individuals (ages $14$ to $21$) in 1979: $12,686$ total observations
 			\item Focus on core white males who reach 16 years between 1977-1981
@@ -297,7 +297,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Choice Distribution by Age, Males}
+	\frametitle{Choice Distribution by Age: Males}
 	\textbf{Table 1 KW(1997) goes here.}
 \end{frame}
 
@@ -307,7 +307,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Average Real Wages, Males}
+	\frametitle{Average Real Wages: Males}
 	\textbf{Table 4 KW(1997) goes here.}
 \end{frame}
 
@@ -315,7 +315,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \section{Estimation}
 
 \begin{frame}
-	\frametitle{Estimation Approach, Females}
+	\frametitle{Estimation Approach: Females}
 		\begin{itemize}
 			\item Usual estimation approach of DCDP models: simulated conditional likelihood
 			\item Issues in this context:
@@ -330,7 +330,7 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \end{frame}
 
 \begin{frame}
-	\frametitle{Estimation Approach, Males}
+	\frametitle{Estimation Approach: Males}
 		\begin{itemize}
 			\item Simulated conditional likelihood
 			\item ``Easy'' to write and calculate the likelihood function:
@@ -347,7 +347,7 @@ L_{nk} = \Pr \left( c_{n}(a) | g_n(16), \text{type=k} \right)	\nonumber
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model Fit and External Validation, Females}
+	\frametitle{Model Fit and External Validation: Females}
 		\begin{itemize}
 			\item Keane and Wolpin (2007) studies this  extensively:
 				\begin{itemize}
@@ -362,7 +362,7 @@ L_{nk} = \Pr \left( c_{n}(a) | g_n(16), \text{type=k} \right)	\nonumber
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model Fit and External Validation, Males}
+	\frametitle{Model Fit and External Validation: Males}
 		\begin{itemize}
 			\item Within-sample: Figures 1-5 evidence satisfactory within-sample fit, which is confirmed through tests (Table 5)
 			\item External validation: model frequency predictions coincide with CPS choice frequencies (Table 10)
@@ -375,40 +375,40 @@ L_{nk} = \Pr \left( c_{n}(a) | g_n(16), \text{type=k} \right)	\nonumber
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model Fit and External Validation (contd 2), Males}
+	\frametitle{Model Fit and External Validation (contd 2): Males}
 	\textbf{Table 10 KW(1997) goes here.}
 \end{frame}
 
 \section{Results}
 \begin{frame}
-	\frametitle{Behavior by Type, Females}
+	\frametitle{Behavior by Type: Females}
 	\textbf{Table 3 KW(2010) goes here}	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Variance explained by Initial Conditions, Females}
+	\frametitle{Variance Explained by Initial Conditions: Females}
 	\textbf{Table 4 KW(2010) goes here}	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Behavior by Type, Males}
+	\frametitle{Behavior by Type: Males}
 	\textbf{Table 11 KW(1997) goes here}	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Type Proportions by Initial Conditions, Males}
+	\frametitle{Type Proportions by Initial Conditions: Males}
 	\textbf{Table 9 KW(1997) goes here}	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Family Background, Males}
+	\frametitle{Family Background: Males}
 	\textbf{Table 13 KW(1997) goes here}	
 \end{frame}
 
 \section{Counter-factual Exercises}
 
 \begin{frame}
-	\frametitle{Counter-factual Exercises, Females}
+	\frametitle{Counter-factual Exercises: Females}
 		\begin{enumerate}
 			\item Equate wage offers, welfare stigma, and parent schooling of blacks and Hispanics to that of whites 
 			\item Welfare experiments for ``type 6'' black, Hispanic, and white women 
@@ -422,64 +422,64 @@ L_{nk} = \Pr \left( c_{n}(a) | g_n(16), \text{type=k} \right)	\nonumber
 \end{frame}
 
 \begin{frame}
-	\frametitle{Equating opportunities for blacks, Females}
+	\frametitle{Equating Opportunities for Blacks: Females}
 		\textbf{Table 5A KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Equating opportunities for Hispanics, Females}
+	\frametitle{Equating Opportunities for Hispanics: Females}
 		\textbf{Table 5B KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd): Females \end{small}}
 		\textbf{Table 6A KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd): Females \end{small}}
 		\textbf{Table 6A (contd) KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd): Females \end{small}}
 		\textbf{Table 6B KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd): Females \end{small}}
 		\textbf{Table 6B (contd) KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd): Females \end{small}}
 		\textbf{Table 6C KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd), Females \end{small}}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd): Females \end{small}}
 		\textbf{Table 6C (contd) KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Introduction of EITC, Females}
+	\frametitle{Introduction of EITC: Females}
 		\textbf{Table 7 (contd) KW(2010) goes here.}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Counter-factual Exercises, Males}
+	\frametitle{Counter-factual Exercises: Males}
 		\begin{enumerate}
 			\item The impact of college tuition subsidies on school attainment and inequality
 		\end{enumerate}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Effects of a College Subsidy, Males}
+	\frametitle{Effects of a College Subsidy: Males}
 		\textbf{Table 14 KW(1997) goes here. }
 \end{frame}
 
 \begin{frame}
-	\frametitle{Effects of a College Subsidy (contd), Males}
+	\frametitle{Effects of a College Subsidy (contd): Males}
 		\textbf{Table 15 KW(1997) goes here. }
 \end{frame}
 
