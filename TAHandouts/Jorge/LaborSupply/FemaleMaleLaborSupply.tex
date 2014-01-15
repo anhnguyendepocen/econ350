@@ -3,7 +3,7 @@
 
 \title{Life-cycle Decisions}
 \subtitle{Female vs. Male}
-\author{Jorge L. Garc\'{i}a G.-Men\'{e}ndez}\institute{The University of Chicago, Economics}
+\author{Econ 350}\institute{The University of Chicago, Economics}
 
 \begin{document}
 
@@ -315,16 +315,172 @@ b_{2t}^s + b_{4t}^s N_{at}^{18} - b_{3t}^s & \nonumber \\
 \section{Estimation}
 
 \begin{frame}
-	\frametitle{Estimation Procedure, Males}
+	\frametitle{Estimation Approach, Females}
 		\begin{itemize}
-			\item Unobserved 
+			\item Usual estimation approach of DCDP models: simulated conditional likelihood
+			\item Issues in this context:
+				\begin{itemize}
+					\item Requires conditional probability agent makes observed choiced at $t$ given $\Omega_{a}$ at $t$
+					\item Lack of complete histories of employment, schooling, welfare for most cohorts back to age $14$
+					\item Unobserved initial conditions and unobserved state variables pose DCCP estimation problems (Heckman, 1981)
+					\item Need to integrate over distribution of unobserved elements: intractably complex
+					\item Estimate based on unconditional simulation of the likelihood function based on the (realistic) assumption that all outcome variables have measurement error (Keane and Wolpin, 2001)
+				\end{itemize}							
 		\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Estimation Approach, Males}
+		\begin{itemize}
+			\item Simulated conditional likelihood
+			\item ``Easy'' to write and calculate the likelihood function:
+			\begin{equation}
+				\Pr \left( c(16), \ldots, c(\bar{a})|g_{n}(16) \right) =
+\sum \limits _{k=1} ^K \prod \limits _{a=16} ^{\bar{a}} \pi_{k|g(16)} L_{nk} \nonumber
+			\end{equation}
+\noindent with
+\begin{equation}
+L_{nk} = \Pr \left( c_{n}(a) | g_n(16), \text{type=k} \right)	\nonumber 
+\end{equation}
+\noindent where $k=1,\ldots,K$ and $n = 1, \ldots, N$ index types and individuals, respectively. $\pi_{k|g_{n}(16)}$ are type proportions, and $c_{n}(a)$ is a choice-reward combination
+		\end{itemize}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Model Fit and External Validation, Females}
+		\begin{itemize}
+			\item Keane and Wolpin (2007) extensively studies this:
+				\begin{itemize}
+					\item Within sample fit: captures well features of the data (choice frequencies and welfare use for each group in each state over the life cycle)
+					\item External Validation: outperforms MNL with less parameters ($202$ vs $240$) in external validations exercises: 
+					\begin{itemize}
+						\item Forecast behavior of women in TX
+						\item What happens if estimation states adopt TX's welfare system
+					\end{itemize}
+				\end{itemize}
+		\end{itemize}				
+\end{frame}
 
-\section{Counter Factual Exercises}
+\begin{frame}
+	\frametitle{Model Fit and External Validation, Males}
+		\begin{itemize}
+			\item Within-sample: Figures 1-5 evidence satisfactory within sample fit which is confirmed through tests (Table 5)
+			\item External validation: model frequency predictions coincide with CPS choice frequencies (Table 10)
+		\end{itemize}
+\end{frame}
 
-\section{Comments}
+\begin{frame}
+	\frametitle{Model Fit and External Validation (contd 1), Males}
+	\textbf{Figures 1-5 KW(1997) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model Fit and External Validation (contd 2), Males}
+	\textbf{Table 10 KW(1997) goes here.}
+\end{frame}
+
+\section{Results}
+\begin{frame}
+	\frametitle{Behavior by Type, Females}
+	\textbf{Table 3 KW(2010) goes here}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Variance explained by Initial Conditions, Females}
+	\textbf{Table 4 KW(2010) goes here}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Behavior by Type, Males}
+	\textbf{Table 11 KW(1997) goes here}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Type Proportions by Initial Conditions, Males}
+	\textbf{Table 9 KW(1997) goes here}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Family Background, Males}
+	\textbf{Table 13 KW(1997) goes here}	
+\end{frame}
+
+\section{Counter-factual Exercises}
+
+\begin{frame}
+	\frametitle{Counter-factual Exercises, Females}
+		\begin{enumerate}
+			\item Equate wage offers, welfare stigma, and parent schooling of blacks and Hispanics to that of whites 
+			\item Welfare experiments for ``type 6'' black, Hispanic, and white women 
+			\item Increase the wage rate for ``type 6'' black, Hispanic, and white women
+			\item Introduction of EITC:
+				\begin{itemize}
+					\item Unexpected in 2004 for ``type 6'' women
+					\item Fully adjusted (in $\Omega_{14}$) in 2004 for ``type 6''
+				\end{itemize}							
+		\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equating opportunities for blacks, Females}
+		\textbf{Table 5A KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Equating opportunities for Hispanics, Females}
+		\textbf{Table 5B KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd), Females \end{small}}
+		\textbf{Table 6A KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Blacks (contd), Females \end{small}}
+		\textbf{Table 6A (contd) KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd), Females \end{small}}
+		\textbf{Table 6B KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Hispanics (contd), Females \end{small}}
+		\textbf{Table 6B (contd) KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd), Females \end{small}}
+		\textbf{Table 6C KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\begin{small} Welfare Experiments and Wage Increase for Whites (contd), Females \end{small}}
+		\textbf{Table 6C (contd) KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Introduction of EITC, Females}
+		\textbf{Table 7 (contd) KW(2010) goes here.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Exercises, Males}
+		\begin{enumerate}
+			\item The impact of college tuition subsidy on school attainment and inequality
+		\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Effects of a College Subsidy, Males}
+		\textbf{Table 14 KW(1997) goes here. }
+\end{frame}
+
+\begin{frame}
+	\frametitle{Effects of a College Subsidy (contd), Males}
+		\textbf{Table 15 KW(1997) goes here. }
+\end{frame}
 
 \end{document}
