@@ -73,6 +73,7 @@ Thumbs.db
 *.pydevproject
 .metadata*
 *.backup
+*.aaa
 
 # R History #
 #############
