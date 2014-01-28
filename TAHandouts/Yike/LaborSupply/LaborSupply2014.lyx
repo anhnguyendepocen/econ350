@@ -1,0 +1,2292 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\usetheme{CambridgeUS}
+\usecolortheme{wolverine}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title (Plain Frame)
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+Labor Supply
+\end_layout
+
+\end_inset
+
+Labor Supply
+\end_layout
+
+\begin_layout Subtitle
+Based on Blundell and MaCurdy (1999), Keane (2011), 
+\begin_inset Newline newline
+\end_inset
+
+Blundell et al (2007) and Lise and Seitz (2011)
+\end_layout
+
+\begin_layout Institute
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+UChicago
+\end_layout
+
+\end_inset
+
+Department of Economics
+\begin_inset Newline newline
+\end_inset
+
+University of Chicago
+\end_layout
+
+\begin_layout BeginFrame
+Outline
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Plan and References
+\end_layout
+
+\begin_layout BeginFrame
+Survey Papers
+\end_layout
+
+\begin_layout Itemize
+Part one of the presentation is based on two survey papers: Blundell and
+ MaCurdy (1999) and Keane (2011).
+ Blundell and MaCurdy (1999) provides a framework for understanding labor
+ supply.
+ And Keane (2011) gives the most updated summary of the empirical results
+ on the estimation of labor supply elasticities.
+\end_layout
+
+\begin_layout Itemize
+Estimation of labor supply elasticities is crucial for examining the costs
+ and benefits of tax polices and welfare transfers.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tax policies: federal income taxes, state income taxes, social security
+ tax, health and insurance taxes, etc.
+\end_layout
+
+\begin_layout Itemize
+Welfare transfers to low income families: Aid to Families with Dependent
+ Children (AFDC), Food Stamp Program (FSP), Supplemental Security Income
+ (SSI), Housing Assistance, Medicaid, Earned Income Tax Credit (EITC), etc.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Other survey papers are also useful for this topic: Heckman and Killingsworth
+ (1986), Moffit (2003), Pancavel (1986), Saez, Slemrod, and Giertz (2012).
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Four Additional Papers
+\end_layout
+
+\begin_layout Itemize
+Although studying the elasticities of labor supply is important, it is not
+ the only focus of the research on labor supply.
+\end_layout
+
+\begin_layout Itemize
+Studying labor supply could also help us to better understand people's lifecycle
+ decision making on, e.g.
+ human capital investment, marriage, fertility, retirement, etc and issues
+ on intra and inter-household inequality.
+\end_layout
+
+\begin_layout Itemize
+Therefore, we discuss four interesting papers in addition to the survey
+ papers: Blundell, Chiaporri, Magnac, and Meghir (2007), Lise and Seitz
+ (2011), Keane and Wolpin (1997) and Keane and Wolpin (2010).
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Recent Empirical Trends
+\end_layout
+
+\begin_layout BeginFrame
+Participation Rates
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/ParticipationRate.png
+	scale 50
+	BoundingBox -50bp 0bp 546bp 405bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Data source: IPUMS-CPS
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Hours of Work
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/AnnualHours.png
+	scale 50
+	BoundingBox -50bp 0bp 546bp 405bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Data source: IPUMS-CPS
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Real Wages
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/HourWage.png
+	scale 50
+	BoundingBox -50bp 0bp 546bp 405bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Data source: IPUMS-CPS
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+A Theoretical Framework and Elasticities
+\end_layout
+
+\begin_layout BeginFrame
+The Static Labor Supply Model
+\end_layout
+
+\begin_layout Itemize
+A worker's utility maximization problem is:
+\begin_inset Formula 
+\[
+\underset{C_{t},L_{t}}{\max\ }U(C_{t},L_{t},X_{t})
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $C_{t}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ are within-period consumption, leisure hours and individual attributes,
+ in period 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Subject to the 
+\begin_inset Quotes eld
+\end_inset
+
+full income
+\begin_inset Quotes erd
+\end_inset
+
+ budget constraint:
+\begin_inset Formula 
+\[
+C_{t}+W_{t}L_{t}=Y_{t}+W_{t}T
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $W_{t}$
+\end_inset
+
+ is hourly wage rate, 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+ is non-labor income, 
+\begin_inset Formula $T$
+\end_inset
+
+ is the total time available.
+ 
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Marshallian Elasticity of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+FOCs for an interior solution: 
+\begin_inset Formula 
+\begin{eqnarray*}
+U_{C}(C_{t},L_{t},X_{t}) & = & \lambda_{t}\\
+U_{L}(C_{t},L_{t},X_{t}) & = & \lambda_{t}W_{t}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+An equivalent representation of the FOCs is:
+\begin_inset Formula 
+\[
+\frac{U_{C}(C_{t},L_{t},X_{t})}{U_{L}(C_{t},L_{t},X_{t})}=\frac{1}{W_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Solving the FOCs yields the Marshallian demand functions for consumption
+ and leisure:
+\begin_inset Formula 
+\begin{eqnarray*}
+C_{t}^{M*} & = & C^{M}(W_{t},Y_{t},X_{t})\\
+L_{t}^{M*} & = & L^{M}(W_{t},Y_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Marshallian Elasticity of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+The Marshallian labor supply function is:
+\begin_inset Formula 
+\begin{eqnarray*}
+H_{t}^{M*} & = & T-L^{M}(W_{t},Y_{t},X_{t})\\
+ & \equiv & H^{M}(W_{t},Y_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Marshallian (uncompensated) elasticity of labor supply is defined as:
+\begin_inset Formula 
+\[
+E_{t}^{M}=\frac{\partial\ln H^{M}(W_{t},Y_{t},X_{t})}{\partial\ln(W_{t})}\biggl|_{Y_{t}=\bar{Y}_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Hicksian Elasticity of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+A dual problem for a worker is the expenditure minimization problem:
+\begin_inset Formula 
+\[
+\underset{C_{t},L_{t}}{\min}\ C_{t}+W_{t}L_{t}
+\]
+
+\end_inset
+
+subject to a given utility level:
+\begin_inset Formula 
+\[
+U(C_{t},L_{t},X_{t})=U_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Solving the minimization problem gives the Hicksian demand functions for
+ consumption and leisure:
+\begin_inset Formula 
+\begin{eqnarray*}
+C_{t}^{H*} & = & C^{M}(W_{t},U_{t},X_{t})\\
+L_{t}^{H*} & = & L^{M}(W_{t},U_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Hicksian Elasticity of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+The Hicksian labor supply function is:
+\begin_inset Formula 
+\begin{eqnarray*}
+H_{t}^{H*} & = & T-L^{M}(W_{t},U_{t},X_{t})\\
+ & \equiv & H^{H}(W_{t},U_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Hicksian (compensated) elasticity of labor supply is defined as:
+\begin_inset Formula 
+\[
+E_{t}^{H}=\frac{\partial\ln H^{H}(W_{t},U_{t},X_{t})}{\partial\ln W_{t}}\Biggl|_{U_{t}=\bar{U}_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Elasticities of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+Two concepts of the elasticity of labor supply in the static model: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The Marshallian elasticity of labor supply: 
+\begin_inset Formula 
+\[
+E_{t}^{M}=\frac{\partial\ln H^{M}(W_{t},Y_{t},X_{t})}{\partial\ln(W_{t})}\biggl|_{Y_{t}=\bar{Y}_{t}}
+\]
+
+\end_inset
+
+is the percentage change in worker's hours of work when the wage rate increases
+ by 1%, holding the amount of 
+\series bold
+non-labor income
+\series default
+ constant.
+\end_layout
+
+\begin_layout Itemize
+The Hicksian elasticity of labor supply:
+\begin_inset Formula 
+\[
+E_{t}^{H}=\frac{\partial\ln H^{H}(W_{t},U_{t},X_{t})}{\partial\ln W_{t}}\Biggl|_{U_{t}=\bar{U}_{t}}
+\]
+
+\end_inset
+
+is the percentage change in worker's hours of work when the wage rate increases
+ by 1%, holding the 
+\series bold
+utility level
+\series default
+ constant.
+\end_layout
+
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Relative Size of Elasticities of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+What about the relative size of the two elasticities?
+\end_layout
+
+\begin_layout Itemize
+From:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+H^{H}(W_{t},U_{t},X_{t})=H^{M}(W_{t},e(W_{t},U_{t},X_{t}),X_{t})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+We can derive the Slutsky equation:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\frac{\partial H^{H}(W_{t},U_{t},X_{t})}{\partial W_{t}}=\frac{\partial H^{M}(W_{t},e(W_{t},U_{t},X_{t}),X_{t})}{\partial W_{t}}-\frac{\partial H^{M}(W_{t},e(W_{t},U_{t},X_{t}),X_{t})}{\partial Y_{t}}H_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Slutsky equation in elasticity form is:
+\size small
+
+\begin_inset Formula 
+\[
+\underset{Hicksian}{\underbrace{\frac{\partial\ln H^{H}(W_{t},U_{t},X_{t})}{\partial\ln W_{t}}}}=\underset{Marshallian}{\underbrace{\frac{\partial\ln H^{M}(W_{t},Y_{t},X_{t})}{\partial\ln W_{t}}}}-\underset{Income\ effect}{\underbrace{\frac{\partial\ln H^{M}(W_{t},Y_{t},X_{t})}{\partial\ln Y_{t}}\frac{H_{t}W_{t}}{Y_{t}}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So if leisure is a normal good, we have:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{H}>E_{t}^{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+The Dynamic Model of Labor Supply
+\end_layout
+
+\begin_layout Itemize
+A full lifecycle model is characterized by a utility function of the form:
+\begin_inset Formula 
+\[
+U(C_{1},L_{1},X_{1},...,C_{T},L_{T},X_{T})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This full model is empirically intractable, so all studies assume some form
+ of separability in time:
+\begin_inset Formula 
+\[
+\tilde{U}(U(C_{1},L_{1},X_{1}),...,U(C_{T},L_{T},X_{T}))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Subject to the intertemporal budget constraint:
+\begin_inset Formula 
+\[
+A_{t+1}=(1+r_{t})A_{t}+W_{t}H_{t}+Y_{t}-C_{t}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $A_{t}$
+\end_inset
+
+ is the real value of assets and 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+ is the real rate of return earned on assets.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Two-Stage Budgeting
+\end_layout
+
+\begin_layout Itemize
+The dynamic problem can be broken down into two sub-problems:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+(Stage 2) In each subperiod, the agent maximizes the period utility as follows:
+\begin_inset Formula 
+\begin{gather*}
+\underset{C_{t},L_{t}}{\max}U(C_{t},L_{t},X_{t})\\
+s.t.\ C_{t}+W_{t}L_{t}=W_{t}T+Y_{t}+(1+r_{t})A_{t}-A_{t+1}\\
+\equiv W_{t}T+Y_{t}^{C}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Notice that this looks exactly the same as in the static case, only except
+ that 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+ is replaced by 
+\begin_inset Formula $Y_{t}^{C}$
+\end_inset
+
+.
+ So the within-period marginal rate of substitution conditions continue
+ to characterize behavior.
+\end_layout
+
+\begin_layout Itemize
+(Stage 1) Choose the optimal 
+\begin_inset Formula $Y_{t}^{C}$
+\end_inset
+
+ for each period.
+\end_layout
+
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Marshallian and Hicksian Elasticities in the Dynamic Setting
+\end_layout
+
+\begin_layout Itemize
+The Marshallian elasticity can be derived in the same way as in the static
+ framework.
+ The only difference here is to condition on 
+\begin_inset Formula $Y_{t}^{C}$
+\end_inset
+
+ instead of 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+And the Hicksian elasticity can be recovered through the Slutsky equation.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+The Recursive Representation
+\end_layout
+
+\begin_layout Itemize
+Representing the problem by using the Bellman Equation:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{gather*}
+V(A_{t})=\underset{C_{t},L_{t}}{\max}[U(C_{t},L_{t},X_{t})+\kappa V(A_{t+1})]\\
+s.t.\ A_{t+1}=(1+r_{t})A_{t}+W_{t}H_{t}+Y_{t}-C_{t}
+\end{gather*}
+
+\end_inset
+
+
+\size default
+where 
+\begin_inset Formula $\kappa$
+\end_inset
+
+ is a discount factor.
+\end_layout
+
+\begin_layout Itemize
+FOCs:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray}
+U_{C}(C_{t},L_{t},X_{t}) & = & \lambda_{t}\label{eq:U_c_Euler}\\
+U_{L}(C_{t},L_{t},X_{t}) & = & \lambda_{t}W_{t}\label{eq:U_L_Euler}\\
+\kappa V'(A_{t+1}) & = & \lambda_{t}\label{eq:E_A_Euler}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Envelop Theorem implies:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+V'(A_{t})=\lambda_{t}(1+r_{t})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Frisch Elasticities
+\end_layout
+
+\begin_layout Itemize
+Combining Equation (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E_A_Euler"
+
+\end_inset
+
+) and the Envelop Theorem condition gives the Euler condition:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\lambda_{t}=\kappa(1+r_{t+1})\lambda_{t+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Beside the Euler equation, the other FOCs are the same as in the static
+ case.
+ The Euler equation determines how to allocate wealth across periods.
+\end_layout
+
+\begin_layout Itemize
+Solving the FOCs (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:U_c_Euler"
+
+\end_inset
+
+) and (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:U_L_Euler"
+
+\end_inset
+
+) (two equations and two unknowns) gives Frisch demand functions for consumption
+ and leisure:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+C_{t}^{F*} & = & C^{F}(W_{t},\lambda_{t},X_{t})\\
+L_{t}^{F*} & = & C^{F}(W_{t},\lambda_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\size default
+in which the marginal utility of wealth parameter serves as the sufficient
+ statistic which captures all the information from other periods that is
+ needed to solve the current period maximization problem.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Frisch Elasticities
+\end_layout
+
+\begin_layout Itemize
+And the Frisch labor supply function is:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+H_{t}^{F*} & = & T-C^{F}(W_{t},\lambda_{t},X_{t})\\
+ & = & H^{F}(W_{t},\lambda_{t},X_{t})
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Frisch elasticity of labor supply is defined as:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{F}=\frac{\partial\ln H^{F}(W_{t},\lambda_{t},X_{t})}{\partial\ln W_{t}}\Biggl|_{\lambda_{t}=\bar{\lambda}_{t}}
+\]
+
+\end_inset
+
+
+\size default
+which is the percentage change in worker's hours of work when the wage rate
+ increases by 1%, holding the 
+\series bold
+marginal utility of wealth
+\series default
+, 
+\begin_inset Formula $\lambda_{t}$
+\end_inset
+
+, constant.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+The Euler Condition
+\end_layout
+
+\begin_layout Itemize
+Recall the Euler Equation is:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\kappa(1+r_{t+1})\lambda_{t+1}=\lambda_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This implies a time path for 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\size footnotesize
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\ln\lambda_{t} & = & \ln\lambda_{t-1}-\ln\kappa(1+r_{t})\\
+ & \equiv & \ln\lambda_{t-1}+b_{t}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Repeating substitution yields:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+\ln\lambda_{t}=\sum_{j=1}^{t}b_{j}+\ln\lambda_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Therefore, holding 
+\begin_inset Formula $\lambda_{t}$
+\end_inset
+
+ constant is the same as holding the initial level of the marginal utility
+ of wealth, 
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+, constant.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Three Definitions of Elasticities in the Dynamic Model
+\end_layout
+
+\begin_layout Itemize
+Marshallian elasticity of labor supply holds the 
+\series bold
+consumption-based income variable
+\series default
+, 
+\begin_inset Formula $Y_{t}^{C}$
+\end_inset
+
+, constant:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{M}=\frac{\partial\ln H^{M}(W_{t},Y_{t}^{C},X_{t})}{\partial\ln(W_{t})}\biggl|_{Y_{t}^{C}=\bar{Y}_{t}^{C}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Hicksian elasticity of labor supply holds the 
+\series bold
+period utility level,
+\series default
+ 
+\begin_inset Formula $U_{t},$
+\end_inset
+
+ constant:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{H}=\frac{\partial\ln H^{H}(W_{t},U_{t},X_{t})}{\partial\ln W_{t}}\Biggl|_{U_{t}=\bar{U}_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Frisch elasticity of labor supply holds the 
+\series bold
+marginal utility of wealth
+\series default
+, 
+\begin_inset Formula $\lambda_{t},$
+\end_inset
+
+ constant:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{F}=\frac{\partial\ln H^{F}(W_{t},\lambda_{t},X_{t})}{\partial\ln W_{t}}\Biggl|_{\lambda_{t}=\bar{\lambda}_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+MaCurdy (1981) and Browning et al.
+ (1985) show that the Frisch elasticity is the largest of the three:
+\size footnotesize
+
+\begin_inset Formula 
+\[
+E_{t}^{F}>E_{t}^{H}>E_{t}^{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Empirical Specifications
+\end_layout
+
+\begin_layout BeginFrame
+The Basic Empirical Specifications
+\end_layout
+
+\begin_layout Itemize
+A prototype empirical specification:
+\begin_inset Formula 
+\[
+\ln H_{t}=\alpha\ln W_{t}+\beta Q_{t}+e_{t}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ are parameters, 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+ is a vector of controls, and 
+\begin_inset Formula $e_{t}$
+\end_inset
+
+ is a stochastic unobservable term.
+\end_layout
+
+\begin_layout Itemize
+The interpretation of the parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ depends on the chosen vector 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Static Specifications
+\end_layout
+
+\begin_layout Itemize
+Control variables in the conventional static specification:
+\begin_inset Formula 
+\[
+\beta Q_{t}=\rho X_{t}+\theta Y_{t}
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ is a vector of 
+\begin_inset Quotes eld
+\end_inset
+
+taste shifter
+\begin_inset Quotes erd
+\end_inset
+
+ variables and 
+\begin_inset Formula $Y_{t}$
+\end_inset
+
+ is a measure of non-labor income.
+\end_layout
+
+\begin_layout Itemize
+If the static model is correct, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is the Marshallian wage elasticity.
+ But we need to assume that either the consumers behave completely myopically,
+ or the capital markets are completely constrained.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Two-Stage Budgeting Specifications
+\end_layout
+
+\begin_layout Itemize
+The Marshallian wage elasticity in the dynamic model can be estimated by
+ controlling for:
+\begin_inset Formula 
+\[
+\beta Q_{t}=\rho X_{t}+\theta Y_{t}^{C}
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $Y_{t}^{C}$
+\end_inset
+
+ is the consumption-based income measure.
+ So 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ estimates the wage effect holding the first-stage income allocation constant.
+\end_layout
+
+\begin_layout Itemize
+This captures the impact of anticipated wage movements through time, but
+ does not capture the impact of shifts of the wage profile.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Frisch Specifications
+\end_layout
+
+\begin_layout Itemize
+It can be shown that if the labor supply and consumption are explicitly
+ additive in the utility function, the Frisch elasticity of labor supply
+ can be estimated by:
+\begin_inset Formula 
+\[
+\Delta\ln H_{t}=b+\rho\Delta X_{t}+\alpha\Delta\ln W_{t}+\Delta e_{t}
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+ is individual specific fixed effect and cancelled out by using the first
+ difference.
+\end_layout
+
+\begin_layout Itemize
+Like in the two-stage budgeting specification, this is not an estimate for
+ the impact of wage variation across consumers or unanticipated shifts of
+ an individual's wage profile.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Lifecycle Specifications
+\end_layout
+
+\begin_layout Itemize
+Which elasticities are policy relevant? 
+\end_layout
+
+\begin_layout Itemize
+Many tax policies and benefit reforms can be considered as unanticipated
+ shifts in today's and all future real wages.
+\end_layout
+
+\begin_layout Itemize
+It may be more relevant to model the effect of changes in the entire wage
+ profile on 
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+ rather than holding 
+\begin_inset Formula $\lambda_{0}$
+\end_inset
+
+ fixed.
+\end_layout
+
+\begin_layout Itemize
+Assume that 
+\begin_inset Formula 
+\[
+\ln\lambda_{0}=D_{0}\psi_{0}+\sum_{j=0}^{T}\gamma_{0j}E_{0}\{\ln W_{j}\}+\theta_{0}A_{0}+a_{0}
+\]
+
+\end_inset
+
+in which 
+\begin_inset Formula $D_{0}$
+\end_inset
+
+ is a vector of demographic characteristics, and 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ is an error term.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Lifecycle Specifications
+\end_layout
+
+\begin_layout Itemize
+Then it can be shown that in this case, the control variables are:
+\begin_inset Formula 
+\[
+\beta Q_{t}=D_{0}\psi_{0}+\sum_{j=0}^{T}\gamma_{0j}E_{0}\{\ln W_{j}\}+\theta_{0}A_{0}+bt+X_{t}\rho
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The estimated wage effect, 
+\begin_inset Formula $\alpha+\gamma_{0t}$
+\end_inset
+
+, measures the effect of an exogenous shift in the wage profile.
+ 
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Econometric Issues
+\end_layout
+
+\begin_layout BeginFrame
+Econometric Issues on Estimating the Empirical Specifications
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ln H_{t}=\alpha\ln W_{t}+\beta Q_{t}+e_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Endogeneity of wages, 
+\begin_inset Formula $W_{t}$
+\end_inset
+
+, arising from the correlation with tastes for work
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+IV approach: e.g.
+ mineral prices may be correlated with wages but uncorrelated with tastes
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Endogeneity arising from simultaneity
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cannot tell whether we are estimating a labor supply curve, or demand curve
+ or just some combination of the two
+\end_layout
+
+\begin_layout Itemize
+Using raw material prices or tax rules as instruments for after-tax wages
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The treatment of taxes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Progressive tax schedule creates the issue of reverse causality
+\end_layout
+
+\begin_layout Itemize
+Progressive tax schedule creates kinks on people's budget constraint, which
+ makes solving the worker's optimization problem harder
+\end_layout
+
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Econometric Issues on Estimating the Empirical Specifications
+\end_layout
+
+\begin_layout Itemize
+Measurement error in wages and nonlabor income
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Classical measurement error will cause OLS estimates to be biased toward
+ zero
+\end_layout
+
+\begin_layout Itemize
+If wages rates are constructed by taking the ratio of annual earnings to
+ annual hours, this leads to the 
+\begin_inset Quotes eld
+\end_inset
+
+denominator bias
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Thus, the negative correlation between measured hours and the ratio wage
+ measure causes the wage coefficient to be underestimated.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Need instruments to correct for the measurement error bias
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Econometric Issues in Estimating the Static Model
+\end_layout
+
+\begin_layout Itemize
+Wages are not observed for people who choose not to work, which leads to
+ the problem of selection bias.
+\end_layout
+
+\begin_layout Itemize
+Solutions:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Heckit 
+\end_layout
+
+\begin_layout Itemize
+Control function approach
+\end_layout
+
+\begin_layout Itemize
+Explicitly modeling individual's participation decisions
+\end_layout
+
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Empirical Results on Labor Supply
+\end_layout
+
+\begin_layout BeginFrame
+Estimation Results on Labor Supply Elasticities for Males
+\end_layout
+
+\begin_layout Itemize
+Saez, Slemrod, and Giertz (2009) states: 
+\begin_inset Quotes eld
+\end_inset
+
+with some exceptions, the profession has settled on a value for the Hicksian
+ elasticity close to zero
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The mean value of the Hicksian elasticity across twenty-two studies reviewed
+ in Keane (2011) is 0.31, which is large enough to generate substantial efficienc
+y costs of taxation.
+\end_layout
+
+\begin_layout Itemize
+Among the twenty-two studies, fourteen produce relatively low estimates
+ and eight produce relatively high estimates (see the graph).
+\end_layout
+
+\begin_layout Itemize
+There is no clear connection between the methods adopted and the estimation
+ results obtained.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Estimation Results on Labor Supply Elasticities for Males
+\end_layout
+
+\begin_layout Itemize
+Instead, the divergent results may be better explained by the data used:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Among the eight large value studies, six use a direct wage measure, and
+ the other two correct for the denominator bias.
+\end_layout
+
+\begin_layout Itemize
+Eight of the fourteen use ratio wage measures, which may lead to downward
+ biased estimates.
+\end_layout
+
+\begin_layout Itemize
+The mean value of the Hicksian elasticity among studies using direct wage
+ measures is 0.43.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Keane (2011) concludes that the consensus on a small Hicksian elasticity
+ for males is not justified.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Estimation Results on Labor Supply Elasticities for Males
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/hicks_male.pdf
+	scale 60
+	BoundingBox -30bp 0bp 407bp 307bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Estimation Results on Labor Supply Elasticities for Females
+\end_layout
+
+\begin_layout Itemize
+Labor supply elasticity estimates for women are generally quite large.
+\end_layout
+
+\begin_layout Itemize
+DCDP models give uniformly large long run elasticities ranging from 2.8 to
+ 5.6.
+\end_layout
+
+\begin_layout Itemize
+The life-cycle models of Heckman and MaCurdy (1982) and Kimmel and Kniesner
+ (1998) give large Frisch elasticities: 2.35 to 3.05.
+\end_layout
+
+\begin_layout Itemize
+Cogan (1980) give large Marshallian elasticity of 0.89.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Interesting Papers: Blundell et al (2007) and Lise and Seitz (2011)
+\end_layout
+
+\begin_layout BeginFrame
+Interesting Papers on Labor Supply
+\end_layout
+
+\begin_layout Itemize
+Static models with semi-reduced form estimations: Blundell, Chiappori, Magnac
+ and Meghir (2007) and Lise and Seitz (2011)
+\end_layout
+
+\begin_layout Itemize
+Dynamic models with fully structural estimations: Keane and Wolpin (1997
+ and 2010) (See the other slides)
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Extending the Unitary Labor Supply Model
+\end_layout
+
+\begin_layout Itemize
+The standard unitary labor supply model has many limitations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The income pooling assumption is rejected in many empirical literature (e.g.
+ Thomas, 1990)
+\end_layout
+
+\begin_layout Itemize
+Cannot study intrahousehold allocation and within-household inequality
+\end_layout
+
+\begin_layout Itemize
+Policy makers are also interested in individual well-being
+\end_layout
+
+\begin_layout Itemize
+Need to study how changes in outside options would affect behaviors and
+ welfare
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A collective framework modeling household joint decisions on labor market
+ participation tends to address these limitations.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+The Collective Model
+\end_layout
+
+\begin_layout Itemize
+Use the framework in Blundell et al (2007)
+\end_layout
+
+\begin_layout Itemize
+The collective model:
+\begin_inset Formula 
+\begin{gather*}
+\underset{h^{f},h^{m},C^{f},C^{m}}{\max}\ U^{f}[1-h^{f},C^{f}]\\
+U^{m}[1-h^{m},C^{m}]\geq\bar{u}^{m}(w_{f,}w_{m},y)\\
+C=w_{f}h^{f}+w_{m}h^{m}+y\\
+0\leq h^{f}\leq1\\
+h^{m}\in\{0,1\}
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\bar{u}^{m}(w_{f},w_{m},y)$
+\end_inset
+
+ is the level of utility member 
+\begin_inset Formula $m$
+\end_inset
+
+ can achieve given 
+\begin_inset Formula $w_{f},\ w_{m},$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Solving the Collective Model
+\end_layout
+
+\begin_layout FrameSubtitle
+If Male Participates
+\end_layout
+
+\begin_layout Itemize
+Conditional on male's participation:
+\begin_inset Formula 
+\[
+U^{m}(C^{m},0)=\bar{u}^{m}(w_{f},w_{m},y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Invert the mapping 
+\begin_inset Formula $U^{m}(\cdot,0)$
+\end_inset
+
+ gives the 
+\series bold
+sharing rule:
+\begin_inset Formula 
+\[
+C^{m}=V^{m}[\bar{u}^{m}(w_{f},w_{m},y)]\equiv\Psi(w_{f},w_{m},y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Solving the Collective Model
+\end_layout
+
+\begin_layout FrameSubtitle
+If Male Participates
+\end_layout
+
+\begin_layout Itemize
+Thus member 
+\begin_inset Formula $f$
+\end_inset
+
+ 's optimization problem is:
+\begin_inset Formula 
+\begin{gather*}
+\underset{h^{f},C^{f}}{\max}\ U^{f}[1-h^{f},C^{f}]\\
+C^{f}=w_{f}h^{f}+y+w_{m}-\Psi(w_{f},w_{m},y)\\
+0\leq h^{f}\leq1
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This gives female labor supply function conditional on male's participation:
+\begin_inset Formula 
+\[
+h_{W}^{f}(w_{f},w_{m},y)=H^{f}[w_{f},y+w_{m}-\Psi(w_{f},w_{m},y)]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Thus an implication of the collective model is:
+\begin_inset Formula 
+\begin{equation}
+\frac{1-\Psi_{w_{m}}}{1-\Psi_{y}}=\frac{h_{w_{m}}^{f}}{h_{y}^{f}}=A(w_{f},w_{m},y)\label{eq:rest1_coll}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Solving the Collective Model
+\end_layout
+
+\begin_layout FrameSubtitle
+If Male Doesn't Participate
+\end_layout
+
+\begin_layout Itemize
+Conditional on male's non-participation:
+\begin_inset Formula 
+\[
+U^{m}(C^{m},1)=\bar{u}^{m}(w_{f},w_{m},y)=V_{m}^{-1}(\Psi(w_{f},w_{m},y))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Invert the mapping 
+\begin_inset Formula $U^{m}(\cdot,1)$
+\end_inset
+
+ gives the 
+\series bold
+sharing rule
+\series default
+:
+\begin_inset Formula 
+\[
+C^{m}=W^{m}[V_{m}^{-1}(\Psi(w_{f},w_{m},y))]\equiv F(\Psi(w_{f},w_{m},y))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+'s utility maximization gives the female labor supply function conditional
+ on male's non-participation:
+\begin_inset Formula 
+\[
+h_{N}^{f}(w_{f},w_{m},y)=H^{f}[w_{f},y-F(\Psi(w_{f},w_{m},y))]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+So the second implication of the collective model is:
+\begin_inset Formula 
+\begin{equation}
+\frac{-F'\Psi_{w_{m}}}{1-F'\Psi_{y}}=\frac{h_{w_{m}}^{f}}{h_{y}^{f}}=B(w_{f},w_{m},y)\label{eq:cons2_coll}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+The Participation Decision
+\end_layout
+
+\begin_layout Itemize
+The participation frontier, 
+\begin_inset Formula $L$
+\end_inset
+
+, is characterized by:
+\begin_inset Formula 
+\[
+\forall(w_{f},w_{m},y)\in L,\ \Psi(w_{f},w_{m},y)-F(\Psi(w_{f},w_{m},y))=w_{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\gamma(w_{f},y)$
+\end_inset
+
+ be the reservation wage.
+ So:
+\begin_inset Formula 
+\[
+\Psi(w_{f},\gamma(w_{f},y),y)-F(\Psi(w_{f},\gamma(w_{f},y),y))=\gamma(w_{f},y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This gives two more implications of the collective model:
+\begin_inset Formula 
+\begin{eqnarray}
+(\Psi_{y}+\gamma_{y}\Psi_{w_{m}}) & = & \frac{\gamma_{y}}{(1-F')}\label{eq:rest3_coll}\\
+\Psi_{w_{f}} & = & \frac{\gamma_{w_{f}}}{\gamma_{y}}\Psi_{y}\label{eq:rest4_coll}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Restrictions From the Collective Model
+\end_layout
+
+\begin_layout Itemize
+Four restrictions from the collective model (Equations (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rest1_coll"
+
+\end_inset
+
+) - (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rest4_coll"
+
+\end_inset
+
+)):
+\begin_inset Formula 
+\begin{eqnarray}
+\frac{1-\Psi_{w_{m}}}{1-\Psi_{y}} & = & \frac{h_{w_{m}}^{f}}{h_{y}^{f}}=A(w_{f},w_{m},y)\\
+\frac{-F'\Psi_{w_{m}}}{1-F'\Psi_{y}} & = & \frac{h_{w_{m}}^{f}}{h_{y}^{f}}=B(w_{f},w_{m},y)\\
+(\Psi_{y}+\gamma_{y}\Psi_{w_{m}}) & = & \frac{\gamma_{y}}{(1-F')}\\
+\Psi_{w_{f}} & = & \frac{\gamma_{w_{f}}}{\gamma_{y}}\Psi_{y}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The preferences and the sharing rules can be recovered up to an additive
+ constant everywhere where 
+\begin_inset Formula $h_{f}>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+In Lise and Seitz (2011), the location of the sharing rule is identified
+ by assuming that when husbands and wives have equal wages, they share resources
+ equally.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Data
+\end_layout
+
+\begin_layout Itemize
+The U.K.
+ Family Expenditure Surveys from 1978 to 2001
+\end_layout
+
+\begin_layout Itemize
+Households without children: males aged between 22 and 60; females aged
+ between 35 and 60.
+\end_layout
+
+\begin_layout Itemize
+Exclude self-employed
+\end_layout
+
+\begin_layout Itemize
+Represent 10%-12% of the population of all households where the heads is
+ 23-59 years old.
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Main Findings
+\end_layout
+
+\begin_layout FrameSubtitle
+Female Labor Supply
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/table1.eps
+	BoundingBox -50bp 0bp 188bp 104bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The sign of the male wage effect on female labor supply changes with the
+ husband's work status.
+ 
+\end_layout
+
+\begin_layout Itemize
+The female wage effect is lower when the husband works than when the husband
+ does not work.
+ 
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Main Findings
+\end_layout
+
+\begin_layout FrameSubtitle
+Between and Within-Household Consumption Inequality
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename figures/inequality.pdf
+	scale 80
+	BoundingBox -50bp 0bp 314bp 236bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\start_of_appendix
+Appendix
+\end_layout
+
+\begin_layout BeginFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
+References
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{thebibliography}{10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Blundell2007} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Blundell, Richard, Pierre-Andre Chiappori, Thierry Magnac, and Costas Meghir.
+ "Collective labour supply: Heterogeneity and non-participation." The Review
+ of Economic Studies 74, no.
+ 2 (2007): 417-445.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Blundell1999} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Blundell, Richard, and Thomas MaCurdy.
+ "Labor supply: A review of alternative approaches." Handbook of labor economics
+ 3 (1999): 1559-1695.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Cogan1980} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Cogan, John.
+ "Fixed costs and labor supply." (1980).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Heckman1986} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Killingsworth, Mark R., and James J.
+ Heckman.
+ "Female labor supply: A survey." Handbook of labor economics 1, no.
+ 1 (1986): 103-204.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Heckman1982}  
+\end_layout
+
+\begin_layout Plain Layout
+
+Heckman, James J., and Thomas MaCurdy.
+ "Corrigendum on a life cycle model of female labour supply." The Review
+ of Economic Studies 49, no.
+ 4 (1982): 659-660.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Keane2011}     
+\end_layout
+
+\begin_layout Plain Layout
+
+Keane, Michael P.
+ "Labor supply and taxes: A survey." Journal of Economic Literature 49, no.
+ 4 (2011): 961-1075.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Keane1997}
+\end_layout
+
+\begin_layout Plain Layout
+
+Keane, Michael P., and Kenneth I.
+ Wolpin.
+ "The career decisions of young men." Journal of political Economy 105, no.
+ 3 (1997): 473-522.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Keane2010}
+\end_layout
+
+\begin_layout Plain Layout
+
+Keane, Michael P., and Kenneth I.
+ Wolpin.
+ "THE ROLE OF LABOR AND MARRIAGE MARKETS, PREFERENCE HETEROGENEITY, AND
+ THE WELFARE SYSTEM IN THE LIFE CYCLE DECISIONS OF BLACK, HISPANIC, AND
+ WHITE WOMEN*." International Economic Review 51, no.
+ 3 (2010): 851-892.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Kimmel1998}
+\end_layout
+
+\begin_layout Plain Layout
+
+Kimmel, Jean, and Thomas J.
+ Kniesner.
+ "New evidence on labor supply:: Employment versus hours elasticities by
+ sex and marital status." Journal of Monetary Economics 42, no.
+ 2 (1998): 289-301.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Lise2011}
+\end_layout
+
+\begin_layout Plain Layout
+
+Lise, Jeremy, and Shannon Seitz.
+ "Consumption inequality and intra-household allocations." The Review of
+ Economic Studies 78, no.
+ 1 (2011): 328-355.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Moffitt2003} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Moffitt, Robert A.
+ "Welfare programs and labor supply." Handbook of public economics 4 (2002):
+ 2393-2430.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Pencavel1986}
+\end_layout
+
+\begin_layout Plain Layout
+
+Pencavel, John.
+ "A cohort analysis of the association between work hours and wages among
+ men." Journal of Human Resources (2002): 251-274.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Saez2012}
+\end_layout
+
+\begin_layout Plain Layout
+
+Saez, Emmanuel, Joel Slemrod, and Seth H.
+ Giertz.
+ "The elasticity of taxable income with respect to marginal tax rates: A
+ critical review." Journal of Economic Literature 50, no.
+ 1 (2012): 3-50.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibitem{Thomas1990}
+\end_layout
+
+\begin_layout Plain Layout
+
+Thomas, Duncan.
+ "Intra-household resource allocation: An inferential approach." Journal
+ of human resources (1990): 635-664.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{thebibliography}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
