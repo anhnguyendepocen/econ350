@@ -1,0 +1,41 @@
+\documentclass{beamer}
+
+%Packages
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{tabularx,ragged2e,booktabs}
+\usepackage{caption}
+\usepackage{hyphenat}
+\usepackage{fixltx2e}
+\usepackage[para]{threeparttable}
+\usepackage[capposition=top]{floatrow}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{natbib}
+\usepackage{rotating}
+
+%Commands
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\equald}{\ensuremath{\overset{d}{=}}}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+
+\mode<presentation>
+	{
+	\usetheme{UChicagoJorge}
+	\setbeamercovered{transparent = 28}
+	}
+
+%\usecolortheme{UChicagoJorge} 
+%\useinnertheme{UChicagoJorge}
+%\useoutertheme{UChicagoJorge}

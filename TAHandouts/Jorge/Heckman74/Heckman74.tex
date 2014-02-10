@@ -1,0 +1,136 @@
+%Input premable
+\input{beamerHelperFilesUChicagoJorge}
+
+\title{Prices, Market Wages, and Labor Supply}
+\subtitle{James J. Heckman (1974), Econometrica}
+\author{Econ 350\institute{The University of Chicago, Economics}}
+
+\begin{document}
+
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+
+\AtBeginSection[]
+{
+   \begin{frame}
+       \frametitle{Outline}
+       \tableofcontents[currentsection]
+   \end{frame}
+}
+
+\section{About the paper}
+
+\begin{frame}
+	\frametitle{About the paper}
+		\begin{itemize}
+ 			\item Pretty cool paper
+ 			\item Why?
+ 				\begin{itemize}
+ 					\item Models wage rates, hours worked and the decision to work all together! 
+ 					\item First time someone did this in the field!
+ 					\item Specially important for women's labor supply
+ 				\end{itemize}
+ 			\item How?
+ 				\begin{itemize}
+ 					\item Focus on women's labor supply
+ 					\item Derives a common set of parameters which underlie the functions determining 
+ 					\begin{enumerate}
+ 						\item the probability that a woman works
+ 						\item her hours of work
+ 						\item her observed wage rate
+ 						\item her asking wage rate or shadow price of time
+ 					\end{enumerate}
+ 				\end{itemize}
+ 		\end{itemize}
+\end{frame}
+
+\section{Model}
+
+\begin{frame}
+	\frametitle{Wages}
+		\begin{itemize}
+			\item Shadow wage (value of marginal units of wife's time in household production and consumption) function depends on
+				\begin{itemize}
+					\item hours of work (time in no-market activities, $h$
+					\item wage of husband, $W_{m}$
+					\item vector of goods prices, $P$
+					\item asset income of the household, $A$
+					\item constraints from previous economic decision, $Z$ (e.g., number of children)
+					\begin{equation}
+						W^* = g \left( h, W_{m}, P, A, Z \right)
+					\end{equation}
+				\end{itemize}
+			\item Market wage depends on
+				\begin{itemize}
+					\item Education, $E$
+					\item Experience, $S$
+						\begin{equation}
+							W = B (E,S)
+						\end{equation}
+				\end{itemize}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Decision}
+		\begin{itemize}
+			\item Assume that the woman is free to adjust her working hours
+			\begin{itemize}
+				\item If she works
+					\begin{equation}
+						W = W^*
+					\end{equation}
+				\item If she does not work
+					\begin{equation}
+						W^* \geq W
+					\end{equation}
+			\item Interpret hours of work as a slack variable
+				\begin{equation}
+					h \left( W^* - W \right) = 0
+ 				\end{equation}
+			\end{itemize}
+		\end{itemize}
+\end{frame}	
+
+\section{Estimation}
+	\begin{frame}
+		\frametitle{Estimation}
+			\begin{itemize}
+				\item Let $l(\cdot)$ be some strictly increasing transformation so that
+					\begin{eqnarray}
+						l(W_{i}^*) &=& \beta_{0} + \beta_{1}h_{i} + \beta_{2} W_{mi} + \beta_{3} P_{i} + \beta_{4} A_{i} + \beta_{5} Z_{i} + \varepsilon_{i} \nonumber \\
+						l(W_{i}) &=& b_{0} + b_{1} S_{i} + b_{2} E_{i} + u_{i} 
+					\end{eqnarray}
+				\item If $W^* > W$ at zero hours of work, the reduced form equations for observed wages and hours is
+				\begin{eqnarray}
+				h_{i} &=& \frac{1}{\beta_{1}} ( b_{0} - \beta_{0} + b_{1} S_{i} + b_{2} E_{i} - \beta_{2} W_{mi} \nonumber \\
+				&-& \beta_{3} P_{i} - \beta_{4} A_{i} - \beta_{3} Z_{i} ) + \frac{u_{i} - \varepsilon_{i}}{\beta_{1}} \nonumber \\
+				l(W_{i}) &=& b_{0} + b_{1} S_{i} + b_{2} E_{i} + u_{i} 
+				\end{eqnarray}
+			\end{itemize}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{Estimation, contd 1}
+		\begin{itemize}
+			\item If there are $T$ women and $K$ work, it is possible to estimate the parameters of interest maximizing
+			\begin{eqnarray}
+				L(\cdot) &=& \prod _{i=1} ^{K} j \left( h_{i}, l(W_{i}) | (W_{i} > W_{i}^* )_{h = 0}\right) \cdot \Pr \left[ (W_{i} > W_{i}^* )_{h = 0} \right] \nonumber \\ 
+				&\times& \prod _{i=K+1} ^{T} \Pr \left[ (W_{i} < W_{i}^* )_{h = 0} \right]
+			\end{eqnarray}
+		\end{itemize}
+\noindent where $j(\cdot)$ is the conditional joint distribution of $h_{i}, l(W_{i})$
+	\begin{itemize}
+		\item How?
+			\begin{enumerate}
+				\item Assume that $\varepsilon, u_{i}$ are i.i.d. joint normal
+				\item Use Yike's results on normality to simplify expressions (this is joint censored distribution)
+			\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+
+\end{document}
