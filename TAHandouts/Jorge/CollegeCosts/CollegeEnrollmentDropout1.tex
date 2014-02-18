@@ -57,9 +57,9 @@
 \begin{frame}
 	\frametitle{Motivation}
 		\begin{itemize}
-			\item The authors motivate their work claiming that inequality perpetuates and exacerbates as follows:
+			\item The authors motivate their work claiming that inequality perpetuates and exacerbates as follows in the U.S.:
 				\begin{enumerate}
-					\item Large fraction of every cohort that enrolls in for year U.S. colleges drops out
+			\item Large fraction of every cohort that enrolls in colleges drops out
 			\item High concentration of dropouts among students from lower-income families
 			\item Students from low-income families drop out earlier than students from high-income families
 			\item Less low-income individuals graduate from college
@@ -128,7 +128,7 @@
 		\item Based on Miao and Wang (2007): framework of entrepreneurial learning and analysis
 		\item Add relevant ingredients of dropout decision:
 			\begin{enumerate}
-				\item Wage profile: depends on experience and college graduation (and corresponding interaction
+				\item Wage profile: depends on experience and college graduation (and corresponding interaction)
 				\item Include information unfolding through learning about unobserved ability in college
 			\end{enumerate}
 	\end{itemize}
@@ -157,17 +157,17 @@
 					\item Prior on ability, $\Pr(\mu = 1 | t = 0) = p(0) \equiv p_{0}$
 					\item Either enrolled in college (full-time) or working (in low-skilled or high-skilled sector)
 					\item High-skill sector only hires high-skilled workers with college degrees
-					\item Work: absorbing state
 				\end{enumerate}
-					\item Wage function:
-						\begin{eqnarray}
-							\tilde{w} \left( \mu, \tau \right)
+			\item Work: absorbing state
+			\item Wage function:
+				\begin{eqnarray}
+						\tilde{w} \left( \mu, \tau \right)
 							\begin{cases}
 								w(\tau) &,  \tau > 0 \\
 								w_{0}    &,  \tau = 0, \mu = 0 \\
 								w_{1}   &,  \tau = 0, \mu = 1 
 							\end{cases} 
-						\end{eqnarray}
+				\end{eqnarray}
 \noindent with $\tau = T - t, w_{0} \equiv w(0) < w_{1}$; $\tau_{0} > \tau_{1} \Leftrightarrow w_{1} > w_{0}$. 
 		\end{itemize}
 \end{frame}
@@ -186,7 +186,7 @@
 		\begin{itemize}
 			\item $c$, consumption
 			\item $a$, per-unit of time cost of college
-			\item $\rho$, discount factor; $r$, interest rate
+			\item $\rho$, discount rate; $r$, interest rate
 			\item $\gamma$, CRRA parameter
 			\item $\lambda_{1}$, probability of getting an excellent grade for high ability student
 			\item $\lambda_{0}$, probability of getting a failing grade for low ability student
@@ -404,12 +404,476 @@
 					\begin{equation}
 					\forall \ \bar{\tau} \in \mathbb{R}_{++}, \Pr \{ \tau^* \leq \bar{\tau} | x_{0}^i, p_{0}, \mu \} = \Pr \{ \tau^* \leq \bar{\tau} | x_{0}^j, p_{0}, \mu \}
 					\end{equation}
-					\item Intuition: given a skill level. $\mu$, and a initial belief, $p_{0}$, richer students drop out later (and have longer expected tenures!)
+					\item Meaning: given a skill level. $\mu$, and a initial belief, $p_{0}$, richer students drop out later (and have longer expected tenures!)
+					\item Intuition:
+						\begin{itemize}
+							\item Cannot diversify uncertainty related to the outcomes of college education
+							\item College is riskier than the risk-free asset!
+							\item CCRA: risk aversion is decreasing in wealth
+							\item Students with more wealth invest more is riskier projects
+						\end{itemize}
 					\item Corollary: once condition on ability type and prior belief richer students are more likely to graduate from college
+					\item Robust? Results hold for HARA utility iff the risk aversion parameter is decreasing in wealth
 				\end{itemize}
 		\end{itemize}
 \end{frame}
 
 \section{Trachter, 2014}
+
+\begin{frame}
+	\frametitle{Paper}
+		\begin{itemize}
+			\item Stepping Stone and Option Value in a Model of Post-Secondary Education
+			\item 2014
+			\item Nicholas Trachter (FRB-Richmond)
+			\item R\&R QE
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Overview}
+		\begin{itemize}
+			\item Dynamic model of the student's  decision to switch from a 2-year (community) college to a 4-year college
+			\begin{enumerate}
+				\item Learn about uncertain educational outcomes
+				\item Drop out or transfer to more rewarding schools
+				\item Carry a fraction of the accumulated human capital
+			\end{enumerate}
+			\item Community college as a ``stepping stone'' which provides
+				\begin{enumerate}
+					\item Leaning
+					\item Transferable human capital
+				\end{enumerate}
+			\item Analogous to Jovanovic and Nyarko (1997), workers move up in the work ladder once they acquire skills
+			\item Main findings:
+				\begin{enumerate}
+					\item Option value (of transferring/dropping) explains a large part of the returns to school enrollment
+					\item Enrollment in community college is driven by the option to ``transfer up''
+					\item The value of the stepping stone itself is small
+				\end{enumerate}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation}
+		\begin{itemize}
+			\item Based on facts of the NLS-72		
+		\begin{figure}[H] 
+			\caption*{}
+			\centering
+			\includegraphics[width=1.5in, height=2in]{Figures/T/table1.png}
+		\end{figure}
+		
+			\item Interesting fact: $56\%$ of students who transfer from community colleges to colleges graduate		
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation, contd 1}
+			\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=2.5in, height=2.5in]{Figures/T/table2.png}
+			\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Motivation, contd 2}
+		\begin{itemize}
+			\item Why is community college a stepping stone?
+				\begin{enumerate}
+					\item Provides a less risky investment (than college) to learn about abilities
+				\end{enumerate}
+			\item Although empirically (almost) irrelevant, the model also allows for ``bandit steps''
+				\begin{itemize}
+					\item Enroll in the hardest step and move down the ladder
+					\item Johnson (1978), Miller (1984)
+				\end{itemize}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Primitives}
+		\begin{itemize}
+			\item Discrete time, infinite horizon; $t \in [0, \infty]$
+			\item $\gamma$, CARA coefficient; $r$, interest/discount rate
+			\item At $t=0$
+				\begin{enumerate}
+					\item Initial level of assets, $a_{0}$
+					\item Unobserved ability to acquire human capital, $\mu \in \{0,1\}$
+					\item Prior on ability, $\Pr(\mu = 1|t=0) = p(0) \equiv p_{0}$
+				\end{enumerate}	
+			\item The agent either
+				\begin{enumerate}
+					\item Works, $W$
+					\item Four-year college, $C$
+					\item Two-year college, $A$
+				\end{enumerate}
+			\item School credits, $s$
+			\item Time before graduation tied to credit accumulation: $T^C > T^A$
+			\item Evolution of credits tied to signals, $\eta \in \mathcal{H}$
+			\item $\eta \sim f_{i}(\eta|\mu)$ for $i = A,C$ satisfies the MLRP
+			\item Per-unit of time tuition: $\tau^C > \tau^A$
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Primitives contd 1}
+		\begin{itemize}
+			\item Working: absorbing state
+			\item Wage function:
+				\begin{eqnarray}
+					h(GS, i, \mu) = 
+						\begin{cases}
+							h^w &, GS = 0 \\
+							h^i(\mu) &, GS =1
+						\end{cases}
+				\end{eqnarray}
+\noindent with $GS = \mathbf{1}(\text{gradiation})$; $h^i (1) \geq h^i (0)$ for $i = C,A$ and $h^C(\mu) \geq h^A(\mu)$ for $\mu = 0,1$
+			\item Evolution of assets
+				\begin{eqnarray}
+					a_{t+1} =
+						\begin{cases}
+							(1 + r)a_{t} + h(GS,i,\mu) - c_{t} &, \text{if working} \\
+							(1+r)a_{t} - \tau^i - c_{t} &, \text{if enrolled in i}  \label{eq:a}
+						\end{cases}
+				\end{eqnarray}
+				\item No borrowing constraints!
+			\end{itemize}							
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Primitives contd 2}
+		\begin{itemize}
+			\item Evolution of credits
+				\begin{equation}
+					s' = s + \tilde{\Omega} (\eta, s)
+				\end{equation}
+\noindent with
+				\begin{eqnarray}
+					 \tilde{\Omega} (\eta, s) = 
+					 	\begin{cases}
+					 		\Omega(\eta) &, s < T^i \\
+					 		0 &, s \geq T^i
+					 	\end{cases}
+				\end{eqnarray}
+			\item Accumulation of credit is only a function of current signal
+			\item Current signal has positive correlation with ability (MLRP)
+			\item High-grade students accumulate at least as much credits as low-grade student: $\Omega(\eta_{1}) \geq \Omega(\eta_{2}) \Leftrightarrow \eta_{1} \geq \eta_{2}$
+		\end{itemize}		 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Primitives contd 3}
+		\begin{itemize}
+			\item Credits map \ldots for $i \neq j$ and $I = [A,C]$
+				\begin{equation}
+					\theta^i (s): \mathbb{R}_{+} \times I \rightarrow [0,T^j]
+				\end{equation}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Student's Problem (Sequential)}
+		\begin{itemize}
+			\item Choose $c(t)$ and either to enroll, dropout, or transfer in $A,C$ to maximize
+		\begin{equation}
+			\mathbb{E} \left\{ \sum \limits _{t=0} ^{\infty}  \frac{\exp ^{- \gamma c_{t} -} - 1}{- \gamma} | p_{0}, a_{0}  \right\}
+		\end{equation}
+\noindent s.t. \eqref{eq:a} holds
+		\item CARA utility: order of risky projects is independent of financial wealth
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Worker's Value Function}
+		\begin{itemize}
+			\item \ldots defined as
+		\begin{equation}
+			W(a;h) = max_{a',c} = \frac{\exp ^{- \gamma c_{t} -} - 1}{- \gamma} + \frac{1}{1 + r} W(a';h)
+		\end{equation}
+\noindent with a' = (1 + r)a + h - c
+			\item Use the FOC and solve to get
+		\end{itemize}
+			\begin{equation}
+				W(a; h(GS, i, \mu)) = - \frac{1+r}{\gamma r} \exp^ {- \gamma (ra +  h(GS, i, \mu) )} + \frac{1+r}{\gamma r}			
+			\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Beliefs and Governing CDF}
+		\begin{itemize}
+			\item Beliefs (use Baye's rule to obtain posterior)
+				\begin{eqnarray}
+					p ' &\equiv& b(\eta; p) \nonumber \\
+						&=& \frac{1}{1 + \frac{f_{i}(\eta|\mu=0)}{f_{i}(\eta|\mu=1)} \frac{1-p}{p}}
+				\end{eqnarray}
+			\item Expected ``governing'' CDF
+				\begin{equation}
+					H_{i}(\eta, p) = p F_{i} (\eta | \mu = 1) + (1 - p) F_{i} (\eta | \mu = 0) 
+				\end{equation}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Student's Value Function}
+		\begin{itemize}
+			\item \ldots defined as
+				\begin{eqnarray}
+				V_{i}(a,s,p) &=& \max_{a',c} \frac{\exp ^{- \gamma c_{t} -} - 1}{- \gamma} \nonumber \\  
+				             &+& \frac{1}{1+r} \int \limits _{\eta \in \mathcal{H}} \tilde{V}_{i} (a',s',p') dH_{i}(\eta,p) \\
+				 \tilde{V}_{i} (a',s',p') &=& \max \{ W(a'; h^w), \mathbf{1}(s' < T^i) V_{i}(a',s',p') \nonumber \\ 
+				  &+& (1 - \mathbf{1}(s' < T^i)) p'W(a';h^i(1)) \nonumber \\       &+& (1 - \mathbf{1}(s' < T^i)) (1-p')W(a';h^i(0))   \nonumber \\      &,& V_{j}(a', \theta^i(s'),p')\}        
+				\end{eqnarray}
+\noindent with $i,j = A,C, i \neq j$
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, Timing}
+		\begin{figure}[H] 
+			\caption*{}
+			\centering
+			\includegraphics[width=3in, height=2.5in]{Figures/T/figure1.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Model, education pattern}
+		\begin{itemize}
+			\item Restrictions on
+				\begin{itemize}
+					\item Expected wages upon graduation
+					\item Low-skill -high-skill wage differential
+					\item Learning technology
+					\item Tuition costs
+				\end{itemize}
+			\item \ldots enable to generate the desired pattern:
+				\begin{itemize}
+					\item Low ability individuals: better-ff joining the workforce, if enrolled better-off in community college
+					\item High ability individuals: better-off joining college, if not better-off in community college than in workforce
+				\end{itemize}
+			\item Community colleges are learning mechanism:
+				\begin{enumerate}
+					\item Pessimistic agents join the workforce
+					\item Optimistic agents enroll in college
+					\item Average join community colleges 
+				\end{enumerate}
+			\item ``A pessimist is a well informed optimist'' Mario Benedetti  			
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration, Credits Map}
+		\begin{itemize}
+		\item Students who transfer from community colleges to colleges usually do so after the first year
+		\item Students who transfer from colleges to community colleges spend for time studying after high school, on average
+			\begin{eqnarray}
+				\theta^i(s) =
+				\begin{cases}
+					\theta^i s ,& \theta^i s < T^j \\
+					T^j        ,& \theta^i s \geq T^j
+				\end{cases}
+			\end{eqnarray}
+\noindent with $\theta^A = \frac{1}{2}$ and $\theta^C = 0$
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration, Signals and Credits}
+		\begin{itemize}
+		\item Signals are grades
+			\begin{enumerate}
+				\item Update beliefs
+				\item Generate credit accumulation
+				\item Fail(F), N(Neutral), Excel(E)
+			\end{enumerate}
+		\begin{eqnarray}
+			\Omega(\eta) =
+				\begin{cases}
+					0 &, \eta = F \\
+					1 &, \eta = N \\
+					1 &, \eta = E
+				\end{cases}
+		\end{eqnarray}			
+	\end{itemize}		
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration, Signals and Credits contd 1}
+		\begin{itemize}
+			\item $q_{\mu}^i(\eta)$: probability of each grade
+				\begin{itemize}
+					\item $q_{1}^A(F) = q_{0}^C(E) = 0$	
+				\end{itemize}	
+			\item hoPrior: estimate Ordered Probit on initial educational choice and construct
+				\begin{eqnarray}
+				p_{0} &=& \frac{1}{1 + \exp^{- X'\beta - \varepsilon}} \nonumber \\
+				\varepsilon &\sim& \mathcal{N}(0,1) 
+				\end{eqnarray}						 
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration, Time Periods and Interest Rates}
+		\begin{itemize}
+		\item Time is measures in quarters: $T^A = 8, T^C = 16$
+		\item Quarterly risk free interest rate $.45$
+		\item $h^w$ is the numeraire (mean wage in 1985: \$17,740l.63)
+		\item $\tau^A = .1152$; $\tau^C = .3205$
+		\item $\gamma = 8$ ($\gamma c = \sigma$)
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration, the rest}
+		\begin{itemize}
+			\item Use Conditional Indirect Inference to calibrate the remaining parameters matching enrollment moments
+				\begin{itemize}
+					\item Long-run wage (4 parameters)
+					\item Probability of dropout, transfer, and graduation (6 parameters)
+					\item
+				\end{itemize}
+			\item Claims over-identification as follows: ``educational histories greatly differ across students in the sample and I have $3,462$, the model is over-identified''
+			\item Calibration-Estimation satisfies MPLR and the structure necessary for the desired schooling pattern
+			\item Transition probabilities implies by the model resemble the data
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration-Estimation, Results}
+			\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=2in, height=1.5in]{Figures/T/table3.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration-Estimation, Results contd 1}
+			\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=3.5in, height=1in]{Figures/T/table4.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration-Estimation, Fit}
+			\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=2.5in, height=2in]{Figures/T/table5.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Calibration-Estimation, Fit}
+			\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=3.5in, height=2in]{Figures/T/figure2.png}
+			\end{figure}
+\end{frame}
+
+\begin{frame}
+		\frametitle{Counter-factual Analysis}
+		\begin{itemize}
+			\item Compute the value of
+				\begin{enumerate}
+					\item Let $\gamma \rightarrow 0$ (risk neutrality)
+					\item Rule out transfer option
+					\item Rule out transfer and dropout options 
+				\end{enumerate}
+			\item Compute the value added of each component through decomposition of enrollment returns, $R_{i}(p)$
+				\begin{eqnarray}
+					R_{i}(p) &=& \frac{\Delta_{i}(p)}{\frac{1+r}{r}h^w} \nonumber \\
+					W(a; h^w)&=& V_{i}(a - \Delta_{i}(p), 0, p)
+				\end{eqnarray}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Return Decomposition}
+		\begin{itemize}
+			\item Decompose return as value added from: transfer option + dropout option + enrollment
+			\begin{eqnarray}
+			R_{i}^{E+D+T} &=& (R_{i}^{E+D+T} - R_{i}^{E+D}) \nonumber \\
+			              &+& (R_{i}^{E+D} - R_{i}^{E}) + R_{i}^{E}
+			\end{eqnarray}
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Results}
+		\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=3in, height=1in]{Figures/T/table6.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Results contd 1}
+		\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=2.3in, height=2in]{Figures/T/figure3.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Results contd 2}
+		\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=3in, height=1in]{Figures/T/table7.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Results contd 1}
+		\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=2.3in, height=2in]{Figures/T/figure4.png}
+		\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Counter-factual Analysis, Results contd 2}
+		\begin{figure}[H] 
+				\caption*{}
+				\centering
+				\includegraphics[width=3in, height=1in]{Figures/T/table8.png}
+		\end{figure}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
