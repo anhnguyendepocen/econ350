@@ -578,7 +578,7 @@
 		\begin{itemize}
 			\item Choose $c(t)$ and either to enroll, dropout, or transfer in $A,C$ to maximize
 		\begin{equation}
-			\mathbb{E} \left\{ \sum \limits _{t=0} ^{\infty}  \frac{\exp ^{- \gamma c_{t} -} - 1}{- \gamma} | p_{0}, a_{0}  \right\}
+			\mathbb{E} \left\{ \sum \limits _{t=0} ^{\infty}  \frac{\exp ^{- \gamma c_{t}} - 1}{- \gamma} | p_{0}, a_{0}  \right\}
 		\end{equation}
 \noindent s.t. \eqref{eq:a} holds
 		\item CARA utility: order of risky projects is independent of financial wealth
@@ -590,7 +590,7 @@
 		\begin{itemize}
 			\item \ldots defined as
 		\begin{equation}
-			W(a;h) = max_{a',c} = \frac{\exp ^{- \gamma c_{t} -} - 1}{- \gamma} + \frac{1}{1 + r} W(a';h)
+			W(a;h) = max_{a',c} = \frac{\exp ^{- \gamma c_{t}} - 1}{- \gamma} + \frac{1}{1 + r} W(a';h)
 		\end{equation}
 \noindent with a' = (1 + r)a + h - c
 			\item Use the FOC and solve to get
@@ -650,7 +650,7 @@
 				\end{itemize}
 			\item \ldots enable to generate the desired pattern:
 				\begin{itemize}
-					\item Low ability individuals: better-ff joining the workforce, if enrolled better-off in community college
+					\item Low ability individuals: better-off joining the workforce, if enrolled better-off in community college
 					\item High ability individuals: better-off joining college, if not better-off in community college than in workforce
 				\end{itemize}
 			\item Community colleges are learning mechanism:
@@ -706,7 +706,7 @@
 				\begin{itemize}
 					\item $q_{1}^A(F) = q_{0}^C(E) = 0$	
 				\end{itemize}	
-			\item hoPrior: estimate Ordered Probit on initial educational choice and construct
+			\item Prior: estimate Ordered Probit on initial educational choice and construct
 				\begin{eqnarray}
 				p_{0} &=& \frac{1}{1 + \exp^{- X'\beta - \varepsilon}} \nonumber \\
 				\varepsilon &\sim& \mathcal{N}(0,1) 
@@ -719,9 +719,9 @@
 		\begin{itemize}
 		\item Time is measures in quarters: $T^A = 8, T^C = 16$
 		\item Quarterly risk free interest rate $.45$
-		\item $h^w$ is the numeraire (mean wage in 1985: \$17,740l.63)
+		\item $h^w$ is the numeraire (mean wage in 1985: \$17,740.63)
 		\item $\tau^A = .1152$; $\tau^C = .3205$
-		\item $\gamma = 8$ ($\gamma c = \sigma$)
+		\item $\gamma = 8$; ($\gamma c = \sigma$)
 		\end{itemize}
 \end{frame}
 
