@@ -149,7 +149,7 @@
 \begin{frame}
 	\frametitle{Model, Primitives}
 		\begin{itemize}
-			\item Continuous time, finite horizon; $t \in [0,T]$
+			\item Continuous time; $t \in [0,\infty]$
 			\item At $t=0$
 				\begin{enumerate}
 					\item Initial endowment, $x(0) \equiv x_{0}$
@@ -184,6 +184,7 @@
 \begin{frame}
 	\frametitle{Model, Primitives contd 2}
 		\begin{itemize}
+			\item $T$, time of graduation
 			\item $c$, consumption
 			\item $a$, per-unit of time cost of college
 			\item $\rho$, discount rate; $r$, interest rate
@@ -264,10 +265,10 @@
 				\begin{equation}
 					\rho J(x,1,\tau) = \max_{c} \frac{c^{1-\gamma}}{1 - \gamma} + J_{x}(x,1,\tau) \dot{x} + J_{\tau}(x,1,\tau) \dot{\tau}  
 				\end{equation}
-\noindent with $J(x,1,0) = J(x,1,0)$
+\noindent with $J(x,1,0) = V(x,1,0)$
 			\item First order condition
 				\begin{equation}
-					c^{1 - \gamma} = J(x,1,\tau) 
+					c^{1 - \gamma} = J_{x}(\cdot) 
 				\end{equation}
 			\item Solve to get
 				\begin{equation}
@@ -334,13 +335,13 @@
 						\end{equation}
 					\item Value Matching Condition
 						\begin{equation}
-							J(x,p^*(\cdot),\tau) = V(x,\tau,0)
+							J(x,p^*(\cdot),\tau) = V(x,0,\tau)
 						\end{equation}
 					\item Smooth Pasting Conditions
 						\begin{eqnarray}
 							J_{p}(x,p^*(\cdot),\tau) &=& 0 \\
-							J_{x}(x,p^*(\cdot),\tau) &=& V_{x}(x,\tau,0)\\
-							J_{\tau}(x,p^*(\cdot),\tau) &=& V_{\tau}(x,\tau,0)
+							J_{x}(x,p^*(\cdot),\tau) &=& V_{x}(x,0,\tau)\\
+							J_{\tau}(x,p^*(\cdot),\tau) &=& V_{\tau}(x,0,\tau)
 						\end{eqnarray}
 				\end{enumerate}
 		\end{itemize}
@@ -639,7 +640,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Model, education pattern}
+	\frametitle{Model, Education Pattern}
 		\begin{itemize}
 			\item Restrictions on
 				\begin{itemize}
@@ -726,7 +727,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Calibration, the rest}
+	\frametitle{Calibration and Estimation}
 		\begin{itemize}
 			\item Use Conditional Indirect Inference to calibrate the remaining parameters matching enrollment moments
 				\begin{itemize}
