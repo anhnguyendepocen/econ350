@@ -213,7 +213,7 @@
 \newcommand{\LogoLine}{%
   \raisebox{-12mm}[0pt][0pt]{%
    	\begin{pgfpicture}{0mm}{0mm}{0mm}{0mm}
-    	 \pgfsetlinewidth{0.28mm}
+    	 \pgfsetlinewidth{0.10mm}
     	  \color{black}
       	\pgfline{\pgfpoint{-3mm}{1mm}}{\pgfpoint{10.8cm}{1mm}}
     \end{pgfpicture}
@@ -265,17 +265,17 @@
 % Putting a logo on the title page and text beside it was quite a difficult task and to be fairly honest, my code is not effecient at all. At the very least, it is plain clumsy.
 % Though it does solve the purpose (I hate to use this phrase) it is neither "neat" nor "cool".
 % Anyway, let's see how we went about it.
-% For the title page, we needed a logo on the left, a vertical separater line, and finally a place for the title, author, date etc. 
+% For the title page, we needed a logo on the left, a vertical separater line, and finally a place for the, author, date etc. 
 
 
 
 % First, let's create the line
 \newcommand{\TitleLine}{%
-  \raisebox{-12mm}[0pt][0pt]{%
-   	\begin{pgfpicture}{0mm}{0mm}{0mm}{0mm}
+  \raisebox{-6mm}[0pt][0pt]{%
+   	\begin{pgfpicture}{10mm}{0mm}{0mm}{0mm}
     	 \pgfsetlinewidth{0.10mm}
     	  \color{black}
-      	\pgfline{\pgfpoint{55mm}{0mm}}{\pgfpoint{55mm}{50mm}}
+      	\pgfline{\pgfpoint{55mm}{0mm}}{\pgfpoint{55mm}{.00000000001mm}}
     \end{pgfpicture}}}
 
 
@@ -284,27 +284,27 @@
 
 % Title
 \newcommand{\MyTitle}{%
- 	\hspace*{60mm}\vspace{-25mm}
-  			\centering \inserttitle}
+ 	\hspace*{30mm}\vspace{-25mm}
+  			\centering \textit{\inserttitle}}
   			
 % Subtitle  			
 \newcommand{\MySubTitle}{%
-	\hspace*{60mm}\vspace{-25mm}
-  		\centering	\footnotesize \textit{\insertsubtitle}}
+	\hspace*{30mm}\vspace{-25mm}
+  		\centering \textit{\insertsubtitle}}
   		
 % Author   		
  \newcommand{\MyAuthor}{ 		
- 	\hspace*{60mm}\vspace{-25mm}
+ 	\hspace*{30mm}\vspace{-25mm}
 		\centering \insertauthor}
 		
 % Institute		
  \newcommand{\MyInstitute}{ 		
- 	\hspace*{60mm}\vspace{-25mm}
+ 	\hspace*{30mm}\vspace{-25mm}
 		\centering \footnotesize \textit{\insertinstitute}}
 
 % Date			
  \newcommand{\MyDate}{		
-  	\hspace*{60mm}\vspace{-25mm}
+  	\hspace*{30mm}\vspace{-25mm}
  		\centering	\insertdate}
   	
 % We declare the image that will be used as the logo
